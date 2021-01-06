@@ -1,0 +1,3712 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+h3c_mib:
+  walk:
+  - 1.3.6.1.4.1.25506
+  metrics:
+  - name: hh3cCPUID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.1
+    type: gauge
+    help: The ID uniquely identifies the CPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.1
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.2
+    type: DisplayString
+    help: The CPU model of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.2
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUFreq
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.3
+    type: DisplayString
+    help: The CPU Frequency of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.3
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUCors
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.4
+    type: gauge
+    help: The number of CPU cores of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.4
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUManufactry
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.5
+    type: DisplayString
+    help: The CPU manufacturer of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.5
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.6
+    type: gauge
+    help: The working status of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.6
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+    enum_values:
+      0: others
+      1: ok
+  - name: hh3cCPUSupport64bit
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.7
+    type: gauge
+    help: Whether the CPU supports 64 bit of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.7
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+    enum_values:
+      0: support
+      1: notSupport
+  - name: hh3cCPUThreads
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.8
+    type: gauge
+    help: The total threads of the CPU support associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.8
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUL1Cache
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.9
+    type: DisplayString
+    help: The L1 cache(KB) of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.9
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUL2Cache
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.10
+    type: DisplayString
+    help: The L2 cache(KB) of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.10
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUL3Cache
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.11
+    type: DisplayString
+    help: The L3 cache(KB) of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.11
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUProcessorID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.12
+    type: DisplayString
+    help: The CPU processor ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.12
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUPresentState
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.13
+    type: gauge
+    help: The present status of the CPU associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.13
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+    enum_values:
+      0: absence
+      1: presence
+  - name: hh3cCPUSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.14
+    type: gauge
+    help: Information about CPU health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.14
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cCPUName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.15
+    type: DisplayString
+    help: The CPU device name. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.15
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUSerialNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.16
+    type: DisplayString
+    help: The CPU device serial number. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.1.1.16
+    indexes:
+    - labelname: hh3cCPUID
+      type: gauge
+  - name: hh3cCPUFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.1.2
+    type: gauge
+    help: Information about all cpu health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.1.2
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cMemID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.1
+    type: gauge
+    help: The ID uniquely identifies the summary memory. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.1
+    indexes:
+    - labelname: hh3cMemID
+      type: gauge
+  - name: hh3cMemModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.2
+    type: DisplayString
+    help: The memory model of the memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.2
+    indexes:
+    - labelname: hh3cMemID
+      type: gauge
+  - name: hh3cMemTotalVolum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.3
+    type: DisplayString
+    help: The total memory capacity of the corresponding processor. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.3
+    indexes:
+    - labelname: hh3cMemID
+      type: gauge
+  - name: hh3cMemOperateFreq
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.4
+    type: DisplayString
+    help: The working frequency of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.4
+    indexes:
+    - labelname: hh3cMemID
+      type: gauge
+  - name: hh3cMemOperateVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.5
+    type: DisplayString
+    help: The working voltage of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.5
+    indexes:
+    - labelname: hh3cMemID
+      type: gauge
+  - name: hh3cMemSocketNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.6
+    type: gauge
+    help: The number of memory slots that the processor supports. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.1.1.6
+    indexes:
+    - labelname: hh3cMemID
+      type: gauge
+  - name: hh3cMemIndexID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.1
+    type: gauge
+    help: The ID uniquely identifies the every single memory. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.1
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.2
+    type: DisplayString
+    help: The memory location indicates the processor associated with the hh3cMemIndexID in MemSummaryInfoTable. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.2
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemChannel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.3
+    type: gauge
+    help: The processor's channel number of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.3
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.4
+    type: DisplayString
+    help: The memory slot number of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.4
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.5
+    type: gauge
+    help: The memory status of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.5
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: absence
+      1: normal
+      2: abnormal
+      3: disabled
+  - name: hh3cMemSize
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.6
+    type: DisplayString
+    help: The volume of single memory of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.6
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemMaxFreq
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.7
+    type: DisplayString
+    help: The memory main frequency of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.7
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.8
+    type: DisplayString
+    help: The memory DIMM type of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.8
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemRanks
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.9
+    type: DisplayString
+    help: The memory DIMM type of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.9
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemTech
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.10
+    type: DisplayString
+    help: The memory DIMM technology of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.10
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.11
+    type: DisplayString
+    help: The part number of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.11
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemManufactry
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.12
+    type: DisplayString
+    help: The manufacturer of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.12
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemAuthen
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.13
+    type: gauge
+    help: The H3C authentication of processor of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.13
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: unrecognized
+      1: certified
+      2: ordinary
+  - name: hh3cMemEccStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.14
+    type: gauge
+    help: The ECC status of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.14
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: others
+      1: support
+  - name: hh3cMemDetailOperateVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.15
+    type: DisplayString
+    help: The working voltage of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.15
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.16
+    type: gauge
+    help: Information about memory health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.16
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cMemSerialNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.17
+    type: DisplayString
+    help: The memory device serial number. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.17
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.3
+    type: gauge
+    help: Information about all memory health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.3
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvRaidCardIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.1
+    type: gauge
+    help: The raid card index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.1
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.2
+    type: DisplayString
+    help: The type of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.2
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardFirmVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.3
+    type: DisplayString
+    help: The firmware version of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.3
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardSerialNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.4
+    type: DisplayString
+    help: The serial number of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.4
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardCacheVolume
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.5
+    type: DisplayString
+    help: The cache module size of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.5
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardCacheModule
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.6
+    type: DisplayString
+    help: The cache module status of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.6
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardSupercapacitor
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.7
+    type: DisplayString
+    help: The super capacity status of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.7
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardChargingState
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.8
+    type: gauge
+    help: The charging status of super capacity of card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.8
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.9
+    type: DisplayString
+    help: The location of slot number of raid card. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.9
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardSupercapacitorStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.10
+    type: gauge
+    help: The super capacitor status. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.10
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvLogicalCardIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.1
+    type: gauge
+    help: The number of logical device, always starts from zero. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.1
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.2
+    type: DisplayString
+    help: The status of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.2
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardTypeLevel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.3
+    type: DisplayString
+    help: The raid level of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.3
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardCapacity
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.4
+    type: DisplayString
+    help: The capacity(GB) of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.4
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArrayUnderLogical
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.5
+    type: OctetString
+    help: The hard disk list under the logical device. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.5
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArraySSDLife
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.6
+    type: gauge
+    help: The minimal hard disk SSD life of the disks under the logical device. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.6
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArrayBootEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.7
+    type: DisplayString
+    help: The boot drive enable of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.7
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArrayDriveCache
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.8
+    type: DisplayString
+    help: The drive cache policy of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.8
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardSpanNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.9
+    type: gauge
+    help: Span number of logical disk group - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.9
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+    enum_values:
+      0: Nonsupport
+  - name: hh3cSrvLogicalCardNumDrives
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.10
+    type: gauge
+    help: Amount of hard disks in logical disk group - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.10
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+    enum_values:
+      0: Nonsupport
+  - name: hh3cSrvStorageCardHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.3
+    type: gauge
+    help: The table describes about the storage card health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.3
+    enum_values:
+      0: unhealth
+      1: health
+  - name: hh3cSrvStorageCardFamilyHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.4
+    type: gauge
+    help: The table describes about the storage card health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.4
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvPCIeCardSlot
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.1
+    type: gauge
+    help: The PCIe card index. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.1
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.2
+    type: DisplayString
+    help: Network card Model, currently only support mLOM network card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.2
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardDataWidth
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.3
+    type: DisplayString
+    help: The data width of the PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.3
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.4
+    type: gauge
+    help: The status of PCIe card associated with the slot number. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.4
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+    enum_values:
+      0: normal
+      1: abnormal
+      2: absent
+  - name: hh3cSrvPCIeCardManuID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.5
+    type: DisplayString
+    help: The vendor of PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.5
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardDevID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.6
+    type: DisplayString
+    help: The device of the PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.6
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardCurSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.7
+    type: DisplayString
+    help: Current link speed of mLom network card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.7
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardMaxSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.8
+    type: DisplayString
+    help: Maximum link speed of mLom network card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.8
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardExpress
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.9
+    type: DisplayString
+    help: The PCIe card express. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.9
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvSrvPCIeCardSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.10
+    type: gauge
+    help: The PCIe card slot number. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.10
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvSrvPCIeCardSerialNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.11
+    type: DisplayString
+    help: The PCIe card serial number. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.11
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvSrvPCIeCardPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.12
+    type: DisplayString
+    help: The PCIe card part number. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.12
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardMaxLinkWidth
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.13
+    type: DisplayString
+    help: Maximum link width of the PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.13
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvSrvPCIeDeviceManufacture
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.14
+    type: DisplayString
+    help: The manufacture of the PCIe device. - 1.3.6.1.4.1.25506.13.1.2.1.1.5.1.1.1.14
+    indexes:
+    - labelname: hh3cSrvPCIeCardSlot
+      type: gauge
+  - name: hh3cLomCardInfoID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.1
+    type: gauge
+    help: The ID uniquely identifies the card information. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.1
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cLomCardType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.2
+    type: DisplayString
+    help: The network card type of mLom card associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.2
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cLomCardMacAddr
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.3
+    type: DisplayString
+    help: The physical address of the port of mLom card associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.3
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cLomCardSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.4
+    type: DisplayString
+    help: The link speed of mLom network card associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.4
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cLomCardNetPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.5
+    type: DisplayString
+    help: The net port number of the card associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.5
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cLomCardProName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.6
+    type: DisplayString
+    help: The product name of mLom card associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.6
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cLomCardLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.7
+    type: DisplayString
+    help: The network card installation location of mLom card associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.1.1.1.7
+    indexes:
+    - labelname: hh3cLomCardInfoID
+      type: gauge
+  - name: hh3cPCIeCardSlot
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.1
+    type: gauge
+    help: The PCIe card index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.1
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.2
+    type: DisplayString
+    help: Network card Model, currently only support mLOM network card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.2
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardDataWidth
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.3
+    type: DisplayString
+    help: The data width of the PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.3
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.4
+    type: gauge
+    help: The status of PCIe card associated with the slot number. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.4
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+    enum_values:
+      0: normal
+      1: abnormal
+      2: absent
+  - name: hh3cPCIeCardManuID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.5
+    type: DisplayString
+    help: The vendor of PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.5
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardDevID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.6
+    type: DisplayString
+    help: The device of the PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.6
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardCurSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.7
+    type: DisplayString
+    help: Current link speed of mLom network card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.7
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardMaxSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.8
+    type: DisplayString
+    help: Maximum link speed of mLom network card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.8
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardExpress
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.9
+    type: DisplayString
+    help: The PCIe card express. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.9
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.10
+    type: gauge
+    help: The PCIe card slot number. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.10
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardSerialNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.11
+    type: DisplayString
+    help: The PCIe card serial number. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.11
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeCardPartNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.12
+    type: DisplayString
+    help: The PCIe card part number. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.12
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cPCIeCardMaxLinkWidth
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.13
+    type: DisplayString
+    help: The max data width of the PCIe card. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.13
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cSrvPCIeDeviceManufacture
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.14
+    type: DisplayString
+    help: The manufacture of the PCIe device. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.2.1.1.14
+    indexes:
+    - labelname: hh3cPCIeCardSlot
+      type: gauge
+  - name: hh3cNetTypeIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.1
+    type: gauge
+    help: The slot number of PCIe. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.1
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.2
+    type: gauge
+    help: The slot number of PCIe. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.2
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeProductName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.3
+    type: DisplayString
+    help: The product name of PCIe. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.3
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeCurSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.4
+    type: DisplayString
+    help: The current speed(GT/s) of net. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.4
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeMaxSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.5
+    type: DisplayString
+    help: The max speed(GT/s) of net. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.5
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypePCIeStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.6
+    type: gauge
+    help: The status of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.6
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+    enum_values:
+      0: normal
+      1: abnormal
+  - name: hh3cNetTypeNICInterfaceName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.7
+    type: DisplayString
+    help: The interface type of product. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.7
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypePortSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.8
+    type: DisplayString
+    help: The speed of the port of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.8
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypePortNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.9
+    type: DisplayString
+    help: The port number of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.9
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypePortType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.10
+    type: DisplayString
+    help: The type of port associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.10
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeCardType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.11
+    type: DisplayString
+    help: The type of card of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.11
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeNetPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.12
+    type: DisplayString
+    help: The NIC port of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.12
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeMacAddr
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.13
+    type: DisplayString
+    help: The mac address of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.13
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetTypeFirmware
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.14
+    type: DisplayString
+    help: The Firmware version of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.14
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetCardChipModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.15
+    type: DisplayString
+    help: The net card chip model of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.15
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNetCardChipManufacture
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.16
+    type: DisplayString
+    help: The net card chip manufacture of the net type associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.3.1.16
+    indexes:
+    - labelname: hh3cNetTypeIndex
+      type: gauge
+  - name: hh3cNICStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.6.4
+    type: gauge
+    help: NIC family status. - 1.3.6.1.4.1.25506.13.1.2.1.1.6.4
+    enum_values:
+      0: normal
+      1: abnormal
+      2: absent
+  - name: hh3cPowerID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.1
+    type: gauge
+    help: The ID uniquely identifies the power supply. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.1
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerPresentStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.2
+    type: gauge
+    help: The present status of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.2
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: absence
+      1: presence
+  - name: hh3cPowerModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.3
+    type: DisplayString
+    help: The model of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.3
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cMaxPower
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.4
+    type: gauge
+    help: The maximum input power of the power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.4
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.5
+    type: DisplayString
+    help: The current firmware version information of the power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.5
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerManu
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.6
+    type: DisplayString
+    help: The manufacturer of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.6
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerSN
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.7
+    type: DisplayString
+    help: The serial number of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.7
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerWorkMode
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.8
+    type: gauge
+    help: The main and standby status of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.8
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: main
+      1: standby
+      255: unrecognized
+  - name: hh3cPowerInputMode
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.9
+    type: gauge
+    help: The main and standby status of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.9
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: Noinput
+      1: AC
+      2: HVDC
+      3: LVDC
+  - name: hh3cPowerCost
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.10
+    type: gauge
+    help: Information about the cost of power.The unit is watt. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.10
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerInputVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.11
+    type: gauge
+    help: Information about the input voltage.The unit is voltage - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.11
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerOutputVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.12
+    type: gauge
+    help: Information about the output voltage - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.12
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.13
+    type: gauge
+    help: Information about power status. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.13
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cPowerName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.14
+    type: DisplayString
+    help: power display name. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.14
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.2
+    type: gauge
+    help: Information about all power supply health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.2
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cPowerTotalCost
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.3
+    type: gauge
+    help: The total cost of power - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.3
+  - name: hh3cSrvPowerCappingEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.2.1
+    type: gauge
+    help: Power capping enable. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.2.1
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cSrvPowerCappingValue
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.2.2
+    type: gauge
+    help: Power capping value(W) - 1.3.6.1.4.1.25506.13.1.2.1.1.7.2.2
+  - name: hh3cSrvPowerCappingFailure
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.2.3
+    type: gauge
+    help: Shut down on capping failure. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.2.3
+    enum_values:
+      0: "No"
+      1: "Yes"
+  - name: hh3cPeakPower
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.1
+    type: DisplayString
+    help: Max power consumption updated in real time.(W) - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.1
+  - name: hh3cMaxPowerStartTime
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.2
+    type: DisplayString
+    help: Real-time max value appeared at. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.2
+  - name: hh3cPowerStatisticStartTime
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.3
+    type: DisplayString
+    help: Start time of real-time statistics period. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.3
+  - name: hh3cAvgPowerInDay
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.4
+    type: DisplayString
+    help: Average Power consumption data for past 24 hours.(W) - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.4
+  - name: hh3cMaxPowerInDay
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.5
+    type: DisplayString
+    help: Maximum Power consumption data for past 24 hours.(W) - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.5
+  - name: hh3cMinPowerInDay
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.6
+    type: DisplayString
+    help: Minimum Power consumption data for past 24 hours.(W) - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.6
+  - name: hh3cAvgPowerInWeek
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.7
+    type: DisplayString
+    help: Average Power consumption data for past 7 days (W). - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.7
+  - name: hh3cMaxPowerInWeek
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.8
+    type: DisplayString
+    help: Maximum Power consumption data for past 7 days (W). - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.8
+  - name: hh3cMinPowerInWeek
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.9
+    type: DisplayString
+    help: Minimum Power consumption data for past 7 days (W). - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.9
+  - name: hh3cClearStatistic
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.10
+    type: gauge
+    help: This node can only execute set value(1) command - 1.3.6.1.4.1.25506.13.1.2.1.1.7.3.10
+    enum_values:
+      1: clearall
+  - name: hh3cSrvHardDiskSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.1
+    type: DisplayString
+    help: The slot number of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.1
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskBiosNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.2
+    type: gauge
+    help: The BIOS number of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.2
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskOsNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.3
+    type: gauge
+    help: The number of hard disk under OS, always the same as BIOS number. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.3
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.4
+    type: DisplayString
+    help: The status of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.4
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskVendor
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.5
+    type: DisplayString
+    help: The vendor of hard disk which not support SATA hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.5
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskFirmVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.6
+    type: DisplayString
+    help: The firmware version of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.6
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskSerial
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.7
+    type: DisplayString
+    help: The serial number of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.7
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.8
+    type: DisplayString
+    help: The type of hard disk, including the link speed, interface type and media type. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.8
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskCapacity
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.9
+    type: DisplayString
+    help: The capacity(GB) of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.9
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskSSDLife
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.10
+    type: gauge
+    help: The SSD life of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.10
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskManufacturer
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.11
+    type: DisplayString
+    help: The Manufacturer of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.1.1.11
+    indexes:
+    - labelname: hh3cSrvHardDiskSlotNum
+      type: DisplayString
+  - name: hh3cSrvNVMeDiskIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.1
+    type: gauge
+    help: The index of NVMe disk info entry. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.1
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.2
+    type: DisplayString
+    help: The slot number of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.2
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskVendorName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.3
+    type: DisplayString
+    help: The vendor name of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.3
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskProductName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.4
+    type: DisplayString
+    help: The product name of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.4
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskPDStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.5
+    type: DisplayString
+    help: The pd status of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.5
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskPercentLife
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.6
+    type: gauge
+    help: The life percentage of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.6
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskSerialNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.7
+    type: DisplayString
+    help: The serial number of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.7
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskModelNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.8
+    type: DisplayString
+    help: The model number of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.8
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskCapacity
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.9
+    type: DisplayString
+    help: The capacity of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.9
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskFirmwareVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.10
+    type: DisplayString
+    help: The firmware version of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.10
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskPortType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.11
+    type: DisplayString
+    help: The port type of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.11
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cSrvNVMeDiskSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.12
+    type: gauge
+    help: The sub status of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.12
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvNVMeDiskPhysicalSlot
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.13
+    type: DisplayString
+    help: The physical slot number of NVMe disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.2.1.13
+    indexes:
+    - labelname: hh3cSrvNVMeDiskIndex
+      type: gauge
+  - name: hh3cHardDiskTableIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.1
+    type: gauge
+    help: The hard disk detail info table index,meaningless. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.1
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskBiosNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.2
+    type: gauge
+    help: The BIOS number of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.2
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskOsNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.3
+    type: gauge
+    help: The number of hard disk under OS, always the same as BIOS number. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.3
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.4
+    type: DisplayString
+    help: The status of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.4
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskVendor
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.5
+    type: DisplayString
+    help: The vendor of hard disk which not support SATA hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.5
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskFirmVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.6
+    type: DisplayString
+    help: The firmware version of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.6
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskSerial
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.7
+    type: DisplayString
+    help: The serial number of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.7
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.8
+    type: DisplayString
+    help: The type of hard disk, including the link speed, interface type and media type. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.8
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskCapacity
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.9
+    type: DisplayString
+    help: The capacity(GB) of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.9
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskSSDLife
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.10
+    type: gauge
+    help: The SSD life of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.10
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.11
+    type: gauge
+    help: The sub status of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.11
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cHardDiskSilkScreen
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.12
+    type: DisplayString
+    help: The silk-screen of the hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.12
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskAscriptionRaidName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.13
+    type: DisplayString
+    help: The RAID name of the hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.13
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskAscriptionRaidLevel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.14
+    type: DisplayString
+    help: The RAID level of the hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.14
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskAscriptionRaidStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.15
+    type: DisplayString
+    help: The RAID status of the hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.15
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskManufacturer
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.16
+    type: DisplayString
+    help: The RAID manufacturer of the hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.3.1.16
+    indexes:
+    - labelname: hh3cHardDiskTableIndex
+      type: gauge
+  - name: hh3cHardDiskFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.4
+    type: gauge
+    help: The family status of the hard disks. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.4
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cNVMeDiskFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.5
+    type: gauge
+    help: The family status of the NVMe disks. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.5
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cHardDiskHealthTableIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.6.1.1
+    type: gauge
+    help: The index of the table. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.6.1.1
+    indexes:
+    - labelname: hh3cHardDiskHealthTableIndex
+      type: gauge
+  - name: hh3cHardDiskLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.6.1.2
+    type: DisplayString
+    help: The location of hard disk. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.6.1.2
+    indexes:
+    - labelname: hh3cHardDiskHealthTableIndex
+      type: gauge
+  - name: hh3cHardDiskHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.9.6.1.3
+    type: gauge
+    help: The hard disk health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.9.6.1.3
+    indexes:
+    - labelname: hh3cHardDiskHealthTableIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvFanID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.1
+    type: gauge
+    help: The fan id. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.1
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.2
+    type: DisplayString
+    help: The name of fan associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.2
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanRatio
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.3
+    type: gauge
+    help: The actual speed is divided by the full speed. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.3
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.4
+    type: DisplayString
+    help: The model of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.4
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.5
+    type: gauge
+    help: The current actual speed of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.5
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanPresentStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.6
+    type: gauge
+    help: The present status of fan associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.6
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+    enum_values:
+      0: absence
+      1: present
+  - name: hh3cSrvFanRedundStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.7
+    type: gauge
+    help: The redundant status of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.7
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+    enum_values:
+      0: normal
+      1: abnormal
+  - name: hh3cSrvFanSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.8
+    type: gauge
+    help: The fan sensor status associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.8
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cFanFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.2
+    type: gauge
+    help: The fan family sensor status. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.2
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cTempFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.1
+    type: gauge
+    help: The Temperature family sensor status. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.1
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cInletTempReading
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.2
+    type: gauge
+    help: The max inlet sensor temperature reading. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.2
+  - name: hh3cTempSensorIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.1
+    type: gauge
+    help: The index uniquely identifies the Sensors. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.1
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempSensorNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.2
+    type: gauge
+    help: The number of sensors associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.2
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempSensorName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.3
+    type: DisplayString
+    help: The name of sensors associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.3
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempSensorReading
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.4
+    type: gauge
+    help: Information about temperature reading,the unit is degree C. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.4
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempSensorUnit
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.5
+    type: DisplayString
+    help: The unit of sensor. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.5
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempSensorSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.6
+    type: gauge
+    help: The Sensors status of component. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.6
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cTempLowerNonRecoverThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.7
+    type: gauge
+    help: Information about temperature lower nonrecoverable threshold,the unit is degree C,0 represent NA. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.7
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempLowerCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.8
+    type: gauge
+    help: Information about temperature lower critical threshold,the unit is degree C,0 represent NA. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.8
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempLowerNonCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.9
+    type: gauge
+    help: Information about temperature lower minor threshold,the unit is degree C,0 represent NA. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.9
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempHigherNonCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.10
+    type: gauge
+    help: Information about temperature upper minor threshold,the unit is degree C,0 represent NA. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.10
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempHigherCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.11
+    type: gauge
+    help: Information about temperature upper critical threshold,the unit is degree C,0 represent NA. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.11
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cTempHigherNonRecoverThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.12
+    type: gauge
+    help: Information about temperature upper nonrecoverable threshold,the unit is degree C,0 represent NA. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.3.1.12
+    indexes:
+    - labelname: hh3cTempSensorIndex
+      type: gauge
+  - name: hh3cOutletTempReading
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.11.4
+    type: gauge
+    help: The outlet sensor temperature readings. - 1.3.6.1.4.1.25506.13.1.2.1.1.11.4
+  - name: hh3cEntiretyHealthFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.12
+    type: gauge
+    help: The entirety health status of this machine. - 1.3.6.1.4.1.25506.13.1.2.1.1.12
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvGPUIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.1
+    type: gauge
+    help: The index of the table. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.1
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.2
+    type: gauge
+    help: The slot number of GPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.2
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUProductName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.3
+    type: DisplayString
+    help: The product name of GPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.3
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUVendorName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.4
+    type: DisplayString
+    help: The vendor name of GPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.4
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUSerialNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.5
+    type: DisplayString
+    help: The serial number of GPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.5
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.6
+    type: DisplayString
+    help: The part number of GPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.6
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUFWVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.7
+    type: DisplayString
+    help: The firmware version of GPU. - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.7
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvGPUPower
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.8
+    type: gauge
+    help: The real time power of GPU - 1.3.6.1.4.1.25506.13.1.2.1.1.13.1.1.8
+    indexes:
+    - labelname: hh3cSrvGPUIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.1
+    type: gauge
+    help: The index of the table. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.1
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.2
+    type: DisplayString
+    help: The name of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.2
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.3
+    type: DisplayString
+    help: The type of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.3
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardFWver
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.4
+    type: DisplayString
+    help: The firmware version of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.4
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.5
+    type: DisplayString
+    help: The location of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.5
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.6
+    type: gauge
+    help: The port of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.6
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardWwpn
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.7
+    type: DisplayString
+    help: The WWPN of the port of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.7
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardWwnn
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.8
+    type: DisplayString
+    help: The WWNN of the port of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.8
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardLinkSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.9
+    type: DisplayString
+    help: The speed(GT/s) of the port of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.9
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+  - name: hh3cSrvFCHBACardLinkStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.10
+    type: gauge
+    help: The status of the port of FC HBA card. - 1.3.6.1.4.1.25506.13.1.2.1.1.14.1.1.10
+    indexes:
+    - labelname: hh3cSrvFCHBACardIndex
+      type: gauge
+    enum_values:
+      1: connect
+      2: disconnect
+      255: NA
+  - name: hh3cFanID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.1
+    type: gauge
+    help: The fan id. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.1
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+  - name: hh3cFanName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.2
+    type: DisplayString
+    help: The name of fan associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.2
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+  - name: hh3cFanRatio
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.3
+    type: gauge
+    help: The actual speed is divided by the full speed. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.3
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+  - name: hh3cFanModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.4
+    type: DisplayString
+    help: The model of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.4
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+  - name: hh3cFanPresentStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.5
+    type: gauge
+    help: The present status of fan associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.5
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+    enum_values:
+      0: absence
+      1: present
+  - name: hh3cFanSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.6
+    type: gauge
+    help: The current actual speed of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.6
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+  - name: hh3cFanRedundStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.7
+    type: gauge
+    help: The redundant status of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.2.1.1.1.7
+    indexes:
+    - labelname: hh3cFanID
+      type: gauge
+    enum_values:
+      0: normal
+      1: abnormal
+  - name: hh3cSensorIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.1
+    type: gauge
+    help: The index uniquely identifies the Sensors. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.1
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.2
+    type: gauge
+    help: The number of sensors associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.2
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.3
+    type: DisplayString
+    help: The name of sensors associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.3
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.4
+    type: DisplayString
+    help: The type of sensors associated with index. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.4
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorReading
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.5
+    type: DisplayString
+    help: The current sensors of the component. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.5
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorUnit
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.6
+    type: DisplayString
+    help: The unit of sensor. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.6
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorServerityLevel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.7
+    type: gauge
+    help: The Sensors state of component. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.7
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+    enum_values:
+      0: NA
+      1: Normal
+      2: Minor
+      3: Major
+      4: Critical
+  - name: hh3cLowerNonRecoverThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.8
+    type: DisplayString
+    help: The fatal floor threshold. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.8
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cLowerCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.9
+    type: DisplayString
+    help: The critical floor threshold. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.9
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cLowerNonCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.10
+    type: DisplayString
+    help: The warning floor threshold. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.10
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cHigherNonCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.11
+    type: DisplayString
+    help: The warning upper limit. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.11
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cHigherCriticalThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.12
+    type: DisplayString
+    help: The critical upper limit. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.12
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cHigherNonRecoverThres
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.13
+    type: DisplayString
+    help: The fatal upper limit. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.1.1.13
+    indexes:
+    - labelname: hh3cSensorIndex
+      type: gauge
+  - name: hh3cSensorInletTemperature
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.2
+    type: DisplayString
+    help: The max inlet temperature sensor reading. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.2
+  - name: hh3cSensorOutletTemperature
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.2.2.3
+    type: DisplayString
+    help: The max out let temperature sensor reading. - 1.3.6.1.4.1.25506.13.1.2.1.2.2.3
+  - name: hh3cSrvFruNumIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.1
+    type: gauge
+    help: The fru index. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.1
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrcFruDeviceID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.2
+    type: gauge
+    help: The fru device identification. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.2
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrcFruProductBoardID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.3
+    type: gauge
+    help: The product board identification. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.3
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrcFruDeviceName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.4
+    type: DisplayString
+    help: The fru device name. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.4
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruBoardDate
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.5
+    type: DisplayString
+    help: The date of manufacture. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.5
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruBoardManufacturer
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.6
+    type: DisplayString
+    help: The board manufacturer. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.6
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruBoardProductName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.7
+    type: DisplayString
+    help: The board name. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.7
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruBoardPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.8
+    type: DisplayString
+    help: The fru board part num. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.8
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruBoardSerial
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.9
+    type: DisplayString
+    help: The board serial number. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.9
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruBoardExtra
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.10
+    type: DisplayString
+    help: The extra information of board. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.10
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruChassisType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.11
+    type: DisplayString
+    help: The type of chassis. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.11
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruChassisPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.12
+    type: DisplayString
+    help: The fru chassis part num. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.12
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruChassisSerial
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.13
+    type: DisplayString
+    help: The chassis serial no. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.13
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruChassisMac
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.14
+    type: DisplayString
+    help: The chassis mac address. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.14
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruChassisMacNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.15
+    type: DisplayString
+    help: The chassis mac num. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.15
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruProductManufacturer
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.16
+    type: DisplayString
+    help: The product manufacturer. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.16
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruProductName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.17
+    type: DisplayString
+    help: The product name. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.17
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruProductSerialNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.18
+    type: DisplayString
+    help: The product serial num. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.18
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruProductPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.19
+    type: DisplayString
+    help: The product part num. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.19
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvFruProductAssetTag
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.20
+    type: DisplayString
+    help: The product asset tag. - 1.3.6.1.4.1.25506.13.1.2.1.3.1.1.20
+    indexes:
+    - labelname: hh3cSrvFruNumIndex
+      type: gauge
+  - name: hh3cSrvCpuUsage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.1
+    type: DisplayString
+    help: Information about cpu usage. - 1.3.6.1.4.1.25506.13.1.2.1.4.1
+  - name: hh3cSrvMemUsage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.2
+    type: DisplayString
+    help: Information about memory usage. - 1.3.6.1.4.1.25506.13.1.2.1.4.2
+  - name: hh3cSrvMemTotalSize
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.3
+    type: DisplayString
+    help: Information about the total size of memory. - 1.3.6.1.4.1.25506.13.1.2.1.4.3
+  - name: hh3cSrvDiskIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.1
+    type: gauge
+    help: The index of disk table. - 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.1
+    indexes:
+    - labelname: hh3cSrvDiskIndex
+      type: gauge
+  - name: hh3cSrvDiskName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.2
+    type: DisplayString
+    help: The name of the disk. - 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.2
+    indexes:
+    - labelname: hh3cSrvDiskIndex
+      type: gauge
+  - name: hh3cSrvDiskUsageRate
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.3
+    type: DisplayString
+    help: The usage of the disk. - 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.3
+    indexes:
+    - labelname: hh3cSrvDiskIndex
+      type: gauge
+  - name: hh3cSrvDiskUsedSize
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.4
+    type: DisplayString
+    help: The used size of the disk. - 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.4
+    indexes:
+    - labelname: hh3cSrvDiskIndex
+      type: gauge
+  - name: hh3cSrvDiskTotalSize
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.5
+    type: DisplayString
+    help: The total size of the disk. - 1.3.6.1.4.1.25506.13.1.2.1.4.4.1.5
+    indexes:
+    - labelname: hh3cSrvDiskIndex
+      type: gauge
+  - name: hh3cSrcPortIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.5.1.1
+    type: gauge
+    help: The index of table. - 1.3.6.1.4.1.25506.13.1.2.1.4.5.1.1
+    indexes:
+    - labelname: hh3cSrcPortIndex
+      type: gauge
+  - name: hh3cSrvPortName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.5.1.2
+    type: DisplayString
+    help: The name of the port . - 1.3.6.1.4.1.25506.13.1.2.1.4.5.1.2
+    indexes:
+    - labelname: hh3cSrcPortIndex
+      type: gauge
+  - name: hh3cSrvNetUsageRate
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.4.5.1.3
+    type: DisplayString
+    help: The usage of the net usage. - 1.3.6.1.4.1.25506.13.1.2.1.4.5.1.3
+    indexes:
+    - labelname: hh3cSrcPortIndex
+      type: gauge
+  - name: hh3cInterfaceIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.1
+    type: gauge
+    help: The index uniquely identifies the interface. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.1
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.2
+    type: DisplayString
+    help: The name of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.2
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.3
+    type: gauge
+    help: The enable status of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.3
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cInterfaceMacAddr
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.4
+    type: DisplayString
+    help: The MAC address of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.4
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceDhcpEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.5
+    type: gauge
+    help: The dhcp status of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.5
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+    enum_values:
+      0: disable
+      1: static
+      2: dhcp
+  - name: hh3cInterfaceIPaddr
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.6
+    type: InetAddressIPv4
+    help: The IP address of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.6
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceMask
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.7
+    type: InetAddressIPv4
+    help: The mask of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.7
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceGateway
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.8
+    type: InetAddressIPv4
+    help: The gateway of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.8
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceVlanEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.9
+    type: gauge
+    help: The vlan enable status of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.9
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cInterfaceVlanID
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.10
+    type: gauge
+    help: The vlan id of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.10
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceVlanPri
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.11
+    type: gauge
+    help: The vlan priority of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.11
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceIPV6Enable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.12
+    type: gauge
+    help: The ipv6 address of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.12
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cInterfaceIPV6DhcpEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.13
+    type: gauge
+    help: The dhcp status of ipv6, disable(0), static(1),dhcp(2) - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.13
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+    enum_values:
+      0: disable
+      1: static
+      2: dhcp
+  - name: hh3cInterfaceIPV6Addr
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.14
+    type: DisplayString
+    help: The ipv6 address of interface. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.14
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cInterfaceIPV6PrefixLen
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.15
+    type: gauge
+    help: The prefix of ipv6 address. - 1.3.6.1.4.1.25506.13.1.2.2.2.1.1.15
+    indexes:
+    - labelname: hh3cInterfaceIndex
+      type: gauge
+  - name: hh3cLldpInfoIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.1
+    type: gauge
+    help: The index uniquely identifies the interface. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.1
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cLldpInterfaceName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.2
+    type: DisplayString
+    help: The name of interface associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.2
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cLldpInfoChassisMac
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.3
+    type: DisplayString
+    help: The Mac of LLDP associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.3
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cLldpInfoChassisName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.4
+    type: DisplayString
+    help: The chassis name of LLDP associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.4
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cLldpInfoPortName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.5
+    type: DisplayString
+    help: The port name of LLDP associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.5
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cLldpInfoPortDescr
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.6
+    type: DisplayString
+    help: The port describes of LLDP associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.6
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cLldpInfoVlanID
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.7
+    type: gauge
+    help: The vlan ID of LLDP associated with the index. - 1.3.6.1.4.1.25506.13.1.2.2.2.2.1.7
+    indexes:
+    - labelname: hh3cLldpInfoIndex
+      type: gauge
+  - name: hh3cNetWorkSendLldpEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.3
+    type: gauge
+    help: Set LLDP enable - 1.3.6.1.4.1.25506.13.1.2.2.2.3
+    enum_values:
+      0: disable
+      1: enable
+  - name: h3cSrvLinkTableIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.1
+    type: gauge
+    help: The index of the table - 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.1
+    indexes:
+    - labelname: h3cSrvLinkTableIndex
+      type: gauge
+  - name: h3cSrvLinkIfName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.2
+    type: DisplayString
+    help: The interface name of the port - 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.2
+    indexes:
+    - labelname: h3cSrvLinkTableIndex
+      type: gauge
+  - name: h3cSrvLinkPortNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.3
+    type: gauge
+    help: The number of the port - 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.3
+    indexes:
+    - labelname: h3cSrvLinkTableIndex
+      type: gauge
+  - name: h3cSrvLinkPortStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.4
+    type: DisplayString
+    help: The link status of the port - 1.3.6.1.4.1.25506.13.1.2.2.2.4.1.4
+    indexes:
+    - labelname: h3cSrvLinkTableIndex
+      type: gauge
+  - name: hh3cConfigPrimaryNTP
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.3.1
+    type: DisplayString
+    help: Configure the primary NTP server address. - 1.3.6.1.4.1.25506.13.1.2.2.3.1
+  - name: hh3cConfigSecondaryNTP
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.3.2
+    type: DisplayString
+    help: Configure the secondary NTP server address. - 1.3.6.1.4.1.25506.13.1.2.2.3.2
+  - name: hh3cNTPConfigAutoDate
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.3.3
+    type: gauge
+    help: Automatically synchronize the date and time with the NTP server(0=manual,1=auto for set; 0=manual, 1=sync success,2= sync fail for get). - 1.3.6.1.4.1.25506.13.1.2.2.3.3
+    enum_values:
+      0: manual
+      1: auto
+      2: synchronizeFailed
+  - name: hh3cNTPConfigTimeZone
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.3.4
+    type: DisplayString
+    help: Select the time zone for the server. - 1.3.6.1.4.1.25506.13.1.2.2.3.4
+  - name: hh3cNTPConfigUpdateFrequency
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.3.5
+    type: gauge
+    help: Set the update frequency for the server,The range of support settings is 600-2592000 in s - 1.3.6.1.4.1.25506.13.1.2.2.3.5
+  - name: hh3cConfigTertiaryNTP
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.3.6
+    type: DisplayString
+    help: Configure the tertiary NTP server address. - 1.3.6.1.4.1.25506.13.1.2.2.3.6
+  - name: hh3cSrvHdmVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.7.1
+    type: DisplayString
+    help: The version of HDM. - 1.3.6.1.4.1.25506.13.1.2.2.7.1
+  - name: hh3cSrvBiosVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.7.2
+    type: DisplayString
+    help: The version of BIOS. - 1.3.6.1.4.1.25506.13.1.2.2.7.2
+  - name: hh3cSrvCpldVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.7.3
+    type: DisplayString
+    help: The version of CPLD. - 1.3.6.1.4.1.25506.13.1.2.2.7.3
+  - name: hh3cSrvName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.1
+    type: DisplayString
+    help: The product name. - 1.3.6.1.4.1.25506.13.1.2.2.8.1
+  - name: hh3cManufactry
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.2
+    type: DisplayString
+    help: The manufacturer of product. - 1.3.6.1.4.1.25506.13.1.2.2.8.2
+  - name: hh3cSrvUUID
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.3
+    type: DisplayString
+    help: The UUID of product. - 1.3.6.1.4.1.25506.13.1.2.2.8.3
+  - name: hh3cSrvUptime
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.4
+    type: gauge
+    help: The uptime of BMC.(hours) - 1.3.6.1.4.1.25506.13.1.2.2.8.4
+  - name: hh3cSrvhostName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.5
+    type: DisplayString
+    help: The host name - 1.3.6.1.4.1.25506.13.1.2.2.8.5
+  - name: hh3cSrvhostOSuptime
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.6
+    type: gauge
+    help: The uptime of OS (secs), considering UTC zone, when a wrong value error occurred, may be time synchronization failed. - 1.3.6.1.4.1.25506.13.1.2.2.8.6
+  - name: hh3cCurPostcode
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.7
+    type: DisplayString
+    help: The current post code. - 1.3.6.1.4.1.25506.13.1.2.2.8.7
+  - name: hh3chostPostcode
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.8.8
+    type: DisplayString
+    help: The host post code. - 1.3.6.1.4.1.25506.13.1.2.2.8.8
+  - name: hh3cTrapEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.1
+    type: gauge
+    help: The status of trap. - 1.3.6.1.4.1.25506.13.1.2.2.9.1
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cTrapVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.2
+    type: gauge
+    help: Trap Version - 1.3.6.1.4.1.25506.13.1.2.2.9.2
+    enum_values:
+      0: v1
+      1: v2c
+      2: v3
+  - name: hh3cTrapUserForV3
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.3
+    type: DisplayString
+    help: The user name for SNMP TRAP V3, the user should be one of the BMC local user - 1.3.6.1.4.1.25506.13.1.2.2.9.3
+  - name: hh3cTrapPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.4
+    type: gauge
+    help: SNMP trap port between 1-65535, default is 162.This node is obsolete, use hh3cTrapReceiverPort recommended. - 1.3.6.1.4.1.25506.13.1.2.2.9.4
+  - name: hh3cTrapCommunity
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.5
+    type: DisplayString
+    help: SNMP Trap community between 1 to 18, default is public. - 1.3.6.1.4.1.25506.13.1.2.2.9.5
+  - name: hh3cTrapAddr1
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.6
+    type: DisplayString
+    help: Trap receiver domain address or ip address(ipv4 or ipv6) - 1.3.6.1.4.1.25506.13.1.2.2.9.6
+  - name: hh3cTrapAddr2
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.7
+    type: DisplayString
+    help: Trap receiver domain address or ip address(ipv4 or ipv6) - 1.3.6.1.4.1.25506.13.1.2.2.9.7
+  - name: hh3cTrapAddr3
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.8
+    type: DisplayString
+    help: Trap receiver domain address or ip address(ipv4 or ipv6) - 1.3.6.1.4.1.25506.13.1.2.2.9.8
+  - name: hh3cTrapMode
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.9
+    type: gauge
+    help: The trap mode. - 1.3.6.1.4.1.25506.13.1.2.2.9.9
+    enum_values:
+      0: NodeMode
+      1: EventMode
+  - name: hh3cTrapSeverityLevel
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.10
+    type: gauge
+    help: The trap severity level. - 1.3.6.1.4.1.25506.13.1.2.2.9.10
+    enum_values:
+      0: Minor-Major-Critical
+      1: Critical
+      2: All
+  - name: hh3cTrapReceiverIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.1
+    type: gauge
+    help: The index of trap receiver. - 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.1
+    indexes:
+    - labelname: hh3cTrapReceiverIndex
+      type: gauge
+  - name: hh3cTrapReceiverEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.2
+    type: gauge
+    help: The status of trap. - 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.2
+    indexes:
+    - labelname: hh3cTrapReceiverIndex
+      type: gauge
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cTrapReceiverPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.3
+    type: gauge
+    help: SNMP trap port between 1-65535, default is 162. - 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.3
+    indexes:
+    - labelname: hh3cTrapReceiverIndex
+      type: gauge
+  - name: hh3cTrapReceiverAddr
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.4
+    type: DisplayString
+    help: Trap receiver domain address or ip address(ipv4 or ipv6) - 1.3.6.1.4.1.25506.13.1.2.2.9.11.1.4
+    indexes:
+    - labelname: hh3cTrapReceiverIndex
+      type: gauge
+  - name: hh3cDNSSource
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.1
+    type: gauge
+    help: Information about dns source, Auto(0), Manual(1). - 1.3.6.1.4.1.25506.13.1.2.2.10.1
+    enum_values:
+      0: Auto
+      1: Manual
+  - name: hh3cDomainBindNetPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.2
+    type: DisplayString
+    help: Information about dns bind net port. - 1.3.6.1.4.1.25506.13.1.2.2.10.2
+  - name: hh3cDomainIPPreference
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.3
+    type: gauge
+    help: DNS Ip preference selected ipv4(1) or ipv6(2), if dns source is selected manual, show invalid(0) - 1.3.6.1.4.1.25506.13.1.2.2.10.3
+    enum_values:
+      0: invalid
+      1: ipv4
+      2: ipv6
+  - name: hh3cDomainName
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.4
+    type: DisplayString
+    help: The domain name suffix registered to the corresponding area of the DNS server - 1.3.6.1.4.1.25506.13.1.2.2.10.4
+  - name: hh3cDomainServer1
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.5
+    type: DisplayString
+    help: 'DNS server 1: the DNS server specified by HDM, which supports IPv4 address and IPv6 address - 1.3.6.1.4.1.25506.13.1.2.2.10.5'
+  - name: hh3cDomainServer2
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.6
+    type: DisplayString
+    help: 'DNS server 2: the DNS server specified by HDM, which supports IPv4 address and IPv6 address - 1.3.6.1.4.1.25506.13.1.2.2.10.6'
+  - name: hh3cDomainServer3
+    oid: 1.3.6.1.4.1.25506.13.1.2.2.10.7
+    type: DisplayString
+    help: 'DNS server 3: the DNS server specified by HDM, which supports IPv4 address and IPv6 address - 1.3.6.1.4.1.25506.13.1.2.2.10.7'
+  - name: hh3cSrvPowerControl
+    oid: 1.3.6.1.4.1.25506.13.1.2.3.1
+    type: gauge
+    help: Remote power control. - 1.3.6.1.4.1.25506.13.1.2.3.1
+    enum_values:
+      0: "off"
+      1: "on"
+      2: powerCycle
+      3: reset
+      5: softOff
+  - name: hh3cSrvSysBootDevice
+    oid: 1.3.6.1.4.1.25506.13.1.2.3.2
+    type: gauge
+    help: Remote system boot device. - 1.3.6.1.4.1.25506.13.1.2.3.2
+    enum_values:
+      0: hdd
+      1: pxe
+      2: bios
+      4: cdrom
+      7: noOverride
+  - name: hh3cSrvSysBootMode
+    oid: 1.3.6.1.4.1.25506.13.1.2.3.3
+    type: gauge
+    help: Remote system boot mode. - 1.3.6.1.4.1.25506.13.1.2.3.3
+    enum_values:
+      0: legacy
+      1: uefi
+      2: noOverride
+  - name: hh3cSrvSysValidPeriod
+    oid: 1.3.6.1.4.1.25506.13.1.2.3.4
+    type: gauge
+    help: Remote system boot mode. - 1.3.6.1.4.1.25506.13.1.2.3.4
+    enum_values:
+      0: oneTime
+      1: permanent
+  - name: hh3cCurPower
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.6.1
+    type: gauge
+    help: The current total power (W). - 1.3.6.1.4.1.25506.13.1.2.4.6.1
+  - name: hh3cEntiretyHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.1
+    type: gauge
+    help: The entirety health status of this machine. - 1.3.6.1.4.1.25506.13.1.2.4.7.1
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cPwrHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.2
+    type: gauge
+    help: Health status of the power supply overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.2
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+  - name: hh3cFanHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.3
+    type: gauge
+    help: Health status of the fan overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.3
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+  - name: hh3cCPUHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.4
+    type: gauge
+    help: Health status of the CPU overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.4
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cSrvHardDiskHealthSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.1
+    type: DisplayString
+    help: The HDD sensor name. - 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.1
+    indexes:
+    - labelname: hh3cSrvHardDiskHealthSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.2
+    type: DisplayString
+    help: The health status of the corresponding hard disk. - 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.2
+    indexes:
+    - labelname: hh3cSrvHardDiskHealthSlotNum
+      type: DisplayString
+  - name: hh3cSrvNetCardHealthIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.1
+    type: gauge
+    help: The index of network card. - 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.1
+    indexes:
+    - labelname: hh3cSrvNetCardHealthIndex
+      type: gauge
+  - name: hh3cSrvNetCardHealthSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.2
+    type: gauge
+    help: The slot number of network card. - 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.2
+    indexes:
+    - labelname: hh3cSrvNetCardHealthIndex
+      type: gauge
+  - name: hh3cSrvNetCardHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.3
+    type: gauge
+    help: The status of network card. - 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.3
+    indexes:
+    - labelname: hh3cSrvNetCardHealthIndex
+      type: gauge
+    enum_values:
+      0: normal
+      1: alarm
+      255: unknown
+  - name: hh3cMemHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.7
+    type: gauge
+    help: The overall health of the memory module. - 1.3.6.1.4.1.25506.13.1.2.4.7.7
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cDiskHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.8
+    type: gauge
+    help: The overall health of the hard disk module. - 1.3.6.1.4.1.25506.13.1.2.4.7.8
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+  - name: hh3cUIDStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.9
+    type: gauge
+    help: Remote UID control. - 1.3.6.1.4.1.25506.13.1.2.4.7.9
+    enum_values:
+      0: "Off"
+      1: "On"
+      2: TimedOn
+  - name: hh3cTempHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.10
+    type: gauge
+    help: Health status of the temperature overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.10
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cSrvUserID
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.1
+    type: gauge
+    help: The users' IDs. - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.1
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+  - name: hh3cSrvUserName
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.2
+    type: DisplayString
+    help: The users' names. - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.2
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+  - name: hh3cSrvUserAccess
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.3
+    type: gauge
+    help: The users' access to HDM. - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.3
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cSrvUserNetworkPriv
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.4
+    type: DisplayString
+    help: The users' roles - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.4
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+  - name: hh3cSrvUserSnmpPriv
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.5
+    type: gauge
+    help: The users' SNMP extended privileges. - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.5
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+    enum_values:
+      0: disable
+      1: enable
+  - name: hh3cSrvUserSnmpAccess
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.6
+    type: DisplayString
+    help: The users' SNMP V3 R/W permission. - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.6
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+  - name: hh3cSrvUserSnmpAuthProtocol
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.7
+    type: DisplayString
+    help: The users' SNMP V3 authProtocol. - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.7
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+  - name: hh3cSrvUserPrivacyProtocol
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.8
+    type: DisplayString
+    help: The users' SNMP V3 privProtocol - 1.3.6.1.4.1.25506.13.1.2.4.8.1.1.8
+    indexes:
+    - labelname: hh3cSrvUserID
+      type: gauge
+  - name: hh3cSrvLdapEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.1
+    type: gauge
+    help: Ldap authentication, Enable(1), Disable(0). - 1.3.6.1.4.1.25506.13.1.2.4.9.1
+    enum_values:
+      0: Disable
+      1: Enable
+  - name: hh3cSrvLdapServerAddr
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.2
+    type: DisplayString
+    help: The system address of the LDAP server, supporting for IPv4 and IPv6 address. - 1.3.6.1.4.1.25506.13.1.2.4.9.2
+  - name: hh3cSrvLdapBindDomain
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.3
+    type: DisplayString
+    help: Bind to the directory where the LDAP server administrator is located, enabling the LDAP server to authenticate users logging into the HDM. - 1.3.6.1.4.1.25506.13.1.2.4.9.3
+  - name: hh3cSrvLdapBindPort
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.4
+    type: gauge
+    help: Specify the port number used by LDAP - 1.3.6.1.4.1.25506.13.1.2.4.9.4
+  - name: hh3cSrvLdapSearchBase
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.5
+    type: DisplayString
+    help: The DN path searched by the LDAP server, support FQDN. - 1.3.6.1.4.1.25506.13.1.2.4.9.5
+  - name: hh3cSrvLdapPassword
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.6
+    type: DisplayString
+    help: Password for the directory where the LDAP server administrator is located.Can be only set. - 1.3.6.1.4.1.25506.13.1.2.4.9.6
+  - name: hh3cSrvLdapGroupIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.1
+    type: gauge
+    help: ID of the role group can be randomly selected from 1 to 5. - 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.1
+    indexes:
+    - labelname: hh3cSrvLdapGroupIndex
+      type: gauge
+  - name: hh3cSrvLdapGroupName
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.2
+    type: DisplayString
+    help: Name of an existing role group on the LDAP server. - 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.2
+    indexes:
+    - labelname: hh3cSrvLdapGroupIndex
+      type: gauge
+  - name: hh3cSrvLdapGroupSearchBase
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.3
+    type: DisplayString
+    help: DN search base of the role group on the LDAP server. - 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.3
+    indexes:
+    - labelname: hh3cSrvLdapGroupIndex
+      type: gauge
+  - name: hh3cSrvLdapGroupPriv
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.4
+    type: gauge
+    help: HDM user role for the role group, include Administrator, Operator, User. - 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.4
+    indexes:
+    - labelname: hh3cSrvLdapGroupIndex
+      type: gauge
+    enum_values:
+      0: NoAccess
+      2: User
+      3: Operator
+      4: Administrator
+      15: None
+  - name: hh3cSrvLdapGroupDelete
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.5
+    type: gauge
+    help: Can be only set, Delete the role group by index. - 1.3.6.1.4.1.25506.13.1.2.4.9.7.1.5
+    indexes:
+    - labelname: hh3cSrvLdapGroupIndex
+      type: gauge
+    enum_values:
+      0: NoAccess
+      1: Delete
+  - name: hh3cSrvLdapServerAddrType
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.9.8
+    type: gauge
+    help: The LDAP server address type. - 1.3.6.1.4.1.25506.13.1.2.4.9.8
+    enum_values:
+      0: IP
+      1: FQDN
+  version: 2
+  auth:
+    community: public
+if_mib:
+  walk:
+  - 1.3.6.1.2.1.2
+  - 1.3.6.1.2.1.31.1.1
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: ifNumber
+    oid: 1.3.6.1.2.1.2.1
+    type: gauge
+    help: The number of network interfaces (regardless of their current state) present on this system. - 1.3.6.1.2.1.2.1
+  - name: ifIndex
+    oid: 1.3.6.1.2.1.2.2.1.1
+    type: gauge
+    help: A unique value, greater than zero, for each interface - 1.3.6.1.2.1.2.2.1.1
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifType
+    oid: 1.3.6.1.2.1.2.2.1.3
+    type: EnumAsInfo
+    help: The type of interface - 1.3.6.1.2.1.2.2.1.3
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifMtu
+    oid: 1.3.6.1.2.1.2.2.1.4
+    type: gauge
+    help: The size of the largest packet which can be sent/received on the interface, specified in octets - 1.3.6.1.2.1.2.2.1.4
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifSpeed
+    oid: 1.3.6.1.2.1.2.2.1.5
+    type: gauge
+    help: An estimate of the interface's current bandwidth in bits per second - 1.3.6.1.2.1.2.2.1.5
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifPhysAddress
+    oid: 1.3.6.1.2.1.2.2.1.6
+    type: PhysAddress48
+    help: The interface's address at its protocol sub-layer - 1.3.6.1.2.1.2.2.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifAdminStatus
+    oid: 1.3.6.1.2.1.2.2.1.7
+    type: gauge
+    help: The desired state of the interface - 1.3.6.1.2.1.2.2.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    enum_values:
+      1: up
+      2: down
+      3: testing
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifLastChange
+    oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
+    help: The value of sysUpTime at the time the interface entered its current operational state - 1.3.6.1.2.1.2.2.1.9
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInOctets
+    oid: 1.3.6.1.2.1.2.2.1.10
+    type: counter
+    help: The total number of octets received on the interface, including framing characters - 1.3.6.1.2.1.2.2.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.11
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were not addressed to a multicast or broadcast address at this sub-layer - 1.3.6.1.2.1.2.2.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInNUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.12
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast or broadcast address at this sub-layer - 1.3.6.1.2.1.2.2.1.12
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInDiscards
+    oid: 1.3.6.1.2.1.2.2.1.13
+    type: counter
+    help: The number of inbound packets which were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.13
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInUnknownProtos
+    oid: 1.3.6.1.2.1.2.2.1.15
+    type: counter
+    help: For packet-oriented interfaces, the number of packets received via the interface which were discarded because of an unknown or unsupported protocol - 1.3.6.1.2.1.2.2.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutOctets
+    oid: 1.3.6.1.2.1.2.2.1.16
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing characters - 1.3.6.1.2.1.2.2.1.16
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.17
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.2.2.1.17
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutNUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.18
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.2.2.1.18
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutErrors
+    oid: 1.3.6.1.2.1.2.2.1.20
+    type: counter
+    help: For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors - 1.3.6.1.2.1.2.2.1.20
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutQLen
+    oid: 1.3.6.1.2.1.2.2.1.21
+    type: gauge
+    help: The length of the output packet queue (in packets). - 1.3.6.1.2.1.2.2.1.21
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifSpecific
+    oid: 1.3.6.1.2.1.2.2.1.22
+    type: OctetString
+    help: A reference to MIB definitions specific to the particular media being used to realize the interface - 1.3.6.1.2.1.2.2.1.22
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.2
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.2
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifInBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.3
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.3
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.4
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.4
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifOutBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.5
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.5
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were not addressed to a multicast or broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCInMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.8
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCInBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.9
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.9
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCOutMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.12
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.12
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifHCOutBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.13
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.13
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifLinkUpDownTrapEnable
+    oid: 1.3.6.1.2.1.31.1.1.1.14
+    type: gauge
+    help: Indicates whether linkUp/linkDown traps should be generated for this interface - 1.3.6.1.2.1.31.1.1.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    enum_values:
+      1: enabled
+      2: disabled
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+  - name: ifPromiscuousMode
+    oid: 1.3.6.1.2.1.31.1.1.1.16
+    type: gauge
+    help: This object has a value of false(2) if this interface only accepts packets/frames that are addressed to this station - 1.3.6.1.2.1.31.1.1.1.16
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: ifConnectorPresent
+    oid: 1.3.6.1.2.1.31.1.1.1.17
+    type: gauge
+    help: This object has the value 'true(1)' if the interface sublayer has a physical connector and the value 'false(2)' otherwise. - 1.3.6.1.2.1.31.1.1.1.17
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: ifCounterDiscontinuityTime
+    oid: 1.3.6.1.2.1.31.1.1.1.19
+    type: gauge
+    help: The value of sysUpTime on the most recent occasion at which any one or more of this interface's counters suffered a discontinuity - 1.3.6.1.2.1.31.1.1.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
