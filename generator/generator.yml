@@ -1,7 +1,10 @@
 modules:
   h3c_mib:
     walk:
-    - hh3c
+    - hh3cHealthInfo
+    - hh3cSrvHardDiskHealthEntry
+    - hh3cSrvNetCardHealthEntry
+    - hh3cPowerStatistic
     version: 2
     auth:
       community: public

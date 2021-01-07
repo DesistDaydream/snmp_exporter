@@ -1,5 +1,10 @@
 modules:
-  # Default IF-MIB interfaces table with ifIndex.
+  h3c_mib:
+    walk:
+    - hh3c
+    version: 2
+    auth:
+      community: public
   if_mib:
     walk: [sysUpTime, interfaces, ifXTable]
     version: 2
