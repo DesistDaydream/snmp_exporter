@@ -1,0 +1,2742 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  public_v2:
+    community: public
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  inspur_mib:
+    walk:
+    - 1.3.6.1.4.1.37945.2.1
+    metrics:
+    - name: serverCPUInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.1.1.1.1.1
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoName
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.2
+      type: DisplayString
+      help: The CPU name associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.2
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoPresent
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.3
+      type: gauge
+      help: The present status associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.3
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Present
+    - name: serverCPUInfoModel
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.4
+      type: DisplayString
+      help: The CPU model associated with the CPU of this entry. - 1.3.6.1.4.1.37945.2.1.1.1.1.1.4
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoUsedCore
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.5
+      type: DisplayString
+      help: The num of core CPU used associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.5
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoThermalDesignPower
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.6
+      type: DisplayString
+      help: The thermal design power(W) associated with the CPU of this entry . -
+        1.3.6.1.4.1.37945.2.1.1.1.1.1.6
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoL1Cache
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.7
+      type: DisplayString
+      help: The L1 Cache(KB) associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.7
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoL2Cache
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.8
+      type: DisplayString
+      help: The L2 Cache(KB) associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.8
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoL3Cache
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.9
+      type: DisplayString
+      help: The L3 Cache(KB) associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.9
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoMaxSpeed
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.10
+      type: DisplayString
+      help: The frequency associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.10
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoThread
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.11
+      type: gauge
+      help: The Thread number associated with the CPU of this entry. - 1.3.6.1.4.1.37945.2.1.1.1.1.1.11
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverCPUInfoSN
+      oid: 1.3.6.1.4.1.37945.2.1.1.1.1.1.12
+      type: DisplayString
+      help: Serial Number of CPU associated with the CPU of this entry . - 1.3.6.1.4.1.37945.2.1.1.1.1.1.12
+      indexes:
+      - labelname: serverCPUInfoIndex
+        type: gauge
+      - labelname: serverCPUInfoName
+        type: DisplayString
+    - name: serverMemoryInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.1
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoName
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.2
+      type: DisplayString
+      help: The memory name associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.2
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoPresent
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.3
+      type: gauge
+      help: The present status associated with the memory of this entry . - 1.3.6.1.4.1.37945.2.1.1.2.1.1.3
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Present
+    - name: serverMemoryInfoAttachTo
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.4
+      type: DisplayString
+      help: The CPU name attach to associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.4
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoType
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.5
+      type: gauge
+      help: The Memory Type associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.5
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+      enum_values:
+        0: other
+        1: unknown
+        2: DRAM
+        3: EDRAM
+        4: VRAM
+        5: SRAM
+        6: RAM
+        7: ROM
+        8: FLASH
+        9: EEPROM
+        10: FEPROM
+        11: EPROM
+        12: CDRAM
+        13: 3DRAM
+        14: SDRAM
+        15: SGRAM
+        16: RDRAM
+        17: DDR
+        18: DDR2
+        19: DDR2-FB-DIMM
+        20: DDR3
+        21: FBD2
+        22: DDR4
+        23: LPDDR
+        24: LPDDR2
+        25: LPDDR3
+        26: LPDDR4
+    - name: serverMemoryInfoMFC
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.6
+      type: DisplayString
+      help: The Manufacturer associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.6
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoPartNO
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.7
+      type: DisplayString
+      help: The Part Number associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.7
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoSerialNO
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.8
+      type: DisplayString
+      help: The Serial Number associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.8
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoCapacity
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.9
+      type: DisplayString
+      help: The Capacity(MB) associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.9
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoSpeed
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.10
+      type: DisplayString
+      help: The Speed(MHZ) associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.10
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoRanks
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.11
+      type: DisplayString
+      help: The Ranks associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.11
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverMemoryInfoDatawidth
+      oid: 1.3.6.1.4.1.37945.2.1.1.2.1.1.12
+      type: DisplayString
+      help: The Datawidth with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.1.2.1.1.12
+      indexes:
+      - labelname: serverMemoryInfoIndex
+        type: gauge
+      - labelname: serverMemoryInfoName
+        type: DisplayString
+    - name: serverPCIEInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.1.3.1.1.1
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoSlotOnBoard
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.2
+      type: DisplayString
+      help: The slot on board associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.2
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoPresent
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.3
+      type: gauge
+      help: The present status associated with the PCIE of this entry . - 1.3.6.1.4.1.37945.2.1.1.3.1.1.3
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Present
+    - name: serverPCIEInfoConnectionType
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.4
+      type: DisplayString
+      help: The connect type associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.4
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoSlotOnRiser
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.5
+      type: DisplayString
+      help: The slot on riser associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.5
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoDeviceType
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.6
+      type: DisplayString
+      help: The device type associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.6
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoVender
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.7
+      type: DisplayString
+      help: The vender associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.7
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoDevice
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.8
+      type: DisplayString
+      help: The device associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.8
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoRatedWidth
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.9
+      type: DisplayString
+      help: The rated width associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.9
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoRatedSpeed
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.10
+      type: DisplayString
+      help: The rated speed associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.10
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoBusNo
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.11
+      type: gauge
+      help: The bus number associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.11
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoDevNo
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.12
+      type: gauge
+      help: The bus number associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.12
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoFuncNo
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.13
+      type: gauge
+      help: The bus number associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.13
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverPCIEInfoDescription
+      oid: 1.3.6.1.4.1.37945.2.1.1.3.1.1.14
+      type: DisplayString
+      help: The description associated with the PCIE of this entry - 1.3.6.1.4.1.37945.2.1.1.3.1.1.14
+      indexes:
+      - labelname: serverPCIEInfoIndex
+        type: gauge
+      - labelname: serverPCIEInfoSlotOnBoard
+        type: DisplayString
+    - name: serverFrontHardBackplaneInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.1.4.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.1.4.1.1.1
+      indexes:
+      - labelname: serverFrontHardBackplaneInfoIndex
+        type: gauge
+      - labelname: serverFrontHardBackplaneInfoName
+        type: DisplayString
+    - name: serverFrontHardBackplaneInfoName
+      oid: 1.3.6.1.4.1.37945.2.1.1.4.1.1.2
+      type: DisplayString
+      help: The name associated with the front hard backplane of this entry - 1.3.6.1.4.1.37945.2.1.1.4.1.1.2
+      indexes:
+      - labelname: serverFrontHardBackplaneInfoIndex
+        type: gauge
+      - labelname: serverFrontHardBackplaneInfoName
+        type: DisplayString
+    - name: serverFrontHardBackplaneInfoPresent
+      oid: 1.3.6.1.4.1.37945.2.1.1.4.1.1.3
+      type: gauge
+      help: The present status associated with the front hard backplane of this entry
+        . - 1.3.6.1.4.1.37945.2.1.1.4.1.1.3
+      indexes:
+      - labelname: serverFrontHardBackplaneInfoIndex
+        type: gauge
+      - labelname: serverFrontHardBackplaneInfoName
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Present
+    - name: serverFrontHardBackplaneInfoPortNumber
+      oid: 1.3.6.1.4.1.37945.2.1.1.4.1.1.4
+      type: DisplayString
+      help: The port number associated with the front hard backplane of this entry
+        - 1.3.6.1.4.1.37945.2.1.1.4.1.1.4
+      indexes:
+      - labelname: serverFrontHardBackplaneInfoIndex
+        type: gauge
+      - labelname: serverFrontHardBackplaneInfoName
+        type: DisplayString
+    - name: serverFrontHardBackplaneInfoHarddiskNumber
+      oid: 1.3.6.1.4.1.37945.2.1.1.4.1.1.5
+      type: DisplayString
+      help: The harddisk number associated with the front hard backplane of this entry
+        - 1.3.6.1.4.1.37945.2.1.1.4.1.1.5
+      indexes:
+      - labelname: serverFrontHardBackplaneInfoIndex
+        type: gauge
+      - labelname: serverFrontHardBackplaneInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.1.5.1.1.1
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoName
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.2
+      type: DisplayString
+      help: The name associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.2
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoPhysicalNICNo
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.3
+      type: DisplayString
+      help: The present status associated with the onboard NIC of this entry . - 1.3.6.1.4.1.37945.2.1.1.5.1.1.3
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoVendorDevice
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.4
+      type: DisplayString
+      help: The connect type associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.4
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoBrandingString
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.5
+      type: DisplayString
+      help: The slot on riser associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.5
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoStatus
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.6
+      type: gauge
+      help: The device type associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.6
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+      enum_values:
+        0: OK
+        1: Warning
+        2: Critical
+        3: Unkonwn
+    - name: serverOnboardNICInfoLinkStatus
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.7
+      type: gauge
+      help: The device type associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.7
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+      enum_values:
+        0: Linked
+        1: Not-Linked
+        2: Unknown
+    - name: serverOnboardNICInfoMACAddress
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.8
+      type: DisplayString
+      help: The device type associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.8
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoIPAddress
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.9
+      type: DisplayString
+      help: The vender associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.9
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoPortType
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.10
+      type: DisplayString
+      help: The port type associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.10
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverOnboardNICInfoStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.11
+      type: gauge
+      help: The standard status associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.11
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Unkonwn
+    - name: serverOnboardNICInfoChipModel
+      oid: 1.3.6.1.4.1.37945.2.1.1.5.1.1.12
+      type: DisplayString
+      help: The model associated with the onboard NIC of this entry - 1.3.6.1.4.1.37945.2.1.1.5.1.1.12
+      indexes:
+      - labelname: serverOnboardNICInfoIndex
+        type: gauge
+      - labelname: serverOnboardNICInfoName
+        type: DisplayString
+    - name: serverPSUInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.1.6.1.1.1
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoName
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.2
+      type: DisplayString
+      help: The PSU name associated with the PSU of this entry. - 1.3.6.1.4.1.37945.2.1.1.6.1.1.2
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoPresent
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.3
+      type: gauge
+      help: The present status associated with the PSU of this entry . - 1.3.6.1.4.1.37945.2.1.1.6.1.1.3
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Present
+    - name: serverPSUInfoMFRID
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.4
+      type: DisplayString
+      help: The MFR ID associated with the PSU of this entry. - 1.3.6.1.4.1.37945.2.1.1.6.1.1.4
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoMFRModel
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.5
+      type: DisplayString
+      help: The MFR model associated with the PSU of this entry. - 1.3.6.1.4.1.37945.2.1.1.6.1.1.5
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoSerialNO
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.6
+      type: DisplayString
+      help: The serial number associated with the PSU of this entry . - 1.3.6.1.4.1.37945.2.1.1.6.1.1.6
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoPoutMax
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.7
+      type: DisplayString
+      help: The max ouput power associated with the PSU of this entry . - 1.3.6.1.4.1.37945.2.1.1.6.1.1.7
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoFWVer
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.8
+      type: DisplayString
+      help: The firmware version associated with the PSU of this entry . - 1.3.6.1.4.1.37945.2.1.1.6.1.1.8
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+    - name: serverPSUInfoStatus
+      oid: 1.3.6.1.4.1.37945.2.1.1.6.1.1.9
+      type: gauge
+      help: The PSU Status associated with the PSU of this entry . - 1.3.6.1.4.1.37945.2.1.1.6.1.1.9
+      indexes:
+      - labelname: serverPSUInfoIndex
+        type: gauge
+      - labelname: serverPSUInfoName
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverFWVerInfoBMCVer
+      oid: 1.3.6.1.4.1.37945.2.1.1.7.1.1.1
+      type: DisplayString
+      help: The firmware version associated with the BMC Version . - 1.3.6.1.4.1.37945.2.1.1.7.1.1.1
+      indexes:
+      - labelname: serverFWVerInfoBMCVer
+        type: DisplayString
+    - name: serverFWVerInfoBIOSVer
+      oid: 1.3.6.1.4.1.37945.2.1.1.7.1.1.2
+      type: DisplayString
+      help: The firmware version associated with BIOS Version . - 1.3.6.1.4.1.37945.2.1.1.7.1.1.2
+      indexes:
+      - labelname: serverFWVerInfoBMCVer
+        type: DisplayString
+    - name: serverGeneralSysGUID
+      oid: 1.3.6.1.4.1.37945.2.1.1.8.1.1.1
+      type: DisplayString
+      help: The System GUID . - 1.3.6.1.4.1.37945.2.1.1.8.1.1.1
+      indexes:
+      - labelname: serverGeneralSysGUID
+        type: DisplayString
+    - name: serverTemperatureSensorIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.1
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorName
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.2
+      type: DisplayString
+      help: The temperature sensor name associated with the temperature sensor of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.2
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.3
+      type: gauge
+      help: The sensor status associated with the temperature sensor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.1.1.1.3
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverTemperatureSensorReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.4
+      type: DisplayString
+      help: The reading value associated with the temperature sensor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.1.1.1.4
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.5
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the temperature sensor of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.6
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.7
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.8
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the temperature sensor of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.9
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverTemperatureSensorUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.1.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.1.1.1.10
+      indexes:
+      - labelname: serverTemperatureSensorIndex
+        type: gauge
+      - labelname: serverTemperatureSensorName
+        type: DisplayString
+    - name: serverVoltageStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.1
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.2
+      type: DisplayString
+      help: The voltage status name associated with the system voltage of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.2.1.1.2
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.3
+      type: gauge
+      help: The system voltage Status associated with the system voltage of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.2.1.1.3
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverVoltageStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.4
+      type: DisplayString
+      help: The reading value associated with the system voltage of this entry. -
+        1.3.6.1.4.1.37945.2.1.2.2.1.1.4
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the system voltage
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.5
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the system voltage of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.6
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the system voltage of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.7
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the system voltage of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.8
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the system voltage of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.9
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverVoltageStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.2.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the system voltage
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.2.1.1.10
+      indexes:
+      - labelname: serverVoltageStatusIndex
+        type: gauge
+      - labelname: serverVoltageStatusName
+        type: DisplayString
+    - name: serverFanSensorIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.1
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorName
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.2
+      type: DisplayString
+      help: The sensor name associated with the fan sensor of this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.2
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.3
+      type: gauge
+      help: The sensor status associated with the temperature sensor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.3.1.1.3
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverFanSensorReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.4
+      type: DisplayString
+      help: The reading value associated with the temperature sensor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.3.1.1.4
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.5
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the temperature sensor of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.6
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.7
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.8
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the temperature sensor of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.9
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanSensorUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the temperature sensor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.10
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+    - name: serverFanDuty
+      oid: 1.3.6.1.4.1.37945.2.1.2.3.1.1.11
+      type: gauge
+      help: The sensor status indicate the speed rate of fan. - 1.3.6.1.4.1.37945.2.1.2.3.1.1.11
+      indexes:
+      - labelname: serverFanSensorIndex
+        type: gauge
+      - labelname: serverFanSensorName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+    - name: serverProcessorStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.1
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.2
+      type: DisplayString
+      help: The processor status name associated with the processor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.4.1.1.2
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.3
+      type: gauge
+      help: The processor status associated with the processor of this entry. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.3
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverProcessorStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.4
+      type: DisplayString
+      help: The reading value associated with the processor of this entry. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.4
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the processor of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.5
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the processor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.4.1.1.6
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the processor of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.7
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the processor of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.8
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the processor of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.4.1.1.9
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverProcessorStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.4.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the processor of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.4.1.1.10
+      indexes:
+      - labelname: serverProcessorStatusIndex
+        type: gauge
+      - labelname: serverProcessorStatusName
+        type: DisplayString
+    - name: serverMemoryStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.1
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.2
+      type: DisplayString
+      help: The memory status name associated with the system memory of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.5.1.1.2
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.3
+      type: gauge
+      help: The system memory Status associated with the system memory of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.5.1.1.3
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverMemoryStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.4
+      type: DisplayString
+      help: The reading value associated with the system memory of this entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.4
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the system memory
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.5
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the system memory of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.6
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the system memory of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.7
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the system memory of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.8
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the system memory of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.9
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverMemoryStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.5.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the system memory
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.5.1.1.10
+      indexes:
+      - labelname: serverMemoryStatusIndex
+        type: gauge
+      - labelname: serverMemoryStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.1
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.2
+      type: DisplayString
+      help: The drive slot name associated with the drive slot of this entry. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.2
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.3
+      type: gauge
+      help: The drive slot Status associated with the drive slot of this entry. -
+        1.3.6.1.4.1.37945.2.1.2.6.1.1.3
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverDriveSlotStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.4
+      type: DisplayString
+      help: The reading value associated with the drive slot of this entry. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.4
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the drive slot of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.5
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the drive slot of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.6.1.1.6
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the drive slot of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.7
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the drive slot of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.8
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the drive slot of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.6.1.1.9
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverDriveSlotStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.6.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the drive slot of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.6.1.1.10
+      indexes:
+      - labelname: serverDriveSlotStatusIndex
+        type: gauge
+      - labelname: serverDriveSlotStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.1
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.2
+      type: DisplayString
+      help: The power supply status name associated with the power supply of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.2
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.3
+      type: gauge
+      help: The power supply Status associated with the power supply of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.7.1.1.3
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverPowerSupplyStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.4
+      type: DisplayString
+      help: The reading value associated with the power supply of this entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.4
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the power supply of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.5
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the power supply of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.6
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the power supply of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.7
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the power supply of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.8
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the power supply of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.9
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerSupplyStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.7.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the power supply of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.7.1.1.10
+      indexes:
+      - labelname: serverPowerSupplyStatusIndex
+        type: gauge
+      - labelname: serverPowerSupplyStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.8.1.1.1
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.2
+      type: DisplayString
+      help: The power unit status Name associated with the power unit of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.8.1.1.2
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.3
+      type: gauge
+      help: The power unit Status associated with the power unit of this entry. -
+        1.3.6.1.4.1.37945.2.1.2.8.1.1.3
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverPowerUnitStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.4
+      type: DisplayString
+      help: The reading value associated with the power unit of this entry. - 1.3.6.1.4.1.37945.2.1.2.8.1.1.4
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the power unit of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.8.1.1.5
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the power unit of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.8.1.1.6
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the power unit of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.8.1.1.7
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the power unit of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.8.1.1.8
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the power unit of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.8.1.1.9
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverPowerUnitStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.8.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the power unit of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.8.1.1.10
+      indexes:
+      - labelname: serverPowerUnitStatusIndex
+        type: gauge
+      - labelname: serverPowerUnitStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.1
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.2
+      type: DisplayString
+      help: The management subsystem health status Name associated with the management
+        subsystem health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.2
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.3
+      type: gauge
+      help: The management subsystem health Status associated with the management
+        subsystem health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.3
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverManagementSubsystemHealthStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.4
+      type: DisplayString
+      help: The reading value associated with the management subsystem health of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.4
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the management subsystem
+        health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.5
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the management subsystem
+        health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.6
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the management subsystem
+        health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.7
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the management subsystem
+        health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.8
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the management subsystem
+        health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.9
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverManagementSubsystemHealthStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.9.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the management subsystem
+        health of this entry. - 1.3.6.1.4.1.37945.2.1.2.9.1.1.10
+      indexes:
+      - labelname: serverManagementSubsystemHealthStatusIndex
+        type: gauge
+      - labelname: serverManagementSubsystemHealthStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.1
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.2
+      type: DisplayString
+      help: The event logging status Name associated with the event logging of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.2
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.3
+      type: gauge
+      help: The event logging Status associated with the event logging of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.10.1.1.3
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverEventLoggingDisabledStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.4
+      type: DisplayString
+      help: The reading value associated with the event logging of this entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.4
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the event logging
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.5
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the event logging of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.6
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the event logging of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.7
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the event logging of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.8
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the event logging of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.9
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverEventLoggingDisabledStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.10.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the event logging
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.10.1.1.10
+      indexes:
+      - labelname: serverEventLoggingDisabledStatusIndex
+        type: gauge
+      - labelname: serverEventLoggingDisabledStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.1
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.2
+      type: DisplayString
+      help: The microcontroller and coprocessor status Name associated with the microcontroller
+        and coprocessor of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.2
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.3
+      type: gauge
+      help: The microcontroller and coprocessor Status associated with the microcontroller
+        and coprocessor of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.3
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverMicrocontrollerAndCoprocessorStatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.4
+      type: DisplayString
+      help: The reading value associated with the microcontroller and coprocessor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.4
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the microcontroller
+        and coprocessor of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.5
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the microcontroller and coprocessor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.6
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the microcontroller and
+        coprocessor of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.7
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the microcontroller and
+        coprocessor of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.8
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the microcontroller and coprocessor
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.9
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverMicrocontrollerAndCoprocessorStatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.11.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the microcontroller
+        and coprocessor of this entry. - 1.3.6.1.4.1.37945.2.1.2.11.1.1.10
+      indexes:
+      - labelname: serverMicrocontrollerAndCoprocessorStatusIndex
+        type: gauge
+      - labelname: serverMicrocontrollerAndCoprocessorStatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.12.1.1.1
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.2
+      type: DisplayString
+      help: The watchdog 2 status Name associated with the watchdog 2 of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.12.1.1.2
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2Status
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.3
+      type: gauge
+      help: The watchdog 2 Status associated with the watchdog 2 of this entry. -
+        1.3.6.1.4.1.37945.2.1.2.12.1.1.3
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+      enum_values:
+        0: Unkonwn
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverWatchdog2StatusReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.4
+      type: DisplayString
+      help: The reading value associated with the watchdog 2 of this entry. - 1.3.6.1.4.1.37945.2.1.2.12.1.1.4
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the watchdog 2 of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.12.1.1.5
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the watchdog 2 of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.12.1.1.6
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the watchdog 2 of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.12.1.1.7
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the watchdog 2 of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.12.1.1.8
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the watchdog 2 of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.12.1.1.9
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverWatchdog2StatusUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.12.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the watchdog 2 of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.12.1.1.10
+      indexes:
+      - labelname: serverWatchdog2StatusIndex
+        type: gauge
+      - labelname: serverWatchdog2StatusName
+        type: DisplayString
+    - name: serverCurPowerState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.1
+      type: gauge
+      help: The Current System Power State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.1
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Power-Off
+        1: Power-On
+    - name: serverUIDState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.2
+      type: gauge
+      help: The Current UID State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.2
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: UID-Off
+        1: UID-On
+    - name: serverCPUState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.3
+      type: gauge
+      help: The Current CPU State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.3
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverMemoryState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.4
+      type: gauge
+      help: The Current Memory State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.4
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverHDDState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.5
+      type: gauge
+      help: The Current HDD State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.5
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverFANState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.6
+      type: gauge
+      help: The Current Fan State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.6
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverPSUState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.7
+      type: gauge
+      help: The Current PSU State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.7
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverRAIDState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.8
+      type: gauge
+      help: The Current RAID State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.8
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverTempState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.9
+      type: gauge
+      help: The Current Tempreature State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.9
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverHealthState
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.10
+      type: gauge
+      help: The Current Health State . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.10
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: OK
+        1: WARNING
+        2: CRITICAL
+        3: ABSENT
+    - name: serverCPUStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.11
+      type: gauge
+      help: The Current CPU Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.11
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverMemoryStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.12
+      type: gauge
+      help: The Current Memory Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.12
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverHDDStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.13
+      type: gauge
+      help: The Current HDD Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.13
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverFANStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.14
+      type: gauge
+      help: The Current Fan Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.14
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverPSUStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.15
+      type: gauge
+      help: The Current PSU Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.15
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverRAIDStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.16
+      type: gauge
+      help: The Current RAID Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.16
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverTempStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.17
+      type: gauge
+      help: The Current Tempreature Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.17
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverHealthStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.13.1.1.18
+      type: gauge
+      help: The Current Health Standard Status . - 1.3.6.1.4.1.37945.2.1.2.13.1.1.18
+      indexes:
+      - labelname: serverCurPowerState
+        type: gauge
+        enum_values:
+          0: Power-Off
+          1: Power-On
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Absent
+    - name: serverSystemNICStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.14.1.1.1
+      type: gauge
+      help: The system NIC index . - 1.3.6.1.4.1.37945.2.1.2.14.1.1.1
+      indexes:
+      - labelname: serverSystemNICStatusIndex
+        type: gauge
+      - labelname: serverSystemNICStatusName
+        type: DisplayString
+    - name: serverSystemNICStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.14.1.1.2
+      type: DisplayString
+      help: The system NIC name . - 1.3.6.1.4.1.37945.2.1.2.14.1.1.2
+      indexes:
+      - labelname: serverSystemNICStatusIndex
+        type: gauge
+      - labelname: serverSystemNICStatusName
+        type: DisplayString
+    - name: serverSystemNICStatusPresent
+      oid: 1.3.6.1.4.1.37945.2.1.2.14.1.1.3
+      type: gauge
+      help: The system NIC present status . - 1.3.6.1.4.1.37945.2.1.2.14.1.1.3
+      indexes:
+      - labelname: serverSystemNICStatusIndex
+        type: gauge
+      - labelname: serverSystemNICStatusName
+        type: DisplayString
+      enum_values:
+        0: Absent
+        1: Present
+        2: Unsupport
+        3: Unkonwn
+    - name: serverSystemNICStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.14.1.1.4
+      type: gauge
+      help: The system NIC status . - 1.3.6.1.4.1.37945.2.1.2.14.1.1.4
+      indexes:
+      - labelname: serverSystemNICStatusIndex
+        type: gauge
+      - labelname: serverSystemNICStatusName
+        type: DisplayString
+      enum_values:
+        0: OK
+        1: Warning
+        2: Critical
+        3: Unkonwn
+    - name: serverSystemNICStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.14.1.1.5
+      type: gauge
+      help: The system NIC status . - 1.3.6.1.4.1.37945.2.1.2.14.1.1.5
+      indexes:
+      - labelname: serverSystemNICStatusIndex
+        type: gauge
+      - labelname: serverSystemNICStatusName
+        type: DisplayString
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+        3: Unkonwn
+    - name: serverResourceRateIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.1
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateName
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.2
+      type: DisplayString
+      help: The voltage status name associated with the system voltage of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.15.1.1.2
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.3
+      type: gauge
+      help: The system voltage Status associated with the system voltage of this entry.
+        - 1.3.6.1.4.1.37945.2.1.2.15.1.1.3
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+      enum_values:
+        0: NA
+        1: Normal
+        2: Warning
+        3: Critical
+    - name: serverResourceRateReading
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.4
+      type: DisplayString
+      help: The reading value associated with the system voltage of this entry. -
+        1.3.6.1.4.1.37945.2.1.2.15.1.1.4
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateLowNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.5
+      type: DisplayString
+      help: The lower non-recoverable threshold associated with the system voltage
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.5
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateLowCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.6
+      type: DisplayString
+      help: The lower critical threshold associated with the system voltage of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.6
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateLowNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.7
+      type: DisplayString
+      help: The lower non-critical threshold associated with the system voltage of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.7
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateUpNCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.8
+      type: DisplayString
+      help: The upper non-critical threshold associated with the system voltage of
+        this entry. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.8
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateUpCT
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.9
+      type: DisplayString
+      help: The upper critical threshold associated with the system voltage of this
+        entry. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.9
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverResourceRateUpNRT
+      oid: 1.3.6.1.4.1.37945.2.1.2.15.1.1.10
+      type: DisplayString
+      help: The upper non-recoverable threshold associated with the system voltage
+        of this entry. - 1.3.6.1.4.1.37945.2.1.2.15.1.1.10
+      indexes:
+      - labelname: serverResourceRateIndex
+        type: gauge
+      - labelname: serverResourceRateName
+        type: DisplayString
+    - name: serverPCIEStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.2.16.1.1.1
+      type: gauge
+      help: The system NIC index . - 1.3.6.1.4.1.37945.2.1.2.16.1.1.1
+    - name: serverPCIEStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.2.16.1.1.2
+      type: DisplayString
+      help: The system NIC name . - 1.3.6.1.4.1.37945.2.1.2.16.1.1.2
+    - name: serverPCIEStatusPresent
+      oid: 1.3.6.1.4.1.37945.2.1.2.16.1.1.3
+      type: gauge
+      help: The system NIC present status . - 1.3.6.1.4.1.37945.2.1.2.16.1.1.3
+      enum_values:
+        0: Absent
+        1: Present
+        2: Unsupport
+        3: Unkonwn
+    - name: serverPCIEStatus
+      oid: 1.3.6.1.4.1.37945.2.1.2.16.1.1.4
+      type: DisplayString
+      help: The system NIC status . - 1.3.6.1.4.1.37945.2.1.2.16.1.1.4
+    - name: serverFrontHDStatusIndex
+      oid: 1.3.6.1.4.1.37945.2.1.3.1.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.3.1.1.1.1
+      indexes:
+      - labelname: serverFrontHDStatusIndex
+        type: gauge
+      - labelname: serverFrontHDStatusName
+        type: DisplayString
+    - name: serverFrontHDStatusName
+      oid: 1.3.6.1.4.1.37945.2.1.3.1.1.1.2
+      type: DisplayString
+      help: The front harddisk status Name associated with the front harddisk of this
+        entry. - 1.3.6.1.4.1.37945.2.1.3.1.1.1.2
+      indexes:
+      - labelname: serverFrontHDStatusIndex
+        type: gauge
+      - labelname: serverFrontHDStatusName
+        type: DisplayString
+    - name: serverFrontHDStatusPresent
+      oid: 1.3.6.1.4.1.37945.2.1.3.1.1.1.3
+      type: gauge
+      help: The front harddisk present Status associated with the front harddisk of
+        this entry. - 1.3.6.1.4.1.37945.2.1.3.1.1.1.3
+      indexes:
+      - labelname: serverFrontHDStatusIndex
+        type: gauge
+      - labelname: serverFrontHDStatusName
+        type: DisplayString
+      enum_values:
+        0: Present
+        1: Absent
+    - name: serverFrontHDStatus
+      oid: 1.3.6.1.4.1.37945.2.1.3.1.1.1.4
+      type: gauge
+      help: The front harddisk Status associated with the front harddisk of this entry.
+        - 1.3.6.1.4.1.37945.2.1.3.1.1.1.4
+      indexes:
+      - labelname: serverFrontHDStatusIndex
+        type: gauge
+      - labelname: serverFrontHDStatusName
+        type: DisplayString
+      enum_values:
+        0: Normal
+        1: Critical
+        2: Absent
+    - name: serverFrontHDStatusLocation
+      oid: 1.3.6.1.4.1.37945.2.1.3.1.1.1.5
+      type: gauge
+      help: The front harddisk Status associated with the front harddisk of this entry.
+        - 1.3.6.1.4.1.37945.2.1.3.1.1.1.5
+      indexes:
+      - labelname: serverFrontHDStatusIndex
+        type: gauge
+      - labelname: serverFrontHDStatusName
+        type: DisplayString
+      enum_values:
+        0: Location
+        1: Absent
+    - name: serverFrontHDStatusRebuild
+      oid: 1.3.6.1.4.1.37945.2.1.3.1.1.1.6
+      type: gauge
+      help: The front harddisk Status associated with the front harddisk of this entry.
+        - 1.3.6.1.4.1.37945.2.1.3.1.1.1.6
+      indexes:
+      - labelname: serverFrontHDStatusIndex
+        type: gauge
+      - labelname: serverFrontHDStatusName
+        type: DisplayString
+      enum_values:
+        0: Rebuild
+        1: Absent
+    - name: serverNICInterfaceTypeIndex
+      oid: 1.3.6.1.4.1.37945.2.1.3.3.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.3.3.1.1.1
+      indexes:
+      - labelname: serverNICInterfaceTypeIndex
+        type: gauge
+    - name: serverNICInterfaceTypeName
+      oid: 1.3.6.1.4.1.37945.2.1.3.3.1.1.2
+      type: DisplayString
+      help: The front NICInterfaceType information associated the entry. - 1.3.6.1.4.1.37945.2.1.3.3.1.1.2
+      indexes:
+      - labelname: serverNICInterfaceTypeIndex
+        type: gauge
+    - name: serverNICInterfaceTypeAttachTo
+      oid: 1.3.6.1.4.1.37945.2.1.3.3.1.1.3
+      type: gauge
+      help: The front NICInterfaceType information associated the entry. - 1.3.6.1.4.1.37945.2.1.3.3.1.1.3
+      indexes:
+      - labelname: serverNICInterfaceTypeIndex
+        type: gauge
+      enum_values:
+        0: OnBoard
+        1: PCIE
+    - name: serverNICInterfaceType
+      oid: 1.3.6.1.4.1.37945.2.1.3.3.1.1.4
+      type: DisplayString
+      help: The front NICInterfaceType information associated the entry. - 1.3.6.1.4.1.37945.2.1.3.3.1.1.4
+      indexes:
+      - labelname: serverNICInterfaceTypeIndex
+        type: gauge
+    - name: serverBIOSSetupOptionsIndex
+      oid: 1.3.6.1.4.1.37945.2.1.4.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.4.1.1.1
+      indexes:
+      - labelname: serverBIOSSetupOptionsIndex
+        type: gauge
+      - labelname: serverBIOSSetupOptions
+        type: DisplayString
+    - name: serverBIOSSetupOptions
+      oid: 1.3.6.1.4.1.37945.2.1.4.1.1.2
+      type: DisplayString
+      help: The BIOS advanced options Name associated with the BIOS advanced options
+        of this entry. - 1.3.6.1.4.1.37945.2.1.4.1.1.2
+      indexes:
+      - labelname: serverBIOSSetupOptionsIndex
+        type: gauge
+      - labelname: serverBIOSSetupOptions
+        type: DisplayString
+    - name: serverBIOSSetupOptionsValue
+      oid: 1.3.6.1.4.1.37945.2.1.4.1.1.3
+      type: DisplayString
+      help: The reading value associated with the BIOS advanced options of this entry
+        . - 1.3.6.1.4.1.37945.2.1.4.1.1.3
+      indexes:
+      - labelname: serverBIOSSetupOptionsIndex
+        type: gauge
+      - labelname: serverBIOSSetupOptions
+        type: DisplayString
+    - name: serverFRUInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.5.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.5.1.1.1
+      indexes:
+      - labelname: serverFRUInfoIndex
+        type: gauge
+      - labelname: serverFRUInfoAttribute
+        type: DisplayString
+    - name: serverFRUInfoAttribute
+      oid: 1.3.6.1.4.1.37945.2.1.5.1.1.2
+      type: DisplayString
+      help: The attribute name associated with the FRU basic information of this entry.
+        - 1.3.6.1.4.1.37945.2.1.5.1.1.2
+      indexes:
+      - labelname: serverFRUInfoIndex
+        type: gauge
+      - labelname: serverFRUInfoAttribute
+        type: DisplayString
+    - name: serverFRUInfoSetupAttributeValue
+      oid: 1.3.6.1.4.1.37945.2.1.5.1.1.3
+      type: DisplayString
+      help: The attribute value associated with the FRU basic information of this
+        entry . - 1.3.6.1.4.1.37945.2.1.5.1.1.3
+      indexes:
+      - labelname: serverFRUInfoIndex
+        type: gauge
+      - labelname: serverFRUInfoAttribute
+        type: DisplayString
+    - name: serverRaidControllorInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.6.1.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.6.1.1.1.1
+      indexes:
+      - labelname: serverRaidControllorInfoIndex
+        type: gauge
+    - name: serverRaidControllorInfoName
+      oid: 1.3.6.1.4.1.37945.2.1.6.1.1.1.2
+      type: DisplayString
+      help: The Raid name associated with the Raid of this entry . - 1.3.6.1.4.1.37945.2.1.6.1.1.1.2
+      indexes:
+      - labelname: serverRaidControllorInfoIndex
+        type: gauge
+    - name: serverRaidControllorInfoStatus
+      oid: 1.3.6.1.4.1.37945.2.1.6.1.1.1.3
+      type: gauge
+      help: The Raid status associated with the Raid of this entry . - 1.3.6.1.4.1.37945.2.1.6.1.1.1.3
+      indexes:
+      - labelname: serverRaidControllorInfoIndex
+        type: gauge
+      enum_values:
+        0: ABSENT
+        1: OK
+        2: CRITICAL
+        3: NA
+    - name: serverRaidControllorInfoStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.6.1.1.1.4
+      type: gauge
+      help: The Raid standard status associated with the Raid of this entry . - 1.3.6.1.4.1.37945.2.1.6.1.1.1.4
+      indexes:
+      - labelname: serverRaidControllorInfoIndex
+        type: gauge
+      enum_values:
+        0: Absent
+        1: Normal
+        2: Critical
+        3: Unkonwn
+    - name: serverRaidDiskInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.1
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+    - name: serverRaidDiskInfoID
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.2
+      type: DisplayString
+      help: The ID associated with the Disk of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.2
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+    - name: serverRaidDiskInfoStatus
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.3
+      type: gauge
+      help: The status associated with the Disk of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.3
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+      enum_values:
+        0: OK
+        1: Warning
+        2: Critical
+    - name: serverRaidDiskInfoAttachTo
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.4
+      type: DisplayString
+      help: The present status associated with the Disk of this entry . - 1.3.6.1.4.1.37945.2.1.6.2.1.1.4
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+    - name: serverRaidDiskInfoType
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.5
+      type: gauge
+      help: The Disk name attach to associated with the Disk of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.5
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+      enum_values:
+        0: Parallel-SCSI
+        1: SAS
+        2: SATA
+        3: Fiber-Channel
+        4: Unknown
+    - name: serverRaidDiskInfoProductor
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.6
+      type: DisplayString
+      help: The Manufacturer associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.6
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+    - name: serverRaidDiskInfoModel
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.7
+      type: gauge
+      help: The Serial Number associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.7
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+      enum_values:
+        0: HDD
+        1: SSD
+        2: Unknown
+    - name: serverRaidDiskInfoSize
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.8
+      type: DisplayString
+      help: The Capacity(GB) associated with the memory of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.8
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+    - name: serverRaidDiskInfoStandardStatus
+      oid: 1.3.6.1.4.1.37945.2.1.6.2.1.1.9
+      type: gauge
+      help: The standard status with the Raiddisk of this entry. - 1.3.6.1.4.1.37945.2.1.6.2.1.1.9
+      indexes:
+      - labelname: serverRaidDiskInfoIndex
+        type: gauge
+      - labelname: serverRaidDiskInfoID
+        type: DisplayString
+      enum_values:
+        0: Normal
+        1: Warning
+        2: Critical
+    - name: serverRaidLogicDiskInfoIndex
+      oid: 1.3.6.1.4.1.37945.2.1.6.3.1.1.1
+      type: gauge
+      help: The index value which uniquely identifies the interface to which this
+        entry is applicable. - 1.3.6.1.4.1.37945.2.1.6.3.1.1.1
+      indexes:
+      - labelname: serverRaidLogicDiskInfoIndex
+        type: gauge
+    - name: serverRaidLogicDiskInfoStatus
+      oid: 1.3.6.1.4.1.37945.2.1.6.3.1.1.2
+      type: gauge
+      help: The status associated with the logic disk of this entry. - 1.3.6.1.4.1.37945.2.1.6.3.1.1.2
+      indexes:
+      - labelname: serverRaidLogicDiskInfoIndex
+        type: gauge
+      enum_values:
+        0: Absent
+        1: Offline
+        2: Partially-Degraded
+        3: Degraded
+        4: Optimal
+        5: Unknown
+    - name: serverRaidLogicDiskInfoAttachTo
+      oid: 1.3.6.1.4.1.37945.2.1.6.3.1.1.3
+      type: DisplayString
+      help: The attach information associated with the logic disk of this entry .
+        - 1.3.6.1.4.1.37945.2.1.6.3.1.1.3
+      indexes:
+      - labelname: serverRaidLogicDiskInfoIndex
+        type: gauge
+    - name: serverRaidDiskInfoVolumeraidLevel
+      oid: 1.3.6.1.4.1.37945.2.1.6.3.1.1.4
+      type: gauge
+      help: The VolumeraidLevel associated with the Logic Disk of this entry. - 1.3.6.1.4.1.37945.2.1.6.3.1.1.4
+      indexes:
+      - labelname: serverRaidLogicDiskInfoIndex
+        type: gauge
+      enum_values:
+        0: RAID-0
+        1: RAID-1
+        2: RAID-5
+        3: RAID-10
+        4: Unknown-Raid-level

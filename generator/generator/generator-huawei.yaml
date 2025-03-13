@@ -1,0 +1,36 @@
+auths:
+  root_v3:
+    version: 3
+    username: root
+    security_level: authPriv
+    password: Huawei12#$
+    auth_protocol: SHA
+    priv_protocol: AES
+    priv_password: Huawei12#$
+modules:
+  huawei_ibmc_mib:
+    walk:
+      # - hwiBMC
+      - system
+      - powerSupplyInfo
+      - fruPowerProperty
+      - fanProperty
+      # - fruLedProperty
+      - componentProperty
+      - firmwareProperty
+      - networkProperty
+      # - sensorProperty
+      # - userProperty
+      - cpuProperty
+      - memoryProperty
+      # - lomProperty
+      - hardDiskProperty
+      - pCIeDeviceProperty
+      - netCardProperty
+      - temperatureProperty
+      - sdCardProperty
+      - securityModuleProperty
+      - raidControllerProperty
+      - logicalDriveProperty
+      - diskArrayProperty
+      - businessPortProperty
