@@ -1,0 +1,569 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  npt_byzoro_mib:
+    walk:
+    - 1.3.6.1.4.1.33922.106.1
+    - 1.3.6.1.4.1.33922.106.4
+    - 1.3.6.1.4.1.33922.106.5
+    get:
+    - 1.3.6.1.4.1.33922.106.2.1.0
+    - 1.3.6.1.4.1.33922.106.2.2.0
+    - 1.3.6.1.4.1.33922.106.2.3.0
+    - 1.3.6.1.4.1.33922.106.2.4.0
+    - 1.3.6.1.4.1.33922.106.2.5.0
+    - 1.3.6.1.4.1.33922.106.2.6.0
+    - 1.3.6.1.4.1.33922.106.2.7.0
+    metrics:
+    - name: cpuUsage
+      oid: 1.3.6.1.4.1.33922.106.1.1
+      type: gauge
+      help: CPU usage (%) - 1.3.6.1.4.1.33922.106.1.1
+    - name: memoryUsage
+      oid: 1.3.6.1.4.1.33922.106.1.2
+      type: gauge
+      help: memory usage (%) - 1.3.6.1.4.1.33922.106.1.2
+    - name: storageUsage
+      oid: 1.3.6.1.4.1.33922.106.1.3
+      type: gauge
+      help: storage usage (%) - 1.3.6.1.4.1.33922.106.1.3
+    - name: sysRunTime
+      oid: 1.3.6.1.4.1.33922.106.1.4
+      type: DisplayString
+      help: 'system run time from start: - 1.3.6.1.4.1.33922.106.1.4'
+    - name: powerIndex
+      oid: 1.3.6.1.4.1.33922.106.1.5.1.1
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.1.5.1.1
+      indexes:
+      - labelname: powerIndex
+        type: gauge
+    - name: powerStaus
+      oid: 1.3.6.1.4.1.33922.106.1.5.1.2
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.1.5.1.2
+      indexes:
+      - labelname: powerIndex
+        type: gauge
+      enum_values:
+        0: "off"
+        1: "on"
+    - name: fanIndex
+      oid: 1.3.6.1.4.1.33922.106.1.6.1.1
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.1.6.1.1
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanStatus
+      oid: 1.3.6.1.4.1.33922.106.1.6.1.2
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.1.6.1.2
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: temperatureIndex
+      oid: 1.3.6.1.4.1.33922.106.1.7.1.1
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.1.7.1.1
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: tempStatus
+      oid: 1.3.6.1.4.1.33922.106.1.7.1.2
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.1.7.1.2
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: deviceName
+      oid: 1.3.6.1.4.1.33922.106.2.1
+      type: DisplayString
+      help: system name - 1.3.6.1.4.1.33922.106.2.1
+    - name: deviceDescription
+      oid: 1.3.6.1.4.1.33922.106.2.2
+      type: DisplayString
+      help: device information remasks - 1.3.6.1.4.1.33922.106.2.2
+    - name: systemLocation
+      oid: 1.3.6.1.4.1.33922.106.2.3
+      type: DisplayString
+      help: ' - 1.3.6.1.4.1.33922.106.2.3'
+    - name: systemContact
+      oid: 1.3.6.1.4.1.33922.106.2.4
+      type: DisplayString
+      help: ' - 1.3.6.1.4.1.33922.106.2.4'
+    - name: softwareVer
+      oid: 1.3.6.1.4.1.33922.106.2.5
+      type: DisplayString
+      help: software version - 1.3.6.1.4.1.33922.106.2.5
+    - name: hardwareVer
+      oid: 1.3.6.1.4.1.33922.106.2.6
+      type: DisplayString
+      help: hardware version - 1.3.6.1.4.1.33922.106.2.6
+    - name: modelName
+      oid: 1.3.6.1.4.1.33922.106.2.7
+      type: DisplayString
+      help: model name - 1.3.6.1.4.1.33922.106.2.7
+    - name: opticalPortCount
+      oid: 1.3.6.1.4.1.33922.106.4.1
+      type: gauge
+      help: optical port numbers - 1.3.6.1.4.1.33922.106.4.1
+    - name: portIndex
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.1
+      type: gauge
+      help: ' - 1.3.6.1.4.1.33922.106.4.2.1.1'
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: portEnableID
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.3
+      type: gauge
+      help: enable port VLAN - 1.3.6.1.4.1.33922.106.4.2.1.3
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: disable
+        1: enable
+    - name: portID
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.4
+      type: gauge
+      help: port vlan id - 1.3.6.1.4.1.33922.106.4.2.1.4
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: portSpeedSet
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.5
+      type: gauge
+      help: 'port speed: - 1.3.6.1.4.1.33922.106.4.2.1.5'
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: auto
+        1: port1G
+        2: port10G
+        3: port40G
+        4: port100G
+        5: port200G
+        6: port25G
+    - name: portSpeed
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.6
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.6
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: auto
+        1: port1G
+        2: port10G
+        3: port40G
+        4: port100G
+        5: port200G
+        6: port25G
+    - name: portLinkStatus
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.7
+      type: gauge
+      help: port link status - 1.3.6.1.4.1.33922.106.4.2.1.7
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: down
+        1: up
+    - name: portUnidirectionalXmitEnable
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.8
+      type: gauge
+      help: port one-way transmission enable switch - 1.3.6.1.4.1.33922.106.4.2.1.8
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: disable
+        1: enable
+    - name: portTxPower
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.9
+      type: DisplayString
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.9
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+        - value: NaN
+          regex: ^(?:--)$
+    - name: portRxPower
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.10
+      type: DisplayString
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.10
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+        - value: NaN
+          regex: ^(?:--)$
+    - name: portVlanPop
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.11
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.11
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: disable
+        1: outer1
+        2: outer2
+    - name: portLoopbackEnable
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.12
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.12
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        1: disable
+        2: localLB
+        3: remoterLB
+    - name: portFEC
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.13
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.13
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        -1: not-support
+        0: disable
+        1: enable
+    - name: portPreambleLeng
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.14
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.14
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        4: b4
+        8: b8
+    - name: portTemperature
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.15
+      type: DisplayString
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.15
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+        - value: NaN
+          regex: ^(?:--)$
+    - name: portVoltage
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.16
+      type: DisplayString
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.16
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+        - value: NaN
+          regex: ^(?:--)$
+    - name: portTxBias
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.17
+      type: DisplayString
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.17
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+        - value: NaN
+          regex: ^(?:--)$
+    - name: portParaRealign
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.18
+      type: gauge
+      help: only for 40G or 100G PORT - 1.3.6.1.4.1.33922.106.4.2.1.18
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: split
+        1: merge
+    - name: portParaSourceMac
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.19
+      type: DisplayString
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.19
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: portCascadEnable
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.20
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.20
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: disable
+        1: enable
+    - name: portModuleStatus
+      oid: 1.3.6.1.4.1.33922.106.4.2.1.21
+      type: gauge
+      help: Description. - 1.3.6.1.4.1.33922.106.4.2.1.21
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+      enum_values:
+        0: abs
+        1: present
+    - name: sendDrop
+      oid: 1.3.6.1.4.1.33922.106.5.1
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.1
+    - name: recvGoodPackets
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.1
+      type: counter
+      help: the number of good packets - 1.3.6.1.4.1.33922.106.5.2.1.1
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: sendGoodPackets
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.2
+      type: counter
+      help: the number of good packets - 1.3.6.1.4.1.33922.106.5.2.1.2
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: recvBadBytes
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.7
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.2.1.7
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: sendBadBytes
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.8
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.2.1.8
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: sendBadPackets
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.9
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.2.1.9
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: recvGoodBytes
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.10
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.2.1.10
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: sendGoodBytes
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.11
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.2.1.11
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: recvCrcErrors
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.12
+      type: counter
+      help: the number of crc error packets - 1.3.6.1.4.1.33922.106.5.2.1.12
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
+    - name: recvOverflowDrops
+      oid: 1.3.6.1.4.1.33922.106.5.2.1.13
+      type: counter
+      help: Description. - 1.3.6.1.4.1.33922.106.5.2.1.13
+      indexes:
+      - labelname: portIndex
+        type: gauge
+      lookups:
+      - labels:
+        - portIndex
+        labelname: portName
+        oid: 1.3.6.1.4.1.33922.106.4.2.1.2
+        type: DisplayString
