@@ -1,0 +1,8 @@
+auths:
+  public_v2:
+    version: 2
+    community: public
+modules:
+  supermicro_mib:
+    walk:
+      - smSuperDoctor5MIB

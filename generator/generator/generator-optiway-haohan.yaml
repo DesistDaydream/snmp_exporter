@@ -1,0 +1,21 @@
+modules:
+  optiway_haohan_mib:
+    walk:
+      - systemManagement
+      - interfaces
+      - boardPortManagement
+    lookups:
+      - source_indexes: [slot1ModuleifIndex]
+        lookup: slot1ModuleifDescr
+    overrides:
+      slot1ModuleifDescr:
+        ignore: true
+      # slot1ModuleifType:
+      #   type: EnumAsInfo
+      # 下面的指标会产生高基数，光功率的值写到 label 中了，变化太频繁
+      slot1ModuleifTxPower:
+        ignore: true
+      slot1ModuleifRxPower:
+        ignore: true
+      cpuUtilization5to30Second:
+        name: cpuUtilization
