@@ -1,0 +1,11 @@
+modules:
+  host_h3c:
+    walk:
+    - hh3cHealthInfo
+    - hh3cPowerInfo
+    - hh3cFansInfo
+    - hh3cMemDetailInfoTable
+    - hh3cStorageCardInfo
+    # - hh3cTempSensorName
+    # - hh3cTempSensorReading
+    # - hh3cTempSensorSubStatus

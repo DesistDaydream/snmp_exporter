@@ -29,6 +29,7 @@ dependencies-stamp
 *.tar.gz
 /vendor
 
-generator/generator
-generator/mibs
 generator/snmp.yml
+
+.vscode/*
+

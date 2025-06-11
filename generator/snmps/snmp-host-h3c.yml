@@ -1,0 +1,642 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+host_h3c:
+  walk:
+  - 1.3.6.1.4.1.25506.13.1.2.1.1.10
+  - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2
+  - 1.3.6.1.4.1.25506.13.1.2.1.1.4
+  - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1
+  - 1.3.6.1.4.1.25506.13.1.2.4.7
+  metrics:
+  - name: hh3cSrvFanID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.1
+    type: gauge
+    help: The fan id. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.1
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.2
+    type: DisplayString
+    help: The name of fan associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.2
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanRatio
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.3
+    type: gauge
+    help: The actual speed is divided by the full speed. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.3
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.4
+    type: DisplayString
+    help: The model of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.4
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanSpeed
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.5
+    type: gauge
+    help: The current actual speed of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.5
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+  - name: hh3cSrvFanPresentStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.6
+    type: gauge
+    help: The present status of fan associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.6
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+    enum_values:
+      0: absence
+      1: present
+  - name: hh3cSrvFanRedundStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.7
+    type: gauge
+    help: The redundant status of fan associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.7
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+    enum_values:
+      0: normal
+      1: abnormal
+  - name: hh3cSrvFanSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.8
+    type: gauge
+    help: The fan sensor status associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.1.1.8
+    indexes:
+    - labelname: hh3cSrvFanID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cFanFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.10.2
+    type: gauge
+    help: The fan family sensor status. - 1.3.6.1.4.1.25506.13.1.2.1.1.10.2
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cMemIndexID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.1
+    type: gauge
+    help: The ID uniquely identifies the every single memory. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.1
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.2
+    type: DisplayString
+    help: The memory location indicates the processor associated with the hh3cMemIndexID
+      in MemSummaryInfoTable. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.2
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemChannel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.3
+    type: gauge
+    help: The processor's channel number of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.3
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.4
+    type: DisplayString
+    help: The memory slot number of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.4
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.5
+    type: gauge
+    help: The memory status of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.5
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: absence
+      1: normal
+      2: abnormal
+      3: disabled
+  - name: hh3cMemSize
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.6
+    type: DisplayString
+    help: The volume of single memory of memory associated with the ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.6
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemMaxFreq
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.7
+    type: DisplayString
+    help: The memory main frequency of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.7
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemType
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.8
+    type: DisplayString
+    help: The memory DIMM type of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.8
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemRanks
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.9
+    type: DisplayString
+    help: The memory DIMM type of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.9
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemTech
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.10
+    type: DisplayString
+    help: The memory DIMM technology of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.10
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemPartNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.11
+    type: DisplayString
+    help: The part number of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.11
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemManufactry
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.12
+    type: DisplayString
+    help: The manufacturer of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.12
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemAuthen
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.13
+    type: gauge
+    help: The H3C authentication of processor of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.13
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: unrecognized
+      1: certified
+      2: ordinary
+  - name: hh3cMemEccStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.14
+    type: gauge
+    help: The ECC status of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.14
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: others
+      1: support
+  - name: hh3cMemDetailOperateVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.15
+    type: DisplayString
+    help: The working voltage of memory associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.15
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cMemSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.16
+    type: gauge
+    help: Information about memory health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.16
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cMemSerialNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.17
+    type: DisplayString
+    help: The memory device serial number. - 1.3.6.1.4.1.25506.13.1.2.1.1.2.2.1.17
+    indexes:
+    - labelname: hh3cMemIndexID
+      type: gauge
+  - name: hh3cSrvRaidCardIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.1
+    type: gauge
+    help: The raid card index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.1
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.2
+    type: DisplayString
+    help: The type of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.2
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardFirmVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.3
+    type: DisplayString
+    help: The firmware version of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.3
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardSerialNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.4
+    type: DisplayString
+    help: The serial number of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.4
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardCacheVolume
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.5
+    type: DisplayString
+    help: The cache module size of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.5
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardCacheModule
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.6
+    type: DisplayString
+    help: The cache module status of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.6
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardSupercapacitor
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.7
+    type: DisplayString
+    help: The super capacity status of storage card associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.7
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardChargingState
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.8
+    type: gauge
+    help: The charging status of super capacity of card associated with the index.
+      - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.8
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardLocation
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.9
+    type: DisplayString
+    help: The location of slot number of raid card. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.9
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+  - name: hh3cSrvRaidCardSupercapacitorStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.10
+    type: gauge
+    help: The super capacitor status. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.1.1.10
+    indexes:
+    - labelname: hh3cSrvRaidCardIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cSrvLogicalCardIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.1
+    type: gauge
+    help: The number of logical device, always starts from zero. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.1
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.2
+    type: DisplayString
+    help: The status of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.2
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardTypeLevel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.3
+    type: DisplayString
+    help: The raid level of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.3
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardCapacity
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.4
+    type: DisplayString
+    help: The capacity(GB) of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.4
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArrayUnderLogical
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.5
+    type: OctetString
+    help: The hard disk list under the logical device. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.5
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArraySSDLife
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.6
+    type: gauge
+    help: The minimal hard disk SSD life of the disks under the logical device. -
+      1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.6
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArrayBootEnable
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.7
+    type: DisplayString
+    help: The boot drive enable of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.7
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvDiskArrayDriveCache
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.8
+    type: DisplayString
+    help: The drive cache policy of logical device associated with the index. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.8
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+  - name: hh3cSrvLogicalCardSpanNumber
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.9
+    type: gauge
+    help: Span number of logical disk group - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.9
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+    enum_values:
+      0: Nonsupport
+  - name: hh3cSrvLogicalCardNumDrives
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.10
+    type: gauge
+    help: Amount of hard disks in logical disk group - 1.3.6.1.4.1.25506.13.1.2.1.1.4.2.1.10
+    indexes:
+    - labelname: hh3cSrvLogicalCardIndex
+      type: gauge
+    enum_values:
+      0: Nonsupport
+  - name: hh3cSrvStorageCardHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.3
+    type: gauge
+    help: The table describes about the storage card health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.3
+    enum_values:
+      0: unhealth
+      1: health
+  - name: hh3cSrvStorageCardFamilyHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.4.4
+    type: gauge
+    help: The table describes about the storage card health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.4.4
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cPowerID
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.1
+    type: gauge
+    help: The ID uniquely identifies the power supply. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.1
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerPresentStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.2
+    type: gauge
+    help: The present status of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.2
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: absence
+      1: presence
+  - name: hh3cPowerModel
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.3
+    type: DisplayString
+    help: The model of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.3
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cMaxPower
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.4
+    type: gauge
+    help: The maximum input power of the power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.4
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerVersion
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.5
+    type: DisplayString
+    help: The current firmware version information of the power supply associated
+      with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.5
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerManu
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.6
+    type: DisplayString
+    help: The manufacturer of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.6
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerSN
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.7
+    type: DisplayString
+    help: The serial number of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.7
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerWorkMode
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.8
+    type: gauge
+    help: The main and standby status of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.8
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: main
+      1: standby
+      255: unrecognized
+  - name: hh3cPowerInputMode
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.9
+    type: gauge
+    help: The main and standby status of power supply associated with ID. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.9
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: Noinput
+      1: AC
+      2: HVDC
+      3: LVDC
+  - name: hh3cPowerCost
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.10
+    type: gauge
+    help: Information about the cost of power.The unit is watt. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.10
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerInputVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.11
+    type: gauge
+    help: Information about the input voltage.The unit is voltage - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.11
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerOutputVoltage
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.12
+    type: gauge
+    help: Information about the output voltage - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.12
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerSubStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.13
+    type: gauge
+    help: Information about power status. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.13
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cPowerName
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.14
+    type: DisplayString
+    help: power display name. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.1.1.14
+    indexes:
+    - labelname: hh3cPowerID
+      type: gauge
+  - name: hh3cPowerFamilyStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.2
+    type: gauge
+    help: Information about all power supply health status. - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.2
+    enum_values:
+      0: unknown
+      1: absence
+      2: ok
+      3: minor
+      4: major
+      5: fatal
+  - name: hh3cPowerTotalCost
+    oid: 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.3
+    type: gauge
+    help: The total cost of power - 1.3.6.1.4.1.25506.13.1.2.1.1.7.1.3
+  - name: hh3cEntiretyHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.1
+    type: gauge
+    help: The entirety health status of this machine. - 1.3.6.1.4.1.25506.13.1.2.4.7.1
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cPwrHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.2
+    type: gauge
+    help: Health status of the power supply overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.2
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+  - name: hh3cFanHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.3
+    type: gauge
+    help: Health status of the fan overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.3
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+  - name: hh3cCPUHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.4
+    type: gauge
+    help: Health status of the CPU overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.4
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cSrvHardDiskHealthSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.1
+    type: DisplayString
+    help: The HDD sensor name. - 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.1
+    indexes:
+    - labelname: hh3cSrvHardDiskHealthSlotNum
+      type: DisplayString
+  - name: hh3cSrvHardDiskHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.2
+    type: DisplayString
+    help: The health status of the corresponding hard disk. - 1.3.6.1.4.1.25506.13.1.2.4.7.5.1.2
+    indexes:
+    - labelname: hh3cSrvHardDiskHealthSlotNum
+      type: DisplayString
+  - name: hh3cSrvNetCardHealthIndex
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.1
+    type: gauge
+    help: The index of network card. - 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.1
+    indexes:
+    - labelname: hh3cSrvNetCardHealthIndex
+      type: gauge
+  - name: hh3cSrvNetCardHealthSlotNum
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.2
+    type: gauge
+    help: The slot number of network card. - 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.2
+    indexes:
+    - labelname: hh3cSrvNetCardHealthIndex
+      type: gauge
+  - name: hh3cSrvNetCardHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.3
+    type: gauge
+    help: The status of network card. - 1.3.6.1.4.1.25506.13.1.2.4.7.6.1.3
+    indexes:
+    - labelname: hh3cSrvNetCardHealthIndex
+      type: gauge
+    enum_values:
+      0: normal
+      1: alarm
+      255: unknown
+  - name: hh3cMemHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.7
+    type: gauge
+    help: The overall health of the memory module. - 1.3.6.1.4.1.25506.13.1.2.4.7.7
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  - name: hh3cDiskHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.8
+    type: gauge
+    help: The overall health of the hard disk module. - 1.3.6.1.4.1.25506.13.1.2.4.7.8
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+  - name: hh3cUIDStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.9
+    type: gauge
+    help: Remote UID control. - 1.3.6.1.4.1.25506.13.1.2.4.7.9
+    enum_values:
+      0: "Off"
+      1: "On"
+      2: TimedOn
+  - name: hh3cTempHealthStatus
+    oid: 1.3.6.1.4.1.25506.13.1.2.4.7.10
+    type: gauge
+    help: Health status of the temperature overall. - 1.3.6.1.4.1.25506.13.1.2.4.7.10
+    enum_values:
+      0: normal
+      1: caution
+      2: warning
+      3: critical
+  version: 2
+  auth:
+    community: public

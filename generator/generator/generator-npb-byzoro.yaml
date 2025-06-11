@@ -1,0 +1,64 @@
+# 百卓
+modules:
+  npt_byzoro_mib:
+    walk:
+      - sysStatus
+      - deviceName
+      - deviceDescription
+      - systemLocation
+      - systemContact
+      - softwareVer
+      - hardwareVer
+      - modelName
+      - portPara
+      - portStatistics
+    lookups:
+      - source_indexes: [portIndex]
+        lookup: portName
+    overrides:
+      portName:
+        ignore: true
+      portRxPower:
+        regex_extracts:
+          "":
+            - regex: '(.*)'
+              value: '$1'
+            - regex: '--'
+              value: 'NaN'
+      portTxPower:
+        regex_extracts:
+          "":
+            - regex: '(.*)'
+              value: '$1'
+            - regex: '--'
+              value: 'NaN'
+      portTemperature:
+        regex_extracts:
+          "":
+            - regex: '(.*)'
+              value: '$1'
+            - regex: '--'
+              value: 'NaN'
+      portVoltage:
+        regex_extracts:
+          "":
+            - regex: '(.*)'
+              value: '$1'
+            - regex: '--'
+              value: 'NaN'
+      portTxBias:
+        regex_extracts:
+          "":
+            - regex: '(.*)'
+              value: '$1'
+            - regex: '--'
+              value: 'NaN'
+      # 一些无用的指标，一种百分比的数值，可以用过原始数据计算，没必要采集
+      recvThroughput:
+        ignore: true
+      sendThroughput:
+        ignore: true
+      recvUtilization:
+        ignore: true
+      sendUtilization:
+          ignore: true

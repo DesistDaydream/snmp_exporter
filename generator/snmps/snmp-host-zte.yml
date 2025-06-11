@@ -1,0 +1,622 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  host_zte:
+    walk:
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.2
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.21
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.24.1.12
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.24.1.15
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.36
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.37.1.10
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.37.1.8
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.38
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.59
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.8.1.19
+    - 1.3.6.1.4.1.3902.6053.19.1.3.2.8.1.4
+    metrics:
+    - name: powerStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.2.1
+      type: gauge
+      help: Power status - 1.3.6.1.4.1.3902.6053.19.1.3.2.2.1
+      enum_values:
+        0: powerOff
+        1: powerOn
+        2: coldRestart
+        3: restart
+        5: softShutDown
+    - name: fanIndex
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.1
+      type: gauge
+      help: Fan Index - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.1
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanOnline
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.2
+      type: gauge
+      help: Fan Presence Status - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.2
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        0: absent
+        1: present
+        255: na
+    - name: fanSpeed
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.3
+      type: gauge
+      help: Fan Speed(RPM) - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.3
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        -1: na
+    - name: fanPwmRatio
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.4
+      type: gauge
+      help: PWM Ratio(%) - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.4
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        0: na
+    - name: fanMinRpm
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.5
+      type: gauge
+      help: Fan Min Speed(RPM) - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.5
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        0: na
+    - name: fanMaxRpm
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.6
+      type: gauge
+      help: Fan Max Speed(RPM) - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.6
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        0: na
+    - name: fanHealthSt
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.7
+      type: gauge
+      help: Fan Health Status - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.7
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        0: unHealthy
+        1: healthy
+        255: na
+    - name: fanSeriNum
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.8
+      type: DisplayString
+      help: Fan Serial Number - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.8
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanPartNum
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.9
+      type: DisplayString
+      help: Fan Part Number - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.9
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanIdentify
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.10
+      type: DisplayString
+      help: Fan Identify - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.10
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanAlarmStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.11
+      type: gauge
+      help: Fan Alarm Status - 1.3.6.1.4.1.3902.6053.19.1.3.2.21.1.11
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        0: ok
+        1: minor
+        2: major
+        3: critical
+        4: unkown
+    - name: memoryManufacturer
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.24.1.12
+      type: DisplayString
+      help: Memory Manufacture - 1.3.6.1.4.1.3902.6053.19.1.3.2.24.1.12
+      indexes:
+      - labelname: memCardNum
+        type: gauge
+      - labelname: memSilkNum
+        type: DisplayString
+    - name: memoryStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.24.1.15
+      type: gauge
+      help: Mem Alarm Status - 1.3.6.1.4.1.3902.6053.19.1.3.2.24.1.15
+      indexes:
+      - labelname: memCardNum
+        type: gauge
+      - labelname: memSilkNum
+        type: DisplayString
+      enum_values:
+        0: ok
+        1: minor
+        2: major
+        3: critical
+        4: unkown
+    - name: ctrlIndex
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.1
+      type: gauge
+      help: Storage controller index,start from 0 - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.1
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ctrlTemperature
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.2
+      type: gauge
+      help: controller temperature - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.2
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        255: na
+    - name: ctrlCacheSize
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.3
+      type: gauge
+      help: controller cache size(MB) - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.3
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        255: na
+    - name: ctrlFwVer
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.4
+      type: DisplayString
+      help: controller firmware version - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.4
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ctrlDevType
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.5
+      type: DisplayString
+      help: controller dev type - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.5
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ctrlOpRomVer
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.6
+      type: DisplayString
+      help: controller OP ROM version - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.6
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ctrlStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.7
+      type: gauge
+      help: controller status - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.7
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        0: healthy
+        1: unhealthy
+        255: na
+    - name: bbuPresentStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.8
+      type: gauge
+      help: controller BBU is present - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.8
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        0: absent
+        1: present
+        255: na
+    - name: bbuTemperature
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.9
+      type: gauge
+      help: controller BBU temperature - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.9
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        253: invalid
+        254: high
+        255: normal
+    - name: bbuVoltageInfo
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.10
+      type: gauge
+      help: controller BBU voltage - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.10
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        253: invalid
+        254: low
+        255: normal
+    - name: locationSlotType
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.11
+      type: gauge
+      help: controller location type - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.11
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        0: embedded
+        1: pcie
+    - name: locationSlotNum
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.12
+      type: gauge
+      help: controller location slot - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.12
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: bConnectExpander
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.13
+      type: gauge
+      help: Expander is connected - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.13
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        0: "no"
+        1: "yes"
+        255: na
+    - name: expanderVersion
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.14
+      type: DisplayString
+      help: Expander1 version - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.14
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: expander2Version
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.15
+      type: DisplayString
+      help: Expander2 version - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.15
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ucVendor
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.16
+      type: DisplayString
+      help: controller vendor - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.16
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ucChipModel
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.17
+      type: DisplayString
+      help: controller chip model - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.17
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ucChipVendor
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.18
+      type: DisplayString
+      help: controller chip vendor - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.18
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ucSerialNum
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.19
+      type: DisplayString
+      help: controller serial number - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.19
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: ucPartNum
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.20
+      type: DisplayString
+      help: controller part number - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.20
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+    - name: bbuHealth
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.21
+      type: gauge
+      help: controller BBUhealth - 1.3.6.1.4.1.3902.6053.19.1.3.2.36.1.21
+      indexes:
+      - labelname: ctrlIndex
+        type: gauge
+      enum_values:
+        0: ok
+        1: minorAlarm
+        2: majorAlarm
+        3: riticalAlarm
+        255: na
+    - name: hardDiskManufacturer
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.37.1.10
+      type: DisplayString
+      help: Disk vendor information - 1.3.6.1.4.1.3902.6053.19.1.3.2.37.1.10
+      indexes:
+      - labelname: pdSlot
+        type: gauge
+        enum_values:
+          16711935: na
+    - name: hardDiskStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.37.1.8
+      type: gauge
+      help: Disk health - 1.3.6.1.4.1.3902.6053.19.1.3.2.37.1.8
+      indexes:
+      - labelname: pdSlot
+        type: gauge
+        enum_values:
+          16711935: na
+      enum_values:
+        0: ok
+        1: warning
+        255: na
+    - name: ldControllerIndex
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.1
+      type: gauge
+      help: Index of controller that containing this logical disk. - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.1
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: virtualDriveIndex
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.2
+      type: gauge
+      help: logical disk index - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.2
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: raidLevel
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.3
+      type: gauge
+      help: RAID level - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.3
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: raid0
+        1: raid1
+        5: raid5
+        6: raid6
+        16: raid00
+        17: raid10
+        18: raid1E
+        19: raid50
+        20: raid60
+        21: raid1E-rlq0
+        255: na
+    - name: memDiskNum
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.4
+      type: gauge
+      help: RAID members count - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.4
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: logicalDriveState
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.5
+      type: gauge
+      help: RAID state - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.5
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: optimal
+        1: degraded
+        2: offline
+        3: failed
+        4: partiallyDegraded
+        5: initializing
+        6: clean
+        7: active
+        8: recovering
+        9: resyncing
+        10: reshaping
+        11: checking
+        12: ok
+        13: notConfigured
+        14: interimRecovery
+        15: readyForRecovery
+        16: wrongDriveReplaced
+        17: driveImproperlyConnected
+        18: hardwareIsOverheating
+        19: hardwareHasOverheated
+        20: expanding
+        21: notYetAvailable
+        22: queuedForExpansion
+        23: disabledFromSCSIIDConflict
+        24: ejected
+        25: eraseInProgress
+        26: unused
+        27: readyToPerformPredictiveSpareRebuild
+        28: rPIInProgress
+        29: rPIQueued
+        30: encryptedVolumeWithoutKey
+        31: plaintextVolumeRejectedInEncryptingMode
+        32: encryptionMigration
+        33: encryptedVolumeRekeying
+        34: encryptedVolumeEncryptionOff
+        35: volumeEncodeRequested
+        36: encryptedVolumeRekeyRequested
+        37: unsupportedOnThisController
+        255: na
+    - name: rebuildProgInfo
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.6
+      type: gauge
+      help: RAID rebuild progress - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.6
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        255: na
+    - name: ldIOPolicy
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.7
+      type: gauge
+      help: RAID IO policy - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.7
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: cacheIO
+        1: directIO
+        255: na
+    - name: ldPad
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.8
+      type: gauge
+      help: Reserved - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.8
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: ldAccessPolicy
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.9
+      type: gauge
+      help: RAID access policy - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.9
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: readWrite
+        1: readOnly
+        2: blocked
+        255: na
+    - name: ldDiskCachePolicy
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.10
+      type: gauge
+      help: RAID member disk cache policy - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.10
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: unChange
+        1: enable
+        2: disable
+        255: na
+    - name: ldReadAheadPolicy
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.11
+      type: gauge
+      help: RAID read ahead policy - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.11
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: noReadAhead
+        1: readAhead
+        255: na
+    - name: ldWritePolicy
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.12
+      type: gauge
+      help: RAID write policy - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.12
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        0: writeThrough
+        1: writeBack
+        2: alwaysWriteBack
+        255: na
+    - name: ldMemDiskSlot
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.13
+      type: gauge
+      help: RAID members bit map,if bit n is 1,disk in slot n is member of this raid
+        - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.13
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: ldStripeSize
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.14
+      type: gauge
+      help: RAID stripe size - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.14
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+      enum_values:
+        65535: na
+    - name: ldCapacity
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.15
+      type: gauge
+      help: RAID capacity - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.15
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: virtualDriveName
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.16
+      type: DisplayString
+      help: RAID name - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.16
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: vdIndexInCtrl
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.17
+      type: gauge
+      help: RAID index in controller - 1.3.6.1.4.1.3902.6053.19.1.3.2.38.1.17
+      indexes:
+      - labelname: ldControllerIndex
+        type: gauge
+      - labelname: virtualDriveIndex
+        type: gauge
+    - name: deviceName
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.59.1
+      type: DisplayString
+      help: System device name - 1.3.6.1.4.1.3902.6053.19.1.3.2.59.1
+    - name: deviceSerialNumber
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.59.2
+      type: DisplayString
+      help: System device serial number - 1.3.6.1.4.1.3902.6053.19.1.3.2.59.2
+    - name: systemHealth
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.59.3
+      type: gauge
+      help: System health status - 1.3.6.1.4.1.3902.6053.19.1.3.2.59.3
+      enum_values:
+        0: healthy
+        1: minorProblem
+        2: majorProblem
+        3: criticalProblem
+        4: na
+    - name: cpuStatus
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.8.1.19
+      type: gauge
+      help: CPU Alarm Status - 1.3.6.1.4.1.3902.6053.19.1.3.2.8.1.19
+      indexes:
+      - labelname: cpuIndex
+        type: gauge
+      enum_values:
+        0: ok
+        1: minor
+        2: major
+        3: critical
+        4: unkown
+    - name: cpuManufacturer
+      oid: 1.3.6.1.4.1.3902.6053.19.1.3.2.8.1.4
+      type: DisplayString
+      help: CPU Manufacture - 1.3.6.1.4.1.3902.6053.19.1.3.2.8.1.4
+      indexes:
+      - labelname: cpuIndex
+        type: gauge

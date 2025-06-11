@@ -1,5 +1,7 @@
 FROM golang:bookworm AS builder
 
+ENV GOPROXY=https://goproxy.cn,https://goproxy.io,https://mirrors.aliyun.com/goproxy/,direct
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libsnmp-dev
 

@@ -1,0 +1,29 @@
+auths:
+  optiway_v2:
+    version: 2
+    community: SDC_V3nus_2018s
+  switch_v2:
+    version: 2
+    community: SDC_V3nus_2018s
+  npb_v2:
+    version: 2
+    community: npb@Snmp0
+  host_v2:
+    version: 2
+    community: host@Snmp0
+  host_v3:
+    version: 3
+    username: monitor
+    security_level: authPriv
+    password: host@Snmp0
+    auth_protocol: SHA
+    priv_protocol: AES
+    priv_password: host@Snmp0
+  huawei_server_v3:
+    version: 3
+    username: monitor
+    security_level: authPriv
+    password: Huawei12#$
+    auth_protocol: SHA
+    priv_protocol: AES
+    priv_password: Huawei12#$

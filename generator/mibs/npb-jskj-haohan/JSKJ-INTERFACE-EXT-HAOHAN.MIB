@@ -1,0 +1,1025 @@
+-- file: JSKJ-INTERFACE-EXT-HAOHAN.mib
+-- Mar. 25 2019
+
+
+JSKJ-INTERFACE-EXT DEFINITIONS ::= BEGIN
+
+            IMPORTS
+			enterprises, MODULE-IDENTITY, Integer32
+				FROM SNMPv2-SMI
+    		Counter
+           			FROM RFC1155-SMI
+			OBJECT-TYPE
+				FROM RFC-1212
+ 			ifIndex
+ 				FROM RFC1213-MIB
+            MacAddress,TruthValue,DisplayString
+ 				FROM SNMPv2-TC;
+
+-- JSKJ MIB
+  jskjMIB       MODULE-IDENTITY
+		LAST-UPDATED	"201805081634Z"
+		ORGANIZATION	""
+		CONTACT-INFO	""
+		DESCRIPTION
+		    "This MIB module defines the JSKJ's equipment's information."
+		::=  {  enterprises  55998  }
+
+-- JSKJ POS MIB
+        jskjCrossPOSObjects OBJECT IDENTIFIER ::= { jskjMIB 17 }
+        ifExtStatistics OBJECT IDENTIFIER ::= { jskjCrossPOSObjects 200 }
+        ifExtStatisticstmp OBJECT IDENTIFIER ::= { ifExtStatistics 1 }
+        ifExtStatisticstemp OBJECT IDENTIFIER ::= { ifExtStatisticstmp 2 }
+
+-- JSKJ POS PORT MIB
+        ifExtStatisticsTable OBJECT-TYPE
+              SYNTAX  SEQUENCE OF ifExtStatisticsEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      "A list of port up/down statistics and enable/disable of sending trap for interfaces."
+              ::= { ifExtStatisticstemp 1 }
+
+          ifExtStatisticsEntry OBJECT-TYPE
+              SYNTAX  ifExtStatisticsEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      "Entry containing port up/down statistics and enable/disable of sending trap for interfaces."
+              INDEX   { ifExtStatisticsIndex }
+              ::= { ifExtStatisticsTable 1 }
+
+          ifExtStatisticsEntry ::=
+              SEQUENCE {
+                ifExtStatisticsIndex    INTEGER,
+                ifChassisIdPort         INTEGER,
+                ifSlotId                INTEGER,
+                ifPortSlikId            INTEGER,
+                ifPanelType             INTEGER,
+                ifExtendId              INTEGER,
+                ifLinkStatus            INTEGER,
+                ifPortType              DisplayString,
+                ifPortTxPower           INTEGER,
+                ifPortRxPower           INTEGER,
+                ifPortSpeed             INTEGER,
+                ifInByteRate            Counter64,
+                ifInPktRate             Counter64,
+                ifInBytes               Counter64,
+                ifInPckts               Counter64,
+                ifInDiscardPckts        Counter64,
+                ifInErrorPckts          Counter64,
+                ifOutByteRate           Counter64,
+                ifOutPktRate            Counter64,
+                ifOutBytes              Counter64,
+                ifOutPckts              Counter64,
+                ifOutDiscardPckts       Counter64,
+                ifOutErrorPckts         Counter64
+              }
+
+          ifExtStatisticsIndex OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "A unique value for each Port,Card ID + Port ID."
+              ::= { ifExtStatisticsEntry 1 }
+
+          ifChassisIdPort  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Chassis Id"
+              ::= { ifExtStatisticsEntry 2 }
+
+          ifSlotId  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Slot Id"
+              ::= { ifExtStatisticsEntry 3 }
+
+		  ifPortSlikId  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Slick Port Id"
+              ::= { ifExtStatisticsEntry 4 }
+
+ 		  ifExtendId  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Port extend id"
+              ::= { ifExtStatisticsEntry 5 }
+
+          ifPanelType  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Panel Type: front or rear"
+              ::= { ifExtStatisticsEntry 6 }
+
+          ifLinkStatus  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Port Link Status"
+              ::= { ifExtStatisticsEntry 7 }
+
+          ifPortType OBJECT-TYPE
+				SYNTAX  DisplayString (SIZE (0..255))
+				ACCESS  read-only
+				STATUS  mandatory
+
+              DESCRIPTION
+                      "Port Type, 1:ethenet other: wave length"
+              ::= { ifExtStatisticsEntry 8 }
+
+          ifPortTxPower OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Port Tx Power "
+              ::= { ifExtStatisticsEntry 9 }
+
+          ifPortRxPower OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Port Rx Power "
+              ::= { ifExtStatisticsEntry 10 }
+
+          ifPortSpeed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "A port's speed  ."
+
+              ::= { ifExtStatisticsEntry 11 }
+
+          ifInByteRate OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean input byte rate now."
+
+              ::= { ifExtStatisticsEntry 12 }
+
+          ifInPktRate OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean input packet rate now."
+
+              ::= { ifExtStatisticsEntry 13 }
+
+          ifInBytes OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean input bytes ."
+
+              ::= { ifExtStatisticsEntry 14 }
+
+          ifInPckts  OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean input packs ."
+
+              ::= { ifExtStatisticsEntry 15 }
+
+          ifInDiscardPckts   OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean input discard packs ."
+
+              ::= { ifExtStatisticsEntry 16 }
+
+
+          ifInErrorPckts   OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean input error packs ."
+
+              ::= { ifExtStatisticsEntry 17 }
+
+          ifOutByteRate OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean output byte rate now."
+
+              ::= { ifExtStatisticsEntry 18 }
+
+          ifOutPktRate OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean output packet rate now."
+
+              ::= { ifExtStatisticsEntry 19 }
+
+          ifOutBytes   OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean output bytes ."
+
+              ::= { ifExtStatisticsEntry 20 }
+
+          ifOutPckts    OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean output packets ."
+
+              ::= { ifExtStatisticsEntry 21 }
+
+          ifOutDiscardPckts OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean output discard packets."
+
+              ::= { ifExtStatisticsEntry 22 }
+
+          ifOutErrorPckts OBJECT-TYPE
+              SYNTAX  Counter64
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Mean output error packets."
+
+              ::= { ifExtStatisticsEntry 23 }
+
+-- JSKJ POS CARD MIB
+
+          ifExtCardStatusTable OBJECT-TYPE
+              SYNTAX  SEQUENCE OF ifExtCardStatusEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      "A list of status for card."
+              ::= { ifExtStatisticstemp 2 }
+
+          ifExtCardStatusEntry OBJECT-TYPE
+              SYNTAX  ifExtCardStatusEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      "Entry containing status for card."
+              INDEX   { ifExtCardIndex }
+              ::= { ifExtCardStatusTable 1 }
+
+          ifExtCardStatusEntry ::=
+              SEQUENCE {
+                ifExtCardIndex          INTEGER,
+                ifChassisIdCard         INTEGER,
+                ifCardSlotId            INTEGER,
+                ifCardType              DisplayString,
+                ifBackIOCardFlag        INTEGER,
+                ifCardStatus            DisplayString,
+                ifSoftRunTimeCard       DisplayString,
+                ifCPURatioCard          INTEGER,
+                ifMemoryRatioCard       INTEGER,
+                ifDiskRatioCard         INTEGER,
+                ifSwitchTemperature     INTEGER,
+                ifNP0Temperature        INTEGER,
+                ifNP1Temperature        INTEGER,
+                ifTCAM0Temperature      INTEGER,
+                ifTCAM1Temperature      INTEGER,
+                if12VMPVolt             INTEGER,
+                if12V0Volt              INTEGER,
+                if12V1Volt              INTEGER,
+                if12V2Volt              INTEGER,
+                if12V3Volt              INTEGER,
+                if5V0Volt               INTEGER,
+                if3V3Volt               INTEGER,
+                if2V5Volt               INTEGER,
+                if1V0Nps0Volt           INTEGER,
+                if1V2Nps0Volt           INTEGER,
+                if1V0PllNps0Volt        INTEGER,
+                if1V80Volt              INTEGER,
+                if0V9Tcam0Volt          INTEGER,
+                if1V0Nps1Volt           INTEGER,
+                if1V2Nps1Volt           INTEGER,
+                if1V0PllNps1Volt        INTEGER,
+                if1V81Volt              INTEGER,
+                if0V9Tcam1Volt          INTEGER,
+                if1V0RovVolt            INTEGER,
+                if1V0XgsVolt            INTEGER,
+                if1V0RtVolt             INTEGER,
+                if0V9RtVolt             INTEGER,
+                if1V0GbVolt             INTEGER,
+                if1V25Volt              INTEGER,
+                if1V2Volt               INTEGER,
+                if0V85Volt              INTEGER
+              }
+
+          ifExtCardIndex OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "A unique value for each card."
+              ::= { ifExtCardStatusEntry 1 }
+
+          ifChassisIdCard OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Chassis Id."
+              ::= { ifExtCardStatusEntry 2 }
+
+          ifCardSlotId OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Slot Id."
+              ::= { ifExtCardStatusEntry 3 }
+
+          ifCardType OBJECT-TYPE
+				SYNTAX  DisplayString (SIZE (0..255))
+				ACCESS  read-only
+				STATUS  mandatory
+
+              DESCRIPTION
+                      "Card Type."
+              ::= { ifExtCardStatusEntry 4 }
+
+          ifBackIOCardFlag OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Back IO Card Flag."
+              ::= { ifExtCardStatusEntry 5 }
+
+          ifCardStatus OBJECT-TYPE
+				SYNTAX  DisplayString (SIZE (0..255))
+				ACCESS  read-only
+				STATUS  mandatory
+
+              DESCRIPTION
+                      "work status ."
+              ::= { ifExtCardStatusEntry 6 }
+
+		  ifSoftRunTimeCard OBJECT-TYPE
+              SYNTAX  DisplayString
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      " The systemManager run-time of equipment."
+              ::= { ifExtCardStatusEntry 7 }
+
+		  ifCPURatioCard OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+				DESCRIPTION
+						"The percent of cpu used."
+				::= { ifExtCardStatusEntry 8 }
+
+		  ifMemoryRatioCard OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+				DESCRIPTION
+						"The percent of memory used."
+				::= { ifExtCardStatusEntry 9 }
+
+		  ifDiskRatioCard	OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+				DESCRIPTION
+						"The percent of disk used."
+				::= { ifExtCardStatusEntry 10 }
+
+          ifSwitchTemperature OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "Switch Temperature."
+              ::= { ifExtCardStatusEntry 11 }
+
+          ifNP0Temperature OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "EZChip0 Temperature."
+              ::= { ifExtCardStatusEntry 12 }
+
+          ifNP1Temperature OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "EZChip1 Temperature."
+              ::= { ifExtCardStatusEntry 13 }
+
+          ifTCAM0Temperature OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "TCAM0 Temperature."
+              ::= { ifExtCardStatusEntry 14 }
+          ifTCAM1Temperature OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "TCAM1 Temperature."
+              ::= { ifExtCardStatusEntry 15 }
+
+		  if12VMPVolt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "12VMP Voltage."
+              ::= { ifExtCardStatusEntry 16 }
+
+		  if12V0Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "12V Voltage0."
+              ::= { ifExtCardStatusEntry 17 }
+
+		  if12V1Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "12V Voltage1."
+              ::= { ifExtCardStatusEntry 18 }
+
+		  if12V2Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "12V Voltage2."
+              ::= { ifExtCardStatusEntry 19 }
+
+		  if12V3Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "12V Voltage3."
+              ::= { ifExtCardStatusEntry 20 }
+
+		  if5V0Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "5V Voltage."
+              ::= { ifExtCardStatusEntry 21 }
+
+		  if3V3Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "3.3V Voltage."
+              ::= { ifExtCardStatusEntry 22 }
+
+		  if2V5Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "2.5V Voltage."
+              ::= { ifExtCardStatusEntry 23 }
+
+		  if1V0Nps0Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V Nps0 Voltage."
+              ::= { ifExtCardStatusEntry 24 }
+
+		  if1V2Nps0Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1.2V Nps0 Voltage."
+              ::= { ifExtCardStatusEntry 25 }
+
+		  if1V0PllNps0Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V PllNps0 Voltage."
+              ::= { ifExtCardStatusEntry 26 }
+
+		  if1V80Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1.8V Voltage0."
+              ::= { ifExtCardStatusEntry 27 }
+
+		  if0V9Tcam0Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "0.9V Tcam0 Voltage."
+              ::= { ifExtCardStatusEntry 28 }
+
+		  if1V0Nps1Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V Nps1 Voltage."
+              ::= { ifExtCardStatusEntry 29 }
+
+		  if1V2Nps1Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1.2V Nps1 Voltage."
+              ::= { ifExtCardStatusEntry 30 }
+
+		  if1V0PllNps1Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V PllNps1 Voltage."
+              ::= { ifExtCardStatusEntry 31 }
+
+		  if1V81Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1.8V Voltage1."
+              ::= { ifExtCardStatusEntry 32 }
+
+		  if0V9Tcam1Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "0.9V Tcam1 Voltage."
+              ::= { ifExtCardStatusEntry 33 }
+
+		  if1V0RovVolt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V Rov Voltage."
+              ::= { ifExtCardStatusEntry 34 }
+
+		  if1V0XgsVolt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V Xgs Voltage."
+              ::= { ifExtCardStatusEntry 35 }
+
+		  if1V0RtVolt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V Rt Voltage."
+              ::= { ifExtCardStatusEntry 36 }
+
+		  if0V9RtVolt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "0.9V Rt Voltage."
+              ::= { ifExtCardStatusEntry 37 }
+
+		  if1V0GbVolt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1V Gb Voltage."
+              ::= { ifExtCardStatusEntry 38 }
+
+		  if1V25Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1.25V Voltage."
+              ::= { ifExtCardStatusEntry 39 }
+
+		  if1V2Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "1.2V Voltage."
+              ::= { ifExtCardStatusEntry 40 }
+
+		  if0V85Volt OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "0.85V Voltage."
+              ::= { ifExtCardStatusEntry 41 }
+
+-- JSKJ POS equipment MIB
+
+          ifExtEquStatusTable OBJECT-TYPE
+              SYNTAX  SEQUENCE OF ifExtEquStatusEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      "A list of status for equipment."
+              ::= { ifExtStatisticstemp 3 }
+
+	  ifExtEquStatusEntry OBJECT-TYPE
+              SYNTAX  ifExtEquStatusEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      "Entry containing status for equipment."
+              INDEX   { ifExtEquIndex }
+              ::= { ifExtEquStatusTable 1 }
+
+          ifExtEquStatusEntry ::=
+              SEQUENCE {
+                  ifExtEquIndex		INTEGER,
+				  ifSoftRunTime		DisplayString,
+				  ifChassisId		INTEGER,
+				  ifChassisType		DisplayString,
+				  ifSoftVersion		DisplayString,
+				  ifCardNum			INTEGER,
+				  ifCPURatio		INTEGER,
+				  ifMemoryRatio		INTEGER,
+				  ifDiskRatio		INTEGER,
+                  ifFan1Speed		INTEGER,
+                  ifFan2Speed       INTEGER,
+				  ifFan3Speed		INTEGER,
+				  ifFan4Speed		INTEGER,
+				  ifFan5Speed		INTEGER,
+				  ifFan6Speed		INTEGER,
+				  ifFan7Speed		INTEGER,
+				  ifFan8Speed		INTEGER,
+				  ifFan9Speed		INTEGER,
+				  ifFan10Speed		INTEGER,
+                  ifPower1Status	INTEGER,
+				  ifPower2Status	INTEGER,
+				  ifPower3Status	INTEGER,
+				  ifPower4Status	INTEGER,
+				  ifPower5Status	INTEGER,
+				  ifPower6Status	INTEGER,
+				  ifPower7Status	INTEGER,
+				  ifPower8Status	INTEGER,
+              }
+
+          ifExtEquIndex OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "A unique value for each equipment."
+              ::= { ifExtEquStatusEntry 1 }
+
+		  ifSoftRunTime OBJECT-TYPE
+              SYNTAX  DisplayString
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      " The systemManager run-time of equipment."
+              ::= { ifExtEquStatusEntry 2 }
+
+		  ifChassisId  OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "The chassis-id."
+              ::= { ifExtEquStatusEntry 3 }
+
+		  ifChassisType OBJECT-TYPE
+				SYNTAX  DisplayString (SIZE (0..255))
+				ACCESS  read-only
+				STATUS  mandatory
+
+			DESCRIPTION
+						"The chassis type of equipment."
+				::= { ifExtEquStatusEntry 4 }
+
+		  ifSoftVersion	OBJECT-TYPE
+				SYNTAX  DisplayString (SIZE (0..255))
+				ACCESS  read-only
+				STATUS  mandatory
+
+				DESCRIPTION
+						"The version-id of software."
+				::= { ifExtEquStatusEntry 5 }
+
+		  ifCardNum OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "The number of cards that is available."
+              ::= { ifExtEquStatusEntry 6 }
+
+		  ifCPURatio OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+				DESCRIPTION
+						"The percent of cpu used."
+				::= { ifExtEquStatusEntry 7 }
+
+		  ifMemoryRatio OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+				DESCRIPTION
+						"The percent of memory used."
+				::= { ifExtEquStatusEntry 8 }
+
+		  ifDiskRatio OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+				DESCRIPTION
+						"The percent of disk used."
+				::= { ifExtEquStatusEntry 9 }
+
+          ifFan1Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN1 speed."
+              ::= { ifExtEquStatusEntry 10 }
+
+          ifFan2Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN2 speed."
+              ::= { ifExtEquStatusEntry 11 }
+
+          ifFan3Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN3 speed."
+              ::= { ifExtEquStatusEntry 12 }
+
+          ifFan4Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN4 speed."
+              ::= { ifExtEquStatusEntry 13 }
+
+          ifFan5Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN5 speed."
+              ::= { ifExtEquStatusEntry 14 }
+
+          ifFan6Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN6 speed."
+              ::= { ifExtEquStatusEntry 15 }
+
+	      ifFan7Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN7 speed."
+              ::= { ifExtEquStatusEntry 16 }
+
+          ifFan8Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN8 speed."
+              ::= { ifExtEquStatusEntry 17 }
+
+          ifFan9Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN9 speed."
+              ::= { ifExtEquStatusEntry 18 }
+
+          ifFan10Speed OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "FAN10 speed."
+              ::= { ifExtEquStatusEntry 19 }
+
+          ifPower1Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 20 }
+
+		  ifPower2Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 21 }
+
+          ifPower3Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 22 }
+
+		  ifPower4Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 23 }
+
+          ifPower5Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 24 }
+
+		  ifPower6Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 25 }
+
+          ifPower7Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 26 }
+
+		  ifPower8Status OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  read-only
+              STATUS  mandatory
+
+              DESCRIPTION
+                      "equipment power status."
+              ::= { ifExtEquStatusEntry 27 }
+END
+

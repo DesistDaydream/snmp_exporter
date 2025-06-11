@@ -1,0 +1,29 @@
+modules:
+  host_zte:
+    walk:
+      - systemInfo
+      - boardPower
+      - boardFanTable
+      - cpuAlarmStatus
+      - cpuMan
+      - memAlarmStatus
+      - memMan
+      - ctrlInfoTable
+      - pdHealth # 物理磁盘
+      - pdVendorInfo
+      - ldInfoTable # 逻辑磁盘
+    overrides:
+      cpuAlarmStatus:
+        name: "cpuStatus"
+      cpuMan:
+        name: "cpuManufacturer"
+      memAlarmStatus:
+        name: "memoryStatus"
+      memMan:
+        name: "memoryManufacturer"
+      pdHealth:
+        name: "hardDiskStatus"
+      pdVendorInfo:
+        name: "hardDiskManufacturer"
+      ldState:
+        name: "logicalDriveState"

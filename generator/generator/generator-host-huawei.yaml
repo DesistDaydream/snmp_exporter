@@ -1,0 +1,60 @@
+modules:
+  host_huawei:
+    walk:
+      - systemHealth
+      - systemPowerState
+      - powerSupplyInfo
+      - fanProperty
+      - cpuEntireStatus
+      - cpuStatus
+      - memoryEntireStatus
+      - memoryStatus
+      - hardDiskProperty
+      - netCardProperty
+      - temperatureProperty
+      - raidControllerProperty
+      - logicalDriveProperty
+      - diskArrayProperty
+      - businessPortProperty
+    lookups:
+      - source_indexes: [powerSupplyIndex]
+        lookup: "powerSupplymanufacture"
+      - source_indexes: [powerSupplyIndex]
+        lookup: "powerSupplyDevicename"
+      - source_indexes: [cpuIndex]
+        lookup: "cpuFamily"
+      - source_indexes: [cpuIndex]
+        lookup: "cpuType"
+      - source_indexes: [memoryDimmIndex]
+        lookup: "memorySize"
+      - source_indexes: [memoryDimmIndex]
+        lookup: "memoryType"
+      - source_indexes: [memoryDimmIndex]
+        lookup: "memorySN"
+      - source_indexes: [hardDiskIndex]
+        lookup: "hardDiskSerialNumber"
+      - source_indexes: [raidControllerIndex]
+        lookup: "raidControllerName"
+      - source_indexes: [raidControllerIndex]
+        lookup: "raidControllerType"
+    overrides:
+      powerSupplymanufacture:
+        ignore: true
+      powerSupplyDevicename:
+        ignore: true
+      cpuFamily:
+        ignore: true
+      cpuType:
+        ignore: true
+      memorySize:
+        ignore: true
+      memoryType:
+        ignore: true
+      memorySN:
+        ignore: true
+      hardDiskSerialNumber:
+        ignore: true
+      raidControllerName:
+        ignore: true
+      raidControllerType:
+        ignore: true

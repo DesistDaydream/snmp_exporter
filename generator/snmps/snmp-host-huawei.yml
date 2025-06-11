@@ -1,0 +1,2195 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  host_huawei:
+    walk:
+    - 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.3
+    - 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.4
+    - 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.6
+    - 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.11
+    - 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.12
+    - 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.4
+    - 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.6
+    - 1.3.6.1.4.1.2011.2.235.1.1.18
+    - 1.3.6.1.4.1.2011.2.235.1.1.25
+    - 1.3.6.1.4.1.2011.2.235.1.1.26
+    - 1.3.6.1.4.1.2011.2.235.1.1.36
+    - 1.3.6.1.4.1.2011.2.235.1.1.37
+    - 1.3.6.1.4.1.2011.2.235.1.1.39
+    - 1.3.6.1.4.1.2011.2.235.1.1.43
+    - 1.3.6.1.4.1.2011.2.235.1.1.6
+    - 1.3.6.1.4.1.2011.2.235.1.1.8
+    get:
+    - 1.3.6.1.4.1.2011.2.235.1.1.1.1.0
+    - 1.3.6.1.4.1.2011.2.235.1.1.1.12.0
+    - 1.3.6.1.4.1.2011.2.235.1.1.15.1.0
+    - 1.3.6.1.4.1.2011.2.235.1.1.16.1.0
+    metrics:
+    - name: systemHealth
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.1.1
+      type: gauge
+      help: systemHealth information about system present state of health - 1.3.6.1.4.1.2011.2.235.1.1.1.1
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+    - name: systemPowerState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.1.12
+      type: gauge
+      help: System Power Status Get - 1.3.6.1.4.1.2011.2.235.1.1.1.12
+      enum_values:
+        1: normalPowerOff
+        2: powerOn
+        3: forcedSystemReset
+        4: forcedPowerCycle
+        5: forcedPowerOff
+    - name: cpuEntireStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.15.1
+      type: gauge
+      help: Information about all cpu health status. - 1.3.6.1.4.1.2011.2.235.1.1.15.1
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: cpuStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.6
+      type: gauge
+      help: Information about CPU health status. - 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.6
+      indexes:
+      - labelname: cpuIndex
+        type: gauge
+      lookups:
+      - labels:
+        - cpuIndex
+        labelname: cpuFamily
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.3
+        type: DisplayString
+      - labels:
+        - cpuIndex
+        labelname: cpuType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.15.50.1.4
+        type: DisplayString
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: memoryEntireStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.16.1
+      type: gauge
+      help: Information about all memory health status. - 1.3.6.1.4.1.2011.2.235.1.1.16.1
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: memoryStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.6
+      type: gauge
+      help: Information about memory health status. - 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.6
+      indexes:
+      - labelname: memoryDimmIndex
+        type: gauge
+      lookups:
+      - labels:
+        - memoryDimmIndex
+        labelname: memorySize
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.4
+        type: DisplayString
+      - labels:
+        - memoryDimmIndex
+        labelname: memoryType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.11
+        type: DisplayString
+      - labels:
+        - memoryDimmIndex
+        labelname: memorySN
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.16.50.1.12
+        type: DisplayString
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: hardDiskEntireStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.1
+      type: gauge
+      help: Information about all hard disk health status. - 1.3.6.1.4.1.2011.2.235.1.1.18.1
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: hardDiskIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.1
+      type: gauge
+      help: Information about hard disk index. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.1
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskPresence
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.2
+      type: gauge
+      help: Information about hard disk presence. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.2
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: absence
+        2: presence
+        3: unknown
+    - name: hardDiskStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.3
+      type: gauge
+      help: Information about hard disk health. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.3
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: hardDiskLocation
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.4
+      type: DisplayString
+      help: Hard disk physical location. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.4
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskFunction
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.5
+      type: DisplayString
+      help: Hard disk logic function. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.5
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskDevicename
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.6
+      type: DisplayString
+      help: Hard disk devicename. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.6
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskModelNumber
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.8
+      type: DisplayString
+      help: Hard disk model number. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.8
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskManufacturer
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.9
+      type: DisplayString
+      help: Hard disk manufacturer. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.9
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskFwState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.10
+      type: gauge
+      help: Hard disk firmware state - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.10
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: unconfigured-good
+        2: unconfigured-bad
+        3: hot-spare
+        4: offline
+        5: failed
+        6: rebuild
+        7: online
+        8: copyback
+        9: jbod
+        10: unconfigured-shielded
+        11: hot-spare-shielded
+        12: configured-shielded
+        13: foreign
+        14: active
+        15: standby
+        16: sleep
+        17: dst
+        18: smart
+        19: sct
+        255: unknown
+    - name: hardDiskFwVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.11
+      type: DisplayString
+      help: Hard disk firmware version. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.11
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskCapacityInGB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.12
+      type: gauge
+      help: Hard disk capacity (GB). - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.12
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskMediaType
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.13
+      type: gauge
+      help: Hard disk media type. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.13
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: hdd
+        2: ssd
+        3: ssm
+        255: unknown
+    - name: hardDiskInterfaceType
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.14
+      type: gauge
+      help: Hard disk interface type - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.14
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: undefined
+        2: parallel-scsi
+        3: sas
+        4: sata
+        5: fiber-channel
+        6: sata-sas
+        7: pcie
+        255: unknown
+    - name: hardDiskPowerState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.15
+      type: gauge
+      help: Hard disk power state. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.15
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: spun-up
+        2: spun-down
+        3: transition
+        255: unknown
+    - name: hardDiskRebuildProgress
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.16
+      type: gauge
+      help: Hard disk rebuild progress (0 - 100%). - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.16
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        255: unknown
+    - name: hardDiskPatrolReadStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.17
+      type: gauge
+      help: Hard disk patrol read status. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.17
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: stopped
+        2: in-progress
+        255: unknown
+    - name: hardDiskCapableSpeedInMbps
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.18
+      type: gauge
+      help: Hard disk maximum supported speed. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.18
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskNegotiatedSpeedInMbps
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.19
+      type: gauge
+      help: Hard disk negotiated speed. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.19
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskTemperature
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.20
+      type: gauge
+      help: Hard disk temperature (in Celsius). - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.20
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        255: unknown
+    - name: hardDiskSASAddr1
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.21
+      type: DisplayString
+      help: Hard disk SAS address 1. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.21
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskSASAddr2
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.22
+      type: DisplayString
+      help: Hard disk SAS address 2. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.22
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+    - name: hardDiskPrefailState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.23
+      type: gauge
+      help: Hard disk prefail state. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.23
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: "no"
+        2: "yes"
+        255: unknown
+    - name: hardDiskHotSpareState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.24
+      type: gauge
+      help: Hard disk hot spare state - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.24
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: none
+        2: global
+        3: dedicated
+        4: commissioned
+        5: emergency
+        255: unknown
+    - name: hardDiskRemnantWearout
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.25
+      type: gauge
+      help: Hard disk remnant wearout (100% - 0) - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.25
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        255: unknown
+    - name: hardDiskMediaErrCount
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.26
+      type: gauge
+      help: Hard disk media error count. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.26
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskPrefailErrCount
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.27
+      type: gauge
+      help: Hard disk prefail error count. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.27
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskOtherErrCount
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.28
+      type: gauge
+      help: Hard disk other error count. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.28
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskLocationState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.29
+      type: gauge
+      help: Hard disk location state - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.29
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        1: unknown
+        2: "off"
+        3: "on"
+    - name: hardDiskCapacityInMB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.30
+      type: gauge
+      help: Hard disk capacity (MB). - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.30
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: hardDiskPowerOnHours
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.31
+      type: gauge
+      help: Power-On Hours. - 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.31
+      indexes:
+      - labelname: hardDiskIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hardDiskIndex
+        labelname: hardDiskSerialNumber
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.18.50.1.7
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: netCardIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.1
+      type: gauge
+      help: Information about net card index. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.1
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardLocation
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.2
+      type: DisplayString
+      help: Net card physical location. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.2
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardFunction
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.3
+      type: DisplayString
+      help: Net card logic function. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.3
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardDevicename
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.4
+      type: DisplayString
+      help: Net card device name. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.4
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardNICModel
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.5
+      type: DisplayString
+      help: Net card model. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.5
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardNICType
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.6
+      type: gauge
+      help: 'NIC type define as: 8: PCIe card, 11: Mezz card, 13: NIC. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.6'
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+      enum_values:
+        8: pcieCard
+        11: mezzCard
+        13: nic
+    - name: netCardNICName
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.7
+      type: DisplayString
+      help: Net card name. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.7
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardChipModel
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.8
+      type: DisplayString
+      help: Net card chip model. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.8
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardNICManufacturer
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.9
+      type: DisplayString
+      help: Net card manufacturer. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.9
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardChipManufacturer
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.10
+      type: DisplayString
+      help: Net card chip manufacturer. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.10
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardDriverName
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.11
+      type: DisplayString
+      help: Net card driver name. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.11
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardDriverVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.12
+      type: DisplayString
+      help: Net card driver version. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.12
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardFirmwareVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.13
+      type: DisplayString
+      help: Net card firmware version. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.13
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardPCBVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.14
+      type: DisplayString
+      help: Net card PCB version. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.14
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: netCardBoardId
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.15
+      type: gauge
+      help: Net card board ID. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.15
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+      enum_values:
+        -1: unknown
+    - name: netCardResourceOwnership
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.16
+      type: gauge
+      help: Net card resource ownership - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.16
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+      enum_values:
+        254: pch
+        255: pcieSwitch
+    - name: netCardRootBDF
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.17
+      type: DisplayString
+      help: Net card root port BDF. - 1.3.6.1.4.1.2011.2.235.1.1.25.50.1.17
+      indexes:
+      - labelname: netCardIndex
+        type: gauge
+    - name: temperatureEntireStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.1
+      type: gauge
+      help: Information about all temperature sensor health status. - 1.3.6.1.4.1.2011.2.235.1.1.26.1
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: unknow
+    - name: temperatureIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.1
+      type: gauge
+      help: Information about temperature index. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.1
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureObject
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.2
+      type: DisplayString
+      help: Information about temperature object. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.2
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureReading
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.3
+      type: gauge
+      help: Information about temperature reading,the unit is 1/10 Celsius degree
+        - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.3
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureUpperNonRecoverable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.4
+      type: gauge
+      help: Information about temperature upper nonrecoverable threshold,the unit
+        is 1/10 Celsius degree,65535 represent NA. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.4
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureUpperCritical
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.5
+      type: gauge
+      help: Information about temperature upper critical threshold,the unit is 1/10
+        Celsius degree,65535 represent NA. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.5
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureUpperMinor
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.6
+      type: gauge
+      help: Information about temperature upper minor threshold,the unit is 1/10 Celsius
+        degree,65535 represent NA. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.6
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureLowerNonRecoverable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.7
+      type: gauge
+      help: Information about temperature lower nonrecoverable threshold,the unit
+        is 1/10 Celsius degree,65535 represent NA. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.7
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureLowerCritical
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.8
+      type: gauge
+      help: Information about temperature lower critical threshold,the unit is 1/10
+        Celsius degree,65535 represent NA. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.8
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: temperatureLowerMinor
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.9
+      type: gauge
+      help: Information about temperature lower minor threshold,the unit is 1/10 Celsius
+        degree,65535 represent NA. - 1.3.6.1.4.1.2011.2.235.1.1.26.50.1.9
+      indexes:
+      - labelname: temperatureIndex
+        type: gauge
+    - name: raidControllerIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.1
+      type: gauge
+      help: Information about RAID controller index. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.1
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerComponentName
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.4
+      type: DisplayString
+      help: Information about RAID controller component name. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.4
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerSupportOOBManagement
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.5
+      type: gauge
+      help: Information about RAID controller if support OOB management - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.5
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: "no"
+        2: "yes"
+    - name: raidControllerMode
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.6
+      type: gauge
+      help: Information about RAID controller mode - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.6
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: none-raid
+        2: raid
+        255: unknown
+    - name: raidControllerHealthStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.7
+      type: gauge
+      help: Information about RAID controller health status - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.7
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        0: ok
+        65535: unknown
+    - name: raidControllerFwVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.8
+      type: DisplayString
+      help: Information about RAID controller firmware version. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.8
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerNVDataVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.9
+      type: DisplayString
+      help: Information about RAID controller NVData version. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.9
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerMemorySizeInMB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.10
+      type: gauge
+      help: Information about RAID controller memory size (MB). - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.10
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        65535: unknown
+    - name: raidControllerDeviceInterface
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.11
+      type: gauge
+      help: Information about RAID controller device interface type - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.11
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: spi
+        2: sas-3G
+        3: sata-1-5G
+        4: sata-3G
+        5: sas-6G
+        6: sas-12G
+        255: unknown
+    - name: raidControllerSASAddress
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.12
+      type: DisplayString
+      help: Information about RAID controller SAS address. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.12
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerCachePinned
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.13
+      type: gauge
+      help: Information about RAID controller if cache is pinned - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.13
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: "no"
+        2: "yes"
+        255: unknown
+    - name: raidControllerMaintainPDFailHistory
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.14
+      type: gauge
+      help: Information about RAID controller if maintain PD fail history - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.14
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: "no"
+        2: "yes"
+        255: unknown
+    - name: raidControllerDDREccCount
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.15
+      type: gauge
+      help: Information about RAID controller DDR ECC count. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.15
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        65535: unknown
+    - name: raidControllerBBUPresence
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.16
+      type: gauge
+      help: Information about RAID controller's BBU presence - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.16
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: absent
+        2: present
+        255: unknown
+    - name: raidControllerBBUType
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.17
+      type: DisplayString
+      help: Information about RAID controller' BBU type. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.17
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerBBUHealthStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.18
+      type: gauge
+      help: Information about RAID controller's BBU health status - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.18
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        0: ok
+    - name: raidControllerMinStripSupportInBytes
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.19
+      type: gauge
+      help: Information about the minimum strip size that RAID controller support.
+        - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.19
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: raidControllerMaxStripSupportInBytes
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.20
+      type: gauge
+      help: Information about the maximum strip size that RAID controller support.
+        - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.20
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        -1: unknown
+    - name: raidControllerCopybackEnable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.21
+      type: gauge
+      help: Information about the copyback state of RAID controller - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.21
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: unknown
+        2: disabled
+        3: enabled
+    - name: raidControllerSMARTerCopybackEnable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.22
+      type: gauge
+      help: Information about the copyback state on SMART error of RAID controller
+        - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.22
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: unknown
+        2: disabled
+        3: enabled
+    - name: raidControllerJBODEnable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.23
+      type: gauge
+      help: Information about the JBOD state of RAID controller - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.23
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+      enum_values:
+        1: unknown
+        2: disabled
+        3: enabled
+    - name: raidControllerRestoreSettings
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.24
+      type: gauge
+      help: Restore RAID controller settings (write only) - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.24
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerCreateLD
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.25
+      type: DisplayString
+      help: Create new logical drive on this RAID controller - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.25
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerAddLD
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.26
+      type: DisplayString
+      help: Add logical drive on array on this RAID controller - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.26
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerDriverName
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.27
+      type: DisplayString
+      help: Information about RAID controller driver name. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.27
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerDriverVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.28
+      type: DisplayString
+      help: Information about RAID controller driver version - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.28
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: raidControllerSupportedRAIDLevels
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.29
+      type: DisplayString
+      help: Information about RAID controller supported levels. - 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.29
+      indexes:
+      - labelname: raidControllerIndex
+        type: gauge
+      lookups:
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerName
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.2
+        type: DisplayString
+      - labels:
+        - raidControllerIndex
+        labelname: raidControllerType
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.36.50.1.3
+        type: DisplayString
+    - name: logicalDriveRAIDControllerIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.1
+      type: gauge
+      help: Information about RAID controller index to which this logical drive belongs.
+        - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.1
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.2
+      type: gauge
+      help: Information about logical drive index in current RAID controller. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.2
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveRAIDLevel
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.3
+      type: DisplayString
+      help: Information about logical drive RAID level. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.3
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.4
+      type: gauge
+      help: Information about logical drive state - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.4
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: offline
+        2: partial-degraded
+        3: degraded
+        4: optimal
+        255: unknown
+    - name: logicalDriveDefaultReadPolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.5
+      type: gauge
+      help: Information about logical drive default read policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.5
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: no-read-ahead
+        2: read-ahead
+        255: unknown
+    - name: logicalDriveDefaultWritePolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.6
+      type: gauge
+      help: Information about logical drive default write policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.6
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: write-through
+        2: write-back-with-bbu
+        3: write-back
+        255: unknown
+    - name: logicalDriveDefaultIOPolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.7
+      type: gauge
+      help: Information about logical drive default IO policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.7
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: cached-IO
+        2: direct-IO
+        255: unknown
+    - name: logicalDriveCurrentReadPolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.8
+      type: gauge
+      help: Information about logical drive current read policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.8
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: no-read-ahead
+        2: read-ahead
+        255: unknown
+    - name: logicalDriveCurrentWritePolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.9
+      type: gauge
+      help: Information about logical drive current write policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.9
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: write-through
+        2: write-back-with-bbu
+        3: write-back
+        255: unknown
+    - name: logicalDriveCurrentIOPolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.10
+      type: gauge
+      help: Information about logical drive current IO policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.10
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: cached-IO
+        2: direct-IO
+        255: unknown
+    - name: logicalDriveSpanDepth
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.11
+      type: gauge
+      help: Information about logical drive span depth. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.11
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        255: unknown
+    - name: logicalDriveNumDrivePerSpan
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.12
+      type: gauge
+      help: Information about logical drive number of drives per span. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.12
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        255: unknown
+    - name: logicalDriveStripeSizeInBytes
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.13
+      type: gauge
+      help: Information about logical drive stripe size in bytes. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.13
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        -1: unknown
+    - name: logicalDriveStripeSizeInMB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.14
+      type: gauge
+      help: Information about logical drive stripe size in mega-bytes. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.14
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        -1: unknown
+    - name: logicalDriveSizeInMB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.15
+      type: gauge
+      help: Information about logical drive size (MB). - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.15
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        -1: unknown
+    - name: logicalDriveDiskCachePolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.16
+      type: gauge
+      help: Information about logical drive disk cache policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.16
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: disk-default
+        2: enabled
+        3: disabled
+        255: unknown
+    - name: logicalDriveConsistencyCheckStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.17
+      type: gauge
+      help: Information about logical drive consistency check status - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.17
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: stopped
+        2: in-progress
+        255: unknown
+    - name: logicalDriveBootable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.18
+      type: gauge
+      help: Information about logical drive if it is bootable - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.18
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: "no"
+        2: "yes"
+        255: unknown
+    - name: logicalDriveName
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.19
+      type: DisplayString
+      help: Information about logical drive name - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.19
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveAccessPolicy
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.20
+      type: gauge
+      help: Information about logical drive access policy - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.20
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: unknown
+        4: blocked
+        5: hidden
+    - name: logicalDriveInitState
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.21
+      type: gauge
+      help: Information about logical drive init state - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.21
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: unknown
+        2: no-init
+        3: quick-init
+        4: full-init
+    - name: logicalDriveBGIEnable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.22
+      type: gauge
+      help: Information about logical drive BGI state - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.22
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: unknown
+        2: disabled
+        3: enabled
+    - name: logicalDriveIsSSCD
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.23
+      type: gauge
+      help: Information about logical drive if it is used for secondary cache - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.23
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: unknown
+        2: "no"
+        3: "yes"
+    - name: logicalDriveSSCDCachingEnable
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.24
+      type: gauge
+      help: Information about logical drive SSCD caching state if it is not used for
+        secondary cache and it's participated physical drives are not SSD - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.24
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+      enum_values:
+        1: unknown
+        2: disabled
+        3: enabled
+    - name: logicalDriveAssociatedLDs
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.25
+      type: DisplayString
+      help: Information about logical drive associated logical drives IDs seperated
+        by commas if it is used for secondary cache. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.25
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveDedicatedSparePD
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.26
+      type: DisplayString
+      help: Information about logical drive dedicated hot spare physical drives IDs
+        seperated by commas. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.26
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveDelete
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.27
+      type: gauge
+      help: Delete logical drive (write only) - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.27
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: logicalDriveOSLetter
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.28
+      type: DisplayString
+      help: Information about logical drive OS letter. - 1.3.6.1.4.1.2011.2.235.1.1.37.50.1.28
+      indexes:
+      - labelname: logicalDriveRAIDControllerIndex
+        type: gauge
+      - labelname: logicalDriveIndex
+        type: gauge
+    - name: diskArrayRAIDControllerIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.1
+      type: gauge
+      help: Information about RAID controller index to which this disk array belongs.
+        - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.1
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+    - name: diskArrayIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.2
+      type: gauge
+      help: Information about disk array index in current RAID controller. - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.2
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+    - name: diskArrayUsedSpaceInMB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.3
+      type: gauge
+      help: Information about the used space in MB of disk array. - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.3
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+      enum_values:
+        -1: unknown
+    - name: diskArrayFreeSpaceInMB
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.4
+      type: gauge
+      help: Information about the free space in MB of disk array. - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.4
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+      enum_values:
+        -1: unknown
+    - name: diskArrayLDCount
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.5
+      type: gauge
+      help: Information about logical drive count in the disk array. - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.5
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+      enum_values:
+        255: unknown
+    - name: diskArrayLDId
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.6
+      type: DisplayString
+      help: Information about logical drive IDs in the disk array, seperated by commas.
+        - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.6
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+    - name: diskArrayPDCount
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.7
+      type: gauge
+      help: Information about physical drive count in the disk array. - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.7
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+      enum_values:
+        255: unknown
+    - name: diskArrayPDId
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.8
+      type: DisplayString
+      help: Information about physical drive IDs in the disk array, seperated by commas.
+        - 1.3.6.1.4.1.2011.2.235.1.1.39.50.1.8
+      indexes:
+      - labelname: diskArrayRAIDControllerIndex
+        type: gauge
+      - labelname: diskArrayIndex
+        type: gauge
+    - name: businessPortIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.1
+      type: gauge
+      help: Information about business port logical resource index within all net
+        card. - 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.1
+      indexes:
+      - labelname: businessPortIndex
+        type: gauge
+    - name: businessPortSilkNum
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.2
+      type: gauge
+      help: Information about business port silk number within a net card. - 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.2
+      indexes:
+      - labelname: businessPortIndex
+        type: gauge
+    - name: businessPortLocation
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.3
+      type: DisplayString
+      help: Information about businessport belongs to which net card. - 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.3
+      indexes:
+      - labelname: businessPortIndex
+        type: gauge
+    - name: businessPortLinkStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.4
+      type: DisplayString
+      help: Business port link status. - 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.4
+      indexes:
+      - labelname: businessPortIndex
+        type: gauge
+    - name: businessPortMacAddr
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.5
+      type: DisplayString
+      help: Business port MAC address. - 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.5
+      indexes:
+      - labelname: businessPortIndex
+        type: gauge
+    - name: businessPortBDF
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.6
+      type: DisplayString
+      help: Business port BDF. - 1.3.6.1.4.1.2011.2.235.1.1.43.50.1.6
+      indexes:
+      - labelname: businessPortIndex
+        type: gauge
+    - name: powerSupplyEntireStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.1
+      type: gauge
+      help: Information about all power supply health status. - 1.3.6.1.4.1.2011.2.235.1.1.6.1
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: settedPowerSupplyEntireMode
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.2
+      type: gauge
+      help: Setted power supply entire mode - 1.3.6.1.4.1.2011.2.235.1.1.6.2
+      enum_values:
+        1: loadBalance
+        2: activeStandby
+        3: unsupport
+    - name: actualPowerSupplyEntireMode
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.3
+      type: gauge
+      help: Actual power supply entire mode. - 1.3.6.1.4.1.2011.2.235.1.1.6.3
+      enum_values:
+        1: loadBalance
+        2: activeStandby
+        3: unknown
+    - name: settedActivePowerSupply
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.4
+      type: gauge
+      help: Setted active power supply - 1.3.6.1.4.1.2011.2.235.1.1.6.4
+    - name: powerSupplyIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.1
+      type: gauge
+      help: Power supply index. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.1
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyInputMode
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.3
+      type: gauge
+      help: Information about power input. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.3
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+      enum_values:
+        1: acInput
+        2: dcInput
+        3: acInputDcInput
+    - name: powerSupplyModel
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.4
+      type: DisplayString
+      help: Information about power Model. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.4
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyVersion
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.5
+      type: DisplayString
+      help: Information about power version. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.5
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyPowerRating
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.6
+      type: gauge
+      help: Information about power rating. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.6
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.7
+      type: gauge
+      help: Information about power status. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.7
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: powerSupplyInputPower
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.8
+      type: gauge
+      help: Information about input power - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.8
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyPresence
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.9
+      type: gauge
+      help: Information about power presence status. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.9
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+      enum_values:
+        1: absence
+        2: presence
+        3: unknown
+    - name: powerSupplyProtocol
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.10
+      type: gauge
+      help: Information about power protocol. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.10
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+      enum_values:
+        1: psmi
+        2: pmbus
+    - name: powerSupplyLocation
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.11
+      type: DisplayString
+      help: Power supply physical location. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.11
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyFunction
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.12
+      type: DisplayString
+      help: Power supply logic function. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.12
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: powerSupplyWorkMode
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.14
+      type: gauge
+      help: power supply actual work mode. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.14
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+      enum_values:
+        1: active
+        2: backup
+        3: unknown
+    - name: powerSupplySN
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.15
+      type: DisplayString
+      help: Power supply SN. - 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.15
+      indexes:
+      - labelname: powerSupplyIndex
+        type: gauge
+      lookups:
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplymanufacture
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.2
+        type: DisplayString
+      - labels:
+        - powerSupplyIndex
+        labelname: powerSupplyDevicename
+        oid: 1.3.6.1.4.1.2011.2.235.1.1.6.50.1.13
+        type: DisplayString
+    - name: fanMode
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.1
+      type: DisplayString
+      help: Fan control mode manual or auto - 1.3.6.1.4.1.2011.2.235.1.1.8.1
+    - name: fanLevel
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.2
+      type: gauge
+      help: Percent of fan speed - 1.3.6.1.4.1.2011.2.235.1.1.8.2
+    - name: fanEntireStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.3
+      type: gauge
+      help: Information about all fan health status. - 1.3.6.1.4.1.2011.2.235.1.1.8.3
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: fanIndex
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.1
+      type: gauge
+      help: Fan index. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.1
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanSpeed
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.2
+      type: gauge
+      help: Information about fan speed, Unit is RPM. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.2
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanPresence
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.3
+      type: gauge
+      help: Information about fan presence. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.3
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        1: absence
+        2: presence
+        3: unknown
+    - name: fanStatus
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.4
+      type: gauge
+      help: Information about fan health status. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.4
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+      enum_values:
+        1: ok
+        2: minor
+        3: major
+        4: critical
+        5: absence
+        6: unknown
+    - name: fanLocation
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.5
+      type: DisplayString
+      help: Fan physical location. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.5
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanFunction
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.6
+      type: DisplayString
+      help: Fan logic function. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.6
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanDevicename
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.7
+      type: DisplayString
+      help: Fan devicename. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.7
+      indexes:
+      - labelname: fanIndex
+        type: gauge
+    - name: fanSpeedRatio
+      oid: 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.8
+      type: gauge
+      help: Fan speed ratio. - 1.3.6.1.4.1.2011.2.235.1.1.8.50.1.8
+      indexes:
+      - labelname: fanIndex
+        type: gauge

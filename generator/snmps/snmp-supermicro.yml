@@ -1,0 +1,1080 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  public_v2:
+    community: public
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  supermicro_mib:
+    walk:
+    - 1.3.6.1.4.1.10876.100.1
+    metrics:
+    - name: sd5Idx
+      oid: 1.3.6.1.4.1.10876.100.1.1.1.1
+      type: gauge
+      help: The unique value identifies this sd5. - 1.3.6.1.4.1.10876.100.1.1.1.1
+      indexes:
+      - labelname: sd5Idx
+        type: gauge
+    - name: sd5Version
+      oid: 1.3.6.1.4.1.10876.100.1.1.1.2
+      type: DisplayString
+      help: The version of the sd5. - 1.3.6.1.4.1.10876.100.1.1.1.2
+      indexes:
+      - labelname: sd5Idx
+        type: gauge
+    - name: sd5MIBVersion
+      oid: 1.3.6.1.4.1.10876.100.1.1.1.3
+      type: DisplayString
+      help: The MIB version of the sd5. - 1.3.6.1.4.1.10876.100.1.1.1.3
+      indexes:
+      - labelname: sd5Idx
+        type: gauge
+    - name: cpuIndex
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.1
+      type: DisplayString
+      help: The unique value which identifies this processor. - 1.3.6.1.4.1.10876.100.1.2.1.1
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuName
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.2
+      type: DisplayString
+      help: The name of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.2
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuDescription
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.3
+      type: DisplayString
+      help: The description of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.3
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuManufacturer
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.4
+      type: DisplayString
+      help: The manufacturer of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.4
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuDeviceStatus
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.5
+      type: gauge
+      help: The status of the processor - 1.3.6.1.4.1.10876.100.1.2.1.5
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuMaxSpeed
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.6
+      type: DisplayString
+      help: The maximum speed (MHz) of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.6
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuCurrentSpeed
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.7
+      type: DisplayString
+      help: The current speed (MHz) of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.7
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuLoadingPercentage
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.9
+      type: DisplayString
+      help: The loading percentage of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.9
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuCoreEnabled
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.10
+      type: gauge
+      help: The core enabled count of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.10
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuCoreCount
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.11
+      type: gauge
+      help: The core count of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.11
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuThreadCount
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.12
+      type: gauge
+      help: The thread count of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.12
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuSocketDesignation
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.14
+      type: DisplayString
+      help: The socket designation of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.14
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuDeviceVersion
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.18
+      type: DisplayString
+      help: The device version of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.18
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuDeviceID
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.20
+      type: DisplayString
+      help: The device ID of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.20
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: cpuID
+      oid: 1.3.6.1.4.1.10876.100.1.2.1.21
+      type: DisplayString
+      help: The ID of the processor. - 1.3.6.1.4.1.10876.100.1.2.1.21
+      indexes:
+      - labelname: cpuIndex
+        type: DisplayString
+    - name: memTag
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.1
+      type: DisplayString
+      help: The tag of the physical memory - 1.3.6.1.4.1.10876.100.1.3.1.1
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memDescription
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.2
+      type: DisplayString
+      help: The description of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.2
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memDeviceStatus
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.3
+      type: gauge
+      help: Indicates the status of the physical memory - 1.3.6.1.4.1.10876.100.1.3.1.3
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memLabeledBank
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.4
+      type: DisplayString
+      help: The labeled bank of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.4
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memDeviceLocator
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.5
+      type: DisplayString
+      help: The device locator of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.5
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memModel
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.7
+      type: DisplayString
+      help: The model name of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.7
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memManufacturer
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.8
+      type: DisplayString
+      help: The manufacturer's name of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.8
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memPartNumber
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.9
+      type: DisplayString
+      help: The part number of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.9
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memSerialNumber
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.10
+      type: DisplayString
+      help: The serial number of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.10
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memCapacity
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.11
+      type: gauge
+      help: The capacity of the physical memory - 1.3.6.1.4.1.10876.100.1.3.1.11
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memDataWidth
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.12
+      type: DisplayString
+      help: The data width of the physical memory - 1.3.6.1.4.1.10876.100.1.3.1.12
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memTotalWidth
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.13
+      type: DisplayString
+      help: The total width of the physical memory - 1.3.6.1.4.1.10876.100.1.3.1.13
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memErrorCount
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.15
+      type: gauge
+      help: The error count of the physical memory - 1.3.6.1.4.1.10876.100.1.3.1.15
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memECCErrorCount
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.16
+      type: gauge
+      help: The ECC error count of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.16
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: memUECCErrorCount
+      oid: 1.3.6.1.4.1.10876.100.1.3.1.17
+      type: gauge
+      help: The UECC error count of the physical memory. - 1.3.6.1.4.1.10876.100.1.3.1.17
+      indexes:
+      - labelname: memTag
+        type: DisplayString
+    - name: diskSerialNumber
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.1
+      type: DisplayString
+      help: The serial number of the disk. - 1.3.6.1.4.1.10876.100.1.4.1.1
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskName
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.2
+      type: DisplayString
+      help: The name of the disk - 1.3.6.1.4.1.10876.100.1.4.1.2
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskVendor
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.3
+      type: DisplayString
+      help: The vendor name of the disk. - 1.3.6.1.4.1.10876.100.1.4.1.3
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskSmartStatus
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.4
+      type: gauge
+      help: Indicates the status of the disk - 1.3.6.1.4.1.10876.100.1.4.1.4
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskModel
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.5
+      type: DisplayString
+      help: The model of the disk. - 1.3.6.1.4.1.10876.100.1.4.1.5
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskSize
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.6
+      type: gauge
+      help: The size of the disk - 1.3.6.1.4.1.10876.100.1.4.1.6
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskMediaType
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.8
+      type: DisplayString
+      help: The media type of the disk includes External hard disk media Removable
+        media other than floppy Fixed hard disk media and Unknown format - 1.3.6.1.4.1.10876.100.1.4.1.8
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskInterfaceType
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.9
+      type: DisplayString
+      help: The disk interface types includes IDE, HDC, USB, and SCSI. - 1.3.6.1.4.1.10876.100.1.4.1.9
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskController
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.10
+      type: DisplayString
+      help: The controller name of the disk. - 1.3.6.1.4.1.10876.100.1.4.1.10
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: diskSlotID
+      oid: 1.3.6.1.4.1.10876.100.1.4.1.11
+      type: DisplayString
+      help: The Slot ID of the disk. - 1.3.6.1.4.1.10876.100.1.4.1.11
+      indexes:
+      - labelname: diskName
+        type: DisplayString
+    - name: sysBIOSIndex
+      oid: 1.3.6.1.4.1.10876.100.1.5.1.1
+      type: gauge
+      help: The unique value identifies this BIOS. - 1.3.6.1.4.1.10876.100.1.5.1.1
+      indexes:
+      - labelname: sysBIOSIndex
+        type: gauge
+    - name: sysBIOSReleaseDate
+      oid: 1.3.6.1.4.1.10876.100.1.5.1.7
+      type: DisplayString
+      help: The release date of BIOS. - 1.3.6.1.4.1.10876.100.1.5.1.7
+      indexes:
+      - labelname: sysBIOSIndex
+        type: gauge
+    - name: sysBIOSVersion
+      oid: 1.3.6.1.4.1.10876.100.1.5.1.8
+      type: DisplayString
+      help: The version of BIOS. - 1.3.6.1.4.1.10876.100.1.5.1.8
+      indexes:
+      - labelname: sysBIOSIndex
+        type: gauge
+    - name: sysBIOSManufacturer
+      oid: 1.3.6.1.4.1.10876.100.1.5.1.11
+      type: DisplayString
+      help: The manufacturer's name of BIOS. - 1.3.6.1.4.1.10876.100.1.5.1.11
+      indexes:
+      - labelname: sysBIOSIndex
+        type: gauge
+    - name: mbIndex
+      oid: 1.3.6.1.4.1.10876.100.1.6.1.1
+      type: gauge
+      help: The unique value identifies this baseboard. - 1.3.6.1.4.1.10876.100.1.6.1.1
+      indexes:
+      - labelname: mbIndex
+        type: gauge
+    - name: mbManufacturer
+      oid: 1.3.6.1.4.1.10876.100.1.6.1.10
+      type: DisplayString
+      help: The manufacturer's name of the baseboard. - 1.3.6.1.4.1.10876.100.1.6.1.10
+      indexes:
+      - labelname: mbIndex
+        type: gauge
+    - name: mbProductName
+      oid: 1.3.6.1.4.1.10876.100.1.6.1.11
+      type: DisplayString
+      help: The product name of the baseboard. - 1.3.6.1.4.1.10876.100.1.6.1.11
+      indexes:
+      - labelname: mbIndex
+        type: gauge
+    - name: mbVersionName
+      oid: 1.3.6.1.4.1.10876.100.1.6.1.12
+      type: DisplayString
+      help: The version of the baseboard. - 1.3.6.1.4.1.10876.100.1.6.1.12
+      indexes:
+      - labelname: mbIndex
+        type: gauge
+    - name: mbAssetTag
+      oid: 1.3.6.1.4.1.10876.100.1.6.1.15
+      type: DisplayString
+      help: The asset tag of the baseboard. - 1.3.6.1.4.1.10876.100.1.6.1.15
+      indexes:
+      - labelname: mbIndex
+        type: gauge
+    - name: mbSerialNumber
+      oid: 1.3.6.1.4.1.10876.100.1.6.1.16
+      type: DisplayString
+      help: The serial number of the baseboard. - 1.3.6.1.4.1.10876.100.1.6.1.16
+      indexes:
+      - labelname: mbIndex
+        type: gauge
+    - name: osIndex
+      oid: 1.3.6.1.4.1.10876.100.1.7.1.1
+      type: gauge
+      help: The unique value identifies this Operation System. - 1.3.6.1.4.1.10876.100.1.7.1.1
+      indexes:
+      - labelname: osIndex
+        type: gauge
+    - name: osName
+      oid: 1.3.6.1.4.1.10876.100.1.7.1.6
+      type: DisplayString
+      help: The name of the Operation System. - 1.3.6.1.4.1.10876.100.1.7.1.6
+      indexes:
+      - labelname: osIndex
+        type: gauge
+    - name: osVersion
+      oid: 1.3.6.1.4.1.10876.100.1.7.1.7
+      type: DisplayString
+      help: The version of the operation system. - 1.3.6.1.4.1.10876.100.1.7.1.7
+      indexes:
+      - labelname: osIndex
+        type: gauge
+    - name: osManufacturer
+      oid: 1.3.6.1.4.1.10876.100.1.7.1.8
+      type: DisplayString
+      help: The manufacturer's name of the Operation System. - 1.3.6.1.4.1.10876.100.1.7.1.8
+      indexes:
+      - labelname: osIndex
+        type: gauge
+    - name: osSerialNumber
+      oid: 1.3.6.1.4.1.10876.100.1.7.1.9
+      type: DisplayString
+      help: The serial number of the operation system. - 1.3.6.1.4.1.10876.100.1.7.1.9
+      indexes:
+      - labelname: osIndex
+        type: gauge
+    - name: osCSDVersion
+      oid: 1.3.6.1.4.1.10876.100.1.7.1.10
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.7.1.10
+      indexes:
+      - labelname: osIndex
+        type: gauge
+    - name: ceccLogDatetime
+      oid: 1.3.6.1.4.1.10876.100.1.8.1.1.1
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.1.1.1
+      indexes:
+      - labelname: ceccLogIndex
+        type: gauge
+    - name: ceccLogInfo
+      oid: 1.3.6.1.4.1.10876.100.1.8.1.1.2
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.1.1.2
+      indexes:
+      - labelname: ceccLogIndex
+        type: gauge
+    - name: ceccLogIndex
+      oid: 1.3.6.1.4.1.10876.100.1.8.1.1.10
+      type: gauge
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.1.1.10
+      indexes:
+      - labelname: ceccLogIndex
+        type: gauge
+    - name: ueccLogDatetime
+      oid: 1.3.6.1.4.1.10876.100.1.8.2.1.1
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.2.1.1
+      indexes:
+      - labelname: ceccLogIndex
+        type: gauge
+    - name: ueccLogInfo
+      oid: 1.3.6.1.4.1.10876.100.1.8.2.1.2
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.2.1.2
+      indexes:
+      - labelname: ceccLogIndex
+        type: gauge
+    - name: ueccLogIndex
+      oid: 1.3.6.1.4.1.10876.100.1.8.2.1.10
+      type: gauge
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.2.1.10
+      indexes:
+      - labelname: ceccLogIndex
+        type: gauge
+    - name: postLogDatetime
+      oid: 1.3.6.1.4.1.10876.100.1.8.8.1.1
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.8.1.1
+      indexes:
+      - labelname: postLogIndex
+        type: gauge
+    - name: postLogInfo
+      oid: 1.3.6.1.4.1.10876.100.1.8.8.1.2
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.8.1.2
+      indexes:
+      - labelname: postLogIndex
+        type: gauge
+    - name: postLogIndex
+      oid: 1.3.6.1.4.1.10876.100.1.8.8.1.10
+      type: gauge
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.8.1.10
+      indexes:
+      - labelname: postLogIndex
+        type: gauge
+    - name: cpuLogDatetime
+      oid: 1.3.6.1.4.1.10876.100.1.8.11.1.1
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.11.1.1
+      indexes:
+      - labelname: cpuLogIndex
+        type: gauge
+    - name: cpuLogInfo
+      oid: 1.3.6.1.4.1.10876.100.1.8.11.1.2
+      type: DisplayString
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.11.1.2
+      indexes:
+      - labelname: cpuLogIndex
+        type: gauge
+    - name: cpuLogIndex
+      oid: 1.3.6.1.4.1.10876.100.1.8.11.1.10
+      type: gauge
+      help: The CSD version of the operation system. - 1.3.6.1.4.1.10876.100.1.8.11.1.10
+      indexes:
+      - labelname: cpuLogIndex
+        type: gauge
+    - name: raidAdapterIndex
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.1
+      type: gauge
+      help: Raid controller index - 1.3.6.1.4.1.10876.100.1.9.1.1
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterGroup
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.2
+      type: DisplayString
+      help: The group of the raid controller - 1.3.6.1.4.1.10876.100.1.9.1.2
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterId
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.3
+      type: DisplayString
+      help: The id of the raid controller - 1.3.6.1.4.1.10876.100.1.9.1.3
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterProductName
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.4
+      type: DisplayString
+      help: The product name of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.4
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterSerialNumber
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.5
+      type: DisplayString
+      help: The serial number of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.5
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterFWPackageBuild
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.6
+      type: DisplayString
+      help: The build number of the firmware package of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.6
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterFWVersion
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.7
+      type: DisplayString
+      help: The firmware version of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.7
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterBIOSVersion
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.8
+      type: DisplayString
+      help: The bios version of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.8
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterVendorId
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.9
+      type: DisplayString
+      help: The PCI vendor id of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.9
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterDeviceId
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.10
+      type: DisplayString
+      help: The PCI device id of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.10
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterSubVendorId
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.11
+      type: DisplayString
+      help: The PCI sub-vendor id of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.11
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterSubDeviceId
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.12
+      type: DisplayString
+      help: The PCI sub-device id of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.12
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidIsBBUAbsent
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.13
+      type: DisplayString
+      help: 'Is the BBU absent or present? Values: Absent, Present. - 1.3.6.1.4.1.10876.100.1.9.1.13'
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidIsBBUAbsentIgnored
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.14
+      type: DisplayString
+      help: 'Does the raid controller ignore the absent BBU? Values: YES, NO - 1.3.6.1.4.1.10876.100.1.9.1.14'
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterAllinoneStatus
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.15
+      type: gauge
+      help: Indicates the status of the raid controller - 1.3.6.1.4.1.10876.100.1.9.1.15
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidAdapterAllinoneMsg
+      oid: 1.3.6.1.4.1.10876.100.1.9.1.16
+      type: DisplayString
+      help: The status message of the raid controller. - 1.3.6.1.4.1.10876.100.1.9.1.16
+      indexes:
+      - labelname: raidAdapterIndex
+        type: gauge
+    - name: raidBBUIndex
+      oid: 1.3.6.1.4.1.10876.100.1.10.1.1
+      type: gauge
+      help: Raid BBU index - 1.3.6.1.4.1.10876.100.1.10.1.1
+      indexes:
+      - labelname: raidBBUIndex
+        type: gauge
+    - name: raidAdapterGroup_BBU
+      oid: 1.3.6.1.4.1.10876.100.1.10.1.2
+      type: DisplayString
+      help: The group of the raid controller - 1.3.6.1.4.1.10876.100.1.10.1.2
+      indexes:
+      - labelname: raidBBUIndex
+        type: gauge
+    - name: raidAdapterId_BBU
+      oid: 1.3.6.1.4.1.10876.100.1.10.1.3
+      type: DisplayString
+      help: The id of the raid controller - 1.3.6.1.4.1.10876.100.1.10.1.3
+      indexes:
+      - labelname: raidBBUIndex
+        type: gauge
+    - name: raidBBUStatus
+      oid: 1.3.6.1.4.1.10876.100.1.10.1.8
+      type: DisplayString
+      help: Indicates the status of the properties of the BBU - 1.3.6.1.4.1.10876.100.1.10.1.8
+      indexes:
+      - labelname: raidBBUIndex
+        type: gauge
+    - name: raidBBUAllinoneStatus
+      oid: 1.3.6.1.4.1.10876.100.1.10.1.9
+      type: gauge
+      help: Indicates the status of the BBU - 1.3.6.1.4.1.10876.100.1.10.1.9
+      indexes:
+      - labelname: raidBBUIndex
+        type: gauge
+    - name: raidBBUAllinoneMsg
+      oid: 1.3.6.1.4.1.10876.100.1.10.1.10
+      type: DisplayString
+      help: The status message of the BBU. - 1.3.6.1.4.1.10876.100.1.10.1.10
+      indexes:
+      - labelname: raidBBUIndex
+        type: gauge
+    - name: raidVDIndex
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.1
+      type: gauge
+      help: Raid virtual drive index - 1.3.6.1.4.1.10876.100.1.11.1.1
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidAdapterGroup_VD
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.2
+      type: DisplayString
+      help: The group of the raid controller - 1.3.6.1.4.1.10876.100.1.11.1.2
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidAdapterId_VD
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.3
+      type: DisplayString
+      help: The id of the raid controller - 1.3.6.1.4.1.10876.100.1.11.1.3
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidDiskGroupId
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.4
+      type: DisplayString
+      help: The disk group id of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.4
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDId
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.5
+      type: DisplayString
+      help: The id of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.5
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDTargetId
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.6
+      type: DisplayString
+      help: The target id of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.6
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDName
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.7
+      type: DisplayString
+      help: The name of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.7
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDRaidLevel
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.8
+      type: DisplayString
+      help: The raid level of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.8
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDSize
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.9
+      type: DisplayString
+      help: The size of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.9
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDMirrorDataSize
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.10
+      type: DisplayString
+      help: The mirror data size of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.10
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDStripSize
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.11
+      type: DisplayString
+      help: The stripe size of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.11
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDNumDrives
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.12
+      type: DisplayString
+      help: The number of physical drives of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.12
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDSpanDepth
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.13
+      type: DisplayString
+      help: The span depth of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.13
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDDefaultCachePolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.14
+      type: DisplayString
+      help: The default cache policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.14
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDCurrentCachePolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.15
+      type: DisplayString
+      help: The current cache policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.15
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDDefaultAccessPolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.16
+      type: DisplayString
+      help: The default access policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.16
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDCurrentAccessPolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.17
+      type: DisplayString
+      help: The current access policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.17
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDDiskCachePolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.18
+      type: DisplayString
+      help: The disk cache policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.18
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDEncryptionType
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.19
+      type: DisplayString
+      help: The encryption type of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.19
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDDefaultPSPolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.20
+      type: DisplayString
+      help: The default power savings policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.20
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDCurrentPSPolicy
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.21
+      type: DisplayString
+      help: The default current savings policy of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.21
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDCanSpinUpIn1Min
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.22
+      type: DisplayString
+      help: Can the physical drive spin up in 1 minute? - 1.3.6.1.4.1.10876.100.1.11.1.22
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDSupportT10Power
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.23
+      type: DisplayString
+      help: Does the VD have drives that support T10 power conditions? - 1.3.6.1.4.1.10876.100.1.11.1.23
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDSupportsMaxPS
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.24
+      type: DisplayString
+      help: Does the VD's IO profile supports MAX power savings with cached writes?
+        - 1.3.6.1.4.1.10876.100.1.11.1.24
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDBadBlocksExist
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.25
+      type: DisplayString
+      help: Does the virtual drive have bad blocks? - 1.3.6.1.4.1.10876.100.1.11.1.25
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDCached
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.26
+      type: DisplayString
+      help: Is the virtual drive cached? - 1.3.6.1.4.1.10876.100.1.11.1.26
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDState
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.27
+      type: DisplayString
+      help: The state of the virtual drive - 1.3.6.1.4.1.10876.100.1.11.1.27
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDAllinoneStatus
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.28
+      type: gauge
+      help: Indicates the status of the virtual drive - 1.3.6.1.4.1.10876.100.1.11.1.28
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidVDAllinoneMsg
+      oid: 1.3.6.1.4.1.10876.100.1.11.1.29
+      type: DisplayString
+      help: The status message of the virtual drive. - 1.3.6.1.4.1.10876.100.1.11.1.29
+      indexes:
+      - labelname: raidVDIndex
+        type: gauge
+    - name: raidPDIndex
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.1
+      type: gauge
+      help: Raid physical drive index - 1.3.6.1.4.1.10876.100.1.12.1.1
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidAdapterGroup_PD
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.2
+      type: DisplayString
+      help: The group of the raid controller - 1.3.6.1.4.1.10876.100.1.12.1.2
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidAdapterId_PD
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.3
+      type: DisplayString
+      help: The id of the raid controller - 1.3.6.1.4.1.10876.100.1.12.1.3
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidDiskGroupId_PD
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.4
+      type: DisplayString
+      help: The disk group id of the virtual drive. - 1.3.6.1.4.1.10876.100.1.12.1.4
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDSlotNumber
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.5
+      type: DisplayString
+      help: The slot number of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.5
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDFirmwareState
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.6
+      type: DisplayString
+      help: The firmware state of the physical drive - 1.3.6.1.4.1.10876.100.1.12.1.6
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDMediaErrorCount
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.7
+      type: DisplayString
+      help: The media error count of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.7
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDOtherErrorCount
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.8
+      type: DisplayString
+      help: The other error count of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.8
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDPredFailCount
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.9
+      type: DisplayString
+      help: The predictive failure count of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.9
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDLastPredFailEventSeqNo
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.10
+      type: DisplayString
+      help: The last predictive failure event sequence number of the physical drive.
+        - 1.3.6.1.4.1.10876.100.1.12.1.10
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDRawSize
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.11
+      type: DisplayString
+      help: The raw size of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.11
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDDeviceFwLevel
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.12
+      type: DisplayString
+      help: The device firmware level of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.12
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDInquiryData
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.13
+      type: DisplayString
+      help: The inquiry data of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.13
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDDeviceSpeed
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.14
+      type: DisplayString
+      help: The device speed of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.14
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDLinkSpeed
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.15
+      type: DisplayString
+      help: The link speed of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.15
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDMediaType
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.16
+      type: DisplayString
+      help: The media type of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.16
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDWriteCache
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.17
+      type: DisplayString
+      help: The write cache of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.17
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDNCQSetting
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.18
+      type: DisplayString
+      help: The NCQ setting of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.18
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDPort0Linkspeed
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.19
+      type: DisplayString
+      help: The link speed of port 0 of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.19
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDPort0Status
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.20
+      type: DisplayString
+      help: The status of port 0 of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.20
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDPort1Linkspeed
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.21
+      type: DisplayString
+      help: The link speed of port 1 of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.21
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDPort1Status
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.22
+      type: DisplayString
+      help: The status of port 1 of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.22
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDEnclosureDeviceID
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.23
+      type: DisplayString
+      help: The enclosure id of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.23
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDOpProgress
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.24
+      type: DisplayString
+      help: The operation progress of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.24
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDSpan
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.25
+      type: DisplayString
+      help: The span of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.25
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDAllinoneStatus
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.26
+      type: gauge
+      help: Indicates the status of the physical drive - 1.3.6.1.4.1.10876.100.1.12.1.26
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDAllinoneMsg
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.27
+      type: DisplayString
+      help: The status message of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.27
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDModel
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.28
+      type: DisplayString
+      help: The model of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.28
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDSerialNumber
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.29
+      type: DisplayString
+      help: The serial number of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.29
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge
+    - name: raidPDFirmwareRevision
+      oid: 1.3.6.1.4.1.10876.100.1.12.1.30
+      type: DisplayString
+      help: The firmware revision of the physical drive. - 1.3.6.1.4.1.10876.100.1.12.1.30
+      indexes:
+      - labelname: raidPDIndex
+        type: gauge

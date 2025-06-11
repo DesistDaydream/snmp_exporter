@@ -1,0 +1,46 @@
+modules:
+  if_mib:
+    walk:
+      - "SNMPv2-MIB::sysUpTime"
+      - "SNMPv2-MIB::sysName"
+      - "SNMPv2-MIB::sysContact"
+      - "IF-MIB::interfaces"
+      # - "IF-MIB::ifXTable"
+      # 烽火交换机 S5800 从 1.3.6.1.2.1.31 会跳到 1.3.6.1.2.1.55 而不是中止，且 55 的 OID 异常长，导致无法解析，所以独立出来单独写这些 OID
+      - "1.3.6.1.2.1.31.1.1.1.1"
+      - "1.3.6.1.2.1.31.1.1.1.2"
+      - "1.3.6.1.2.1.31.1.1.1.3"
+      - "1.3.6.1.2.1.31.1.1.1.4"
+      - "1.3.6.1.2.1.31.1.1.1.5"
+      - "1.3.6.1.2.1.31.1.1.1.6"
+      - "1.3.6.1.2.1.31.1.1.1.7"
+      - "1.3.6.1.2.1.31.1.1.1.8"
+      - "1.3.6.1.2.1.31.1.1.1.9"
+      - "1.3.6.1.2.1.31.1.1.1.10"
+      - "1.3.6.1.2.1.31.1.1.1.11"
+      - "1.3.6.1.2.1.31.1.1.1.12"
+      - "1.3.6.1.2.1.31.1.1.1.13"
+      - "1.3.6.1.2.1.31.1.1.1.15"
+      - "1.3.6.1.2.1.31.1.1.1.16"
+      - "1.3.6.1.2.1.31.1.1.1.17"
+      - "1.3.6.1.2.1.31.1.1.1.18"
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: "IF-MIB::ifAlias"
+      - source_indexes: [ifIndex]
+        # Disambiguate from PaloAlto PAN-COMMON-MIB::ifDescr.
+        lookup: "IF-MIB::ifDescr"
+      - source_indexes: [ifIndex]
+        # Disambiguate from Netscaler NS-ROOT-MIB::ifName.
+        lookup: "IF-MIB::ifName"
+    overrides:
+      ifAlias:
+        ignore: true # Lookup metric
+      ifDescr:
+        ignore: true # Lookup metric
+      ifName:
+        ignore: true # Lookup metric
+      ifType:
+        type: EnumAsInfo
+      IPV6-MIB:  # 排除整个IP-FORWARD-MIB
+        ignore: true

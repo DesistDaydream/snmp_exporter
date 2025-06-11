@@ -1,0 +1,53 @@
+# 金陵
+modules:
+  npb_jskj_haohan:
+    walk:
+      - ifExtStatisticsTable
+      - ifExtCardStatusTable
+      - ifExtEquStatusTable
+    lookups:
+      - source_indexes: [ifExtCardIndex]
+        lookup: ifCardSlotId
+      - source_indexes: [ifExtStatisticsIndex]
+        lookup: ifChassisIdPort
+      - source_indexes: [ifExtStatisticsIndex]
+        lookup: ifSlotId
+    overrides:
+      ifCardSlotId:
+        ignore: true
+      ifChassisIdPort:
+        ignore: true
+      ifSlotId:
+        ignore: true
+      ifCardStatus:
+        regex_extracts:
+          "":
+            - regex: 'Ready'
+              value: 0
+            - regex: 'No Card'
+              value: 1
+      # 下面的指标会产生高基数
+      ifSoftRunTime:
+        help: "设备已启动的天数，小时数，分钟数。原始格式是 281days 17hours 48mins 这样，没法转换"
+        regex_extracts:
+          "Day":
+            - regex: ^(?:(\d+)days\s+(\d+)hours\s+(\d+)mins)$
+              value: $1
+          "Hour":
+            - regex: ^(?:(\d+)days\s+(\d+)hours\s+(\d+)mins)$
+              value: $2
+          "Min":
+            - regex: ^(?:(\d+)days\s+(\d+)hours\s+(\d+)mins)$
+              value: $3
+      ifSoftRunTimeCard:
+        help: "板卡已启动的天数，小时数，分钟数。原始格式是 281days 17hours 48mins 这样，没法转换"
+        regex_extracts:
+          "Day":
+            - regex: ^(?:(\d+)days\s+(\d+)hours\s+(\d+)mins)$
+              value: $1
+          "Hour":
+            - regex: ^(?:(\d+)days\s+(\d+)hours\s+(\d+)mins)$
+              value: $2
+          "Min":
+            - regex: ^(?:(\d+)days\s+(\d+)hours\s+(\d+)mins)$
+              value: $3
