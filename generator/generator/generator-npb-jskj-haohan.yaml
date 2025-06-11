@@ -1,0 +1,18 @@
+modules:
+  npb_jskj_haohan:
+    walk:
+      - ifExtStatisticstemp
+    lookups:
+      - source_indexes: [ifExtCardIndex]
+        lookup: ifCardSlotId
+      - source_indexes: [ifExtStatisticsIndex]
+        lookup: ifChassisIdPort
+      - source_indexes: [ifExtStatisticsIndex]
+        lookup: ifSlotId
+    overrides:
+      ifCardSlotId:
+        ignore: true
+      ifChassisIdPort:
+        ignore: true
+      ifSlotId:
+        ignore: true
