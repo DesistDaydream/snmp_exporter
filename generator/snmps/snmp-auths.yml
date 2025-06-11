@@ -1,0 +1,44 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  host_v2:
+    community: host@Snmp0
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+  host_v3:
+    community: public
+    security_level: authPriv
+    username: monitor
+    password: host@Snmp0
+    auth_protocol: SHA
+    priv_protocol: AES
+    priv_password: host@Snmp0
+    version: 3
+  huawei_server_v3:
+    community: public
+    security_level: authPriv
+    username: monitor
+    password: Huawei12#$
+    auth_protocol: SHA
+    priv_protocol: AES
+    priv_password: Huawei12#$
+    version: 3
+  npb_v2:
+    community: npb@Snmp0
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+  optiway_v2:
+    community: SDC_V3nus_2018s
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+  switch_v2:
+    community: SDC_V3nus_2018s
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2

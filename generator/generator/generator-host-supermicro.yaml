@@ -1,0 +1,4 @@
+modules:
+  host_supermicro:
+    walk:
+      - smSuperDoctor5MIB
