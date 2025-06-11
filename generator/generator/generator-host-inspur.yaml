@@ -1,0 +1,4 @@
+modules:
+  host_inspur:
+    walk:
+      - serverHardwareMonitor

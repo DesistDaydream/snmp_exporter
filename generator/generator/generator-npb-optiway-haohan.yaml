@@ -1,0 +1,123 @@
+# 恒为（浩瀚） .1.3.6.1.4.1.1013
+modules:
+  npb_optiway_haohan:
+    walk:
+      - systemManagement
+      - interfaces
+      - boardPortManagement
+    lookups:
+      - source_indexes: [slot1ModuleifIndex]
+        lookup: slot1ModuleifDescr
+    overrides:
+      sysTime:
+        datetime_pattern: "%F %T"
+        type: ParseDateAndTime
+      slot1ModuleifDescr:
+        ignore: true
+      # slot1ModuleifType:
+      #   type: EnumAsInfo
+      slot1Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot2Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot3Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot4Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot5Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot6Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot7Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot8Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot9Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot10Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot11Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot12Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot13Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      slot14Status:
+        regex_extracts:
+          "":
+            - regex: 'offline'
+              value: 0
+            - regex: 'normal'
+              value: 1
+      # 下面的指标会产生高基数，光功率的值写到 label 中了，变化太频繁
+      slot1ModuleifTxPower:
+        ignore: true
+      slot1ModuleifRxPower:
+        ignore: true
+      cpuUtilization5to30Second:
+        name: cpuUtilization

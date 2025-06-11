@@ -1,0 +1,4028 @@
+
+-- File Name : hh3c-server-agent.mib
+-- Date      : Thu Dec 19 02:48:19 GMT 2019
+-- Author    : AdventNet Agent Toolkit C Edition - MibEditor 6
+
+
+-- ==========================================================================
+-- Copyright (c) 2014-2017 Hangzhou H3C Tech. Co., Ltd.  All rights reserved.
+--
+-- Description: H3C SERVER SNMP AGENT MIB, This file describes the enterprise mib implementation
+--              of getting and setting some information on device.
+-- Reference:
+-- Version: V1.0
+-- History:
+--     V1.0 created by xiongli
+--     v1.1 add some nodes
+-- ==========================================================================
+
+HH3C-SERVER-AGENT-MIB	DEFINITIONS ::= BEGIN
+	IMPORTS
+		MacAddress, DisplayString, RowStatus
+			FROM SNMPv2-TC
+		DisplayString
+			FROM RFC1213-MIB
+		hh3c
+			FROM HH3C-OID-MIB
+		OBJECT-TYPE, MODULE-IDENTITY, Integer32, IpAddress, enterprises
+			FROM SNMPv2-SMI;
+
+	hh3c2014	MODULE-IDENTITY
+		LAST-UPDATED	"201612011030Z"
+		ORGANIZATION	"Hangzhou H3C Technologies Co., Ltd."
+		CONTACT-INFO	"X86 Platform Team H3C Technologies Co., Ltd.
+        http://www.h3c.com"
+		DESCRIPTION		"This MIB is applicable to server products.
+
+        Some objects in this may be used only for some specific products,
+        so users should refer to the related documents to acquire more
+        detail information.
+        "
+		REVISION		"201612011030Z"
+		DESCRIPTION		"The initial revision of this MIB module."
+		::=  {  hh3c  13  }
+
+	hh3cServer	OBJECT IDENTIFIER
+		::=  {  hh3c2014  1  }
+
+	hh3cServerAgent	OBJECT IDENTIFIER
+		::=  {  hh3cServer  2  }
+
+	hh3cSrvSysInfo	OBJECT IDENTIFIER
+		::=  {  hh3cServerAgent  1  }
+
+	hh3cSrvDeviceManage	OBJECT IDENTIFIER
+		::=  {  hh3cServerAgent  2  }
+
+	hh3cSrvRemoteControl	OBJECT IDENTIFIER
+		::=  {  hh3cServerAgent  3  }
+
+	hh3cSrvsystem	OBJECT IDENTIFIER
+		::=  {  hh3cServerAgent  4  }
+
+	hh3cSrvDeviceInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvSysInfo  1  }
+
+	hh3cSrvSensorMonitor	OBJECT IDENTIFIER
+		::=  {  hh3cSrvSysInfo  2  }
+
+	hh3cSrvFRUInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvSysInfo  3  }
+
+	hh3cSrvSrcInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvSysInfo  4  }
+
+	hh3cNetwork	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceManage  2  }
+
+	hh3cNtp	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceManage  3  }
+
+	hh3cFirmwareProperty	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceManage  7  }
+
+	hh3cProductBasicInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceManage  8  }
+
+	hh3ctrap	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceManage  9  }
+
+	hh3cDomainNameSystem	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceManage  10  }
+
+	hh3cSrvPowerControl	OBJECT-TYPE
+		SYNTAX			Integer32  { off ( 0 ) , on ( 1 ) , powerCycle ( 2 ) , reset ( 3 ) , softOff ( 5 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Remote power control."
+		::=  {  hh3cSrvRemoteControl  1  }
+
+	hh3cSrvSysBootDevice	OBJECT-TYPE
+		SYNTAX			Integer32  { hdd ( 0 ) , pxe ( 1 ) , bios ( 2 ) , cdrom ( 4 ) , noOverride ( 7 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Remote system boot device."
+		::=  {  hh3cSrvRemoteControl  2  }
+
+	hh3cSrvSysBootMode	OBJECT-TYPE
+		SYNTAX			Integer32  { legacy ( 0 ) , uefi ( 1 ) , noOverride ( 2 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Remote system boot mode."
+		::=  {  hh3cSrvRemoteControl  3  }
+
+	hh3cSrvSysValidPeriod	OBJECT-TYPE
+		SYNTAX			Integer32  { oneTime ( 0 ) , permanent ( 1 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Remote system boot mode."
+		::=  {  hh3cSrvRemoteControl  4  }
+
+	hh3cPowerStatistic	OBJECT IDENTIFIER
+		::=  {  hh3cSrvsystem  6  }
+
+	hh3cHealthInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvsystem  7  }
+
+	hh3cUserInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvsystem  8  }
+
+	hh3cLdapInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvsystem  9  }
+
+	hh3cCPUInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  1  }
+
+	hh3cMemoryInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  2  }
+
+	hh3cStorageCardInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  4  }
+
+	hh3cSrvPCIeInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  5  }
+
+	hh3cNICInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  6  }
+
+	hh3cPSUInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  7  }
+
+	hh3cHardDiskInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  9  }
+
+	hh3cFansInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  10  }
+
+	hh3cTempInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  11  }
+
+	hh3cEntiretyHealthFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The entirety health status of this machine."
+		::=  {  hh3cSrvDeviceInfo  12  }
+
+	hh3cFanInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvSensorMonitor  1  }
+
+	hh3cSensors	OBJECT IDENTIFIER
+		::=  {  hh3cSrvSensorMonitor  2  }
+
+	hh3cSrvFruInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvFruInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The fru information table."
+		::=  { hh3cSrvFRUInfo  1 }
+
+	hh3cSrvFruInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvFruInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The fru information entry."
+		INDEX		{  hh3cSrvFruNumIndex  }
+		::=  { hh3cSrvFruInfoTable 1 }
+
+	Hh3cSrvFruInfoEntry  ::=  SEQUENCE {
+		hh3cSrvFruNumIndex  Integer32,
+		hh3cSrcFruDeviceID  Integer32,
+		hh3cSrcFruProductBoardID  Integer32,
+		hh3cSrcFruDeviceName  DisplayString,
+		hh3cSrvFruBoardDate  DisplayString,
+		hh3cSrvFruBoardManufacturer  DisplayString,
+		hh3cSrvFruBoardProductName  DisplayString,
+		hh3cSrvFruBoardPartNum  DisplayString,
+		hh3cSrvFruBoardSerial  DisplayString,
+		hh3cSrvFruBoardExtra  DisplayString,
+		hh3cSrvFruChassisType  DisplayString,
+		hh3cSrvFruChassisPartNum  DisplayString,
+		hh3cSrvFruChassisSerial  DisplayString,
+		hh3cSrvFruChassisMac  DisplayString,
+		hh3cSrvFruChassisMacNum  DisplayString,
+		hh3cSrvFruProductManufacturer  DisplayString,
+		hh3cSrvFruProductName  DisplayString,
+		hh3cSrvFruProductSerialNum  DisplayString,
+		hh3cSrvFruProductPartNum  DisplayString,
+		hh3cSrvFruProductAssetTag  DisplayString
+		}
+
+
+	hh3cSrvFruNumIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The fru index."
+		::=  {  hh3cSrvFruInfoEntry  1  }
+
+
+	hh3cSrcFruDeviceID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fru device identification."
+		::=  {  hh3cSrvFruInfoEntry  2  }
+
+
+	hh3cSrcFruProductBoardID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product board identification."
+		::=  {  hh3cSrvFruInfoEntry  3  }
+
+
+	hh3cSrcFruDeviceName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fru device name."
+		::=  {  hh3cSrvFruInfoEntry  4  }
+
+
+	hh3cSrvFruBoardDate	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The date of manufacture."
+		::=  {  hh3cSrvFruInfoEntry  5  }
+
+
+	hh3cSrvFruBoardManufacturer	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The board manufacturer."
+		::=  {  hh3cSrvFruInfoEntry  6  }
+
+
+	hh3cSrvFruBoardProductName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The board name."
+		::=  {  hh3cSrvFruInfoEntry  7  }
+
+
+	hh3cSrvFruBoardPartNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fru board part num."
+		::=  {  hh3cSrvFruInfoEntry  8  }
+
+
+	hh3cSrvFruBoardSerial	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The board serial number."
+		::=  {  hh3cSrvFruInfoEntry  9  }
+
+
+	hh3cSrvFruBoardExtra	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The extra information of board."
+		::=  {  hh3cSrvFruInfoEntry  10  }
+
+
+	hh3cSrvFruChassisType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of chassis."
+		::=  {  hh3cSrvFruInfoEntry  11  }
+
+
+	hh3cSrvFruChassisPartNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fru chassis part num."
+		::=  {  hh3cSrvFruInfoEntry  12  }
+
+
+	hh3cSrvFruChassisSerial	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The chassis serial no."
+		::=  {  hh3cSrvFruInfoEntry  13  }
+
+
+	hh3cSrvFruChassisMac	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The chassis mac address."
+		::=  {  hh3cSrvFruInfoEntry  14  }
+
+
+	hh3cSrvFruChassisMacNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The chassis mac num."
+		::=  {  hh3cSrvFruInfoEntry  15  }
+
+
+	hh3cSrvFruProductManufacturer	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product manufacturer."
+		::=  {  hh3cSrvFruInfoEntry  16  }
+
+
+	hh3cSrvFruProductName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product name."
+		::=  {  hh3cSrvFruInfoEntry  17  }
+
+
+	hh3cSrvFruProductSerialNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product serial num."
+		::=  {  hh3cSrvFruInfoEntry  18  }
+
+
+	hh3cSrvFruProductPartNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product part num."
+		::=  {  hh3cSrvFruInfoEntry  19  }
+
+
+	hh3cSrvFruProductAssetTag	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product asset tag."
+		::=  {  hh3cSrvFruInfoEntry  20  }
+
+	hh3cSrvCpuUsage	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about cpu usage."
+		::=  {  hh3cSrvSrcInfo  1  }
+
+	hh3cSrvMemUsage	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about memory usage."
+		::=  {  hh3cSrvSrcInfo  2  }
+
+	hh3cSrvMemTotalSize	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about the total size of memory."
+		::=  {  hh3cSrvSrcInfo  3  }
+
+	hh3cSrvDiskUsageInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvDiskUsageInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The disk usage information table."
+		::=  { hh3cSrvSrcInfo  4 }
+
+	hh3cSrvDiskUsageInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvDiskUsageInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cSrvDiskIndex  }
+		::=  { hh3cSrvDiskUsageInfoTable 1 }
+
+	Hh3cSrvDiskUsageInfoEntry  ::=  SEQUENCE {
+		hh3cSrvDiskIndex  Integer32,
+		hh3cSrvDiskName  DisplayString,
+		hh3cSrvDiskUsageRate  DisplayString,
+		hh3cSrvDiskUsedSize  DisplayString,
+		hh3cSrvDiskTotalSize  DisplayString
+		}
+
+
+	hh3cSrvDiskIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index of disk table."
+		::=  {  hh3cSrvDiskUsageInfoEntry  1  }
+
+
+	hh3cSrvDiskName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of the disk."
+		::=  {  hh3cSrvDiskUsageInfoEntry  2  }
+
+
+	hh3cSrvDiskUsageRate	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The usage of the disk."
+		::=  {  hh3cSrvDiskUsageInfoEntry  3  }
+
+
+	hh3cSrvDiskUsedSize	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The used size of the disk."
+		::=  {  hh3cSrvDiskUsageInfoEntry  4  }
+
+
+	hh3cSrvDiskTotalSize	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The total size of the disk."
+		::=  {  hh3cSrvDiskUsageInfoEntry  5  }
+
+	hh3cSrvNetUsageInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvNetUsageInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The net usage information table."
+		::=  { hh3cSrvSrcInfo  5 }
+
+	hh3cSrvNetUsageInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvNetUsageInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cSrcPortIndex  }
+		::=  { hh3cSrvNetUsageInfoTable 1 }
+
+	Hh3cSrvNetUsageInfoEntry  ::=  SEQUENCE {
+		hh3cSrcPortIndex  Integer32,
+		hh3cSrvPortName  DisplayString,
+		hh3cSrvNetUsageRate  DisplayString
+		}
+
+
+	hh3cSrcPortIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index of table."
+		::=  {  hh3cSrvNetUsageInfoEntry  1  }
+
+
+	hh3cSrvPortName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of the port ."
+		::=  {  hh3cSrvNetUsageInfoEntry  2  }
+
+
+	hh3cSrvNetUsageRate	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The usage of the net usage."
+		::=  {  hh3cSrvNetUsageInfoEntry  3  }
+
+	hh3cNetWorkInterfaceInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cNetWorkInterfaceInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network interface information table."
+		::=  { hh3cNetwork  1 }
+
+	hh3cNetWorkInterfaceInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cNetWorkInterfaceInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cInterfaceIndex  }
+		::=  { hh3cNetWorkInterfaceInfoTable 1 }
+
+	Hh3cNetWorkInterfaceInfoEntry  ::=  SEQUENCE {
+		hh3cInterfaceIndex  Integer32,
+		hh3cInterfaceName  DisplayString,
+		hh3cInterfaceEnable  Integer32,
+		hh3cInterfaceMacAddr  DisplayString,
+		hh3cInterfaceDhcpEnable  Integer32,
+		hh3cInterfaceIPaddr  IpAddress,
+		hh3cInterfaceMask  IpAddress,
+		hh3cInterfaceGateway  IpAddress,
+		hh3cInterfaceVlanEnable  Integer32,
+		hh3cInterfaceVlanID  Integer32,
+		hh3cInterfaceVlanPri  Integer32,
+		hh3cInterfaceIPV6Enable  Integer32,
+		hh3cInterfaceIPV6DhcpEnable  Integer32,
+		hh3cInterfaceIPV6Addr  DisplayString,
+		hh3cInterfaceIPV6PrefixLen  Integer32
+		}
+
+
+	hh3cInterfaceIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index uniquely identifies the interface."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  1  }
+
+
+	hh3cInterfaceName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  2  }
+
+
+	hh3cInterfaceEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { disable ( 0 ) , enable ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The enable status of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  3  }
+
+
+	hh3cInterfaceMacAddr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The MAC address of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  4  }
+
+
+	hh3cInterfaceDhcpEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { disable ( 0 ) , static ( 1 ) , dhcp ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The dhcp status of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  5  }
+
+
+	hh3cInterfaceIPaddr	OBJECT-TYPE
+		SYNTAX			IpAddress
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The IP address of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  6  }
+
+
+	hh3cInterfaceMask	OBJECT-TYPE
+		SYNTAX			IpAddress
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The mask of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  7  }
+
+
+	hh3cInterfaceGateway	OBJECT-TYPE
+		SYNTAX			IpAddress
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The gateway of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  8  }
+
+
+	hh3cInterfaceVlanEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { disable ( 0 ) , enable ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vlan enable status of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  9  }
+
+
+	hh3cInterfaceVlanID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vlan id of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  10  }
+
+
+	hh3cInterfaceVlanPri	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vlan priority of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  11  }
+
+
+	hh3cInterfaceIPV6Enable	OBJECT-TYPE
+		SYNTAX			Integer32  { disable ( 0 ) , enable ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ipv6 address of interface associated with the index."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  12  }
+
+
+	hh3cInterfaceIPV6DhcpEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { disable ( 0 ) , static ( 1 ) , dhcp ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The dhcp status of ipv6, disable(0), static(1),dhcp(2) "
+		::=  {  hh3cNetWorkInterfaceInfoEntry  13  }
+
+
+	hh3cInterfaceIPV6Addr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ipv6 address of interface."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  14  }
+
+
+	hh3cInterfaceIPV6PrefixLen	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The prefix of ipv6 address."
+		::=  {  hh3cNetWorkInterfaceInfoEntry  15  }
+
+	hh3cNetWorkLldpInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cNetWorkLldpInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network LLDP information table."
+		::=  { hh3cNetwork  2 }
+
+	hh3cNetWorkLldpInfoEntry	OBJECT-TYPE
+		SYNTAX		hh3cNetWorkLldpInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cLldpInfoIndex  }
+		::=  { hh3cNetWorkLldpInfoTable 1 }
+
+	hh3cNetWorkLldpInfoEntry  ::=  SEQUENCE {
+		hh3cLldpInfoIndex  Integer32,
+		hh3cLldpInterfaceName  DisplayString,
+		hh3cLldpInfoChassisMac  DisplayString,
+		hh3cLldpInfoChassisName  DisplayString,
+		hh3cLldpInfoPortName  DisplayString,
+		hh3cLldpInfoPortDescr  DisplayString,
+		hh3cLldpInfoVlanID  Integer32
+		}
+
+
+	hh3cLldpInfoIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index uniquely identifies the interface."
+		::=  {  hh3cNetWorkLldpInfoEntry  1  }
+
+
+	hh3cLldpInterfaceName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of interface associated with the index."
+		::=  {  hh3cNetWorkLldpInfoEntry  2  }
+
+
+	hh3cLldpInfoChassisMac	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The Mac of LLDP associated with the index."
+		::=  {  hh3cNetWorkLldpInfoEntry  3  }
+
+
+	hh3cLldpInfoChassisName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The chassis name  of LLDP associated with the index."
+		::=  {  hh3cNetWorkLldpInfoEntry  4  }
+
+
+	hh3cLldpInfoPortName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The port name  of LLDP associated with the index."
+		::=  {  hh3cNetWorkLldpInfoEntry  5  }
+
+
+	hh3cLldpInfoPortDescr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The port describes of LLDP associated with the index."
+		::=  {  hh3cNetWorkLldpInfoEntry  6  }
+
+
+	hh3cLldpInfoVlanID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vlan ID of LLDP associated with the index."
+		::=  {  hh3cNetWorkLldpInfoEntry  7  }
+
+
+	hh3cNetWorkSendLldpEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { disable ( 0 ) , enable ( 1 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Set LLDP enable"
+		::=  {  hh3cNetwork  3  }
+
+	hh3cConfigPrimaryNTP	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Configure the primary NTP server address."
+		::=  {  hh3cNtp  1  }
+
+	hh3cConfigSecondaryNTP	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Configure the secondary NTP server address."
+		::=  {  hh3cNtp  2  }
+
+	hh3cNTPConfigAutoDate	OBJECT-TYPE
+		SYNTAX			Integer32  { manual ( 0 ) , auto ( 1 ) , synchronizeFailed ( 2 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Automatically synchronize the date and time with the NTP server(0=manual,1=auto for set;  0=manual, 1=sync success,2= sync fail for get)."
+		::=  {  hh3cNtp  3  }
+
+	hh3cNTPConfigTimeZone	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Select the time zone for the server."
+		::=  {  hh3cNtp  4  }
+
+	hh3cNTPConfigUpdateFrequency	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Set the update frequency for the server,The range of support settings is 600-2592000 in s. Can be only set."
+		::=  {  hh3cNtp  5  }
+
+	hh3cConfigTertiaryNTP	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Configure the tertiary NTP server address."
+		::=  {  hh3cNtp  6  }
+
+	hh3cSrvHdmVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The version of HDM."
+		::=  {  hh3cFirmwareProperty  1  }
+
+	hh3cSrvBiosVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The version of BIOS."
+		::=  {  hh3cFirmwareProperty  2  }
+
+	hh3cSrvCpldVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The version of CPLD."
+		::=  {  hh3cFirmwareProperty  3  }
+
+	hh3cSrvName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product name."
+		::=  {  hh3cProductBasicInfo  1  }
+
+	hh3cManufactry	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The manufacturer of product."
+		::=  {  hh3cProductBasicInfo  2  }
+
+	hh3cSrvUUID	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The UUID of product."
+		::=  {  hh3cProductBasicInfo  3  }
+
+	hh3cSrvUptime	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The uptime of BMC.(hours)"
+		::=  {  hh3cProductBasicInfo  4  }
+
+	hh3cSrvhostName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The host name"
+		::=  {  hh3cProductBasicInfo  5  }
+
+	hh3cSrvhostOSuptime	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The uptime of OS (secs), considering UTC zone, when a wrong value error occurred, may be time synchronization failed."
+		::=  {  hh3cProductBasicInfo  6  }
+
+	hh3cCurPostcode	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current post code."
+		::=  {  hh3cProductBasicInfo  7  }
+
+	hh3chostPostcode	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The host post code."
+		::=  {  hh3cProductBasicInfo  8  }
+
+	hh3cTrapEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { enable ( 1 ) , disable ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The status of trap."
+		::=  {  hh3ctrap  1  }
+
+	hh3cTrapVersion	OBJECT-TYPE
+		SYNTAX			Integer32  { v1 ( 0 ) , v2c ( 1 ) , v3 ( 2 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Trap Version"
+		::=  {  hh3ctrap  2  }
+
+	hh3cTrapUserForV3	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The user name for SNMP TRAP V3, the user should be one of the BMC local user"
+		::=  {  hh3ctrap  3  }
+
+	hh3cTrapPort	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"SNMP trap port between 1-65535, default is 162.This node is obsolete, use hh3cTrapReceiverPort recommended."
+		::=  {  hh3ctrap  4  }
+
+	hh3cTrapCommunity	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"SNMP Trap community between 1 to 18, default is public."
+		::=  {  hh3ctrap  5  }
+
+	hh3cTrapAddr1	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Trap receiver domain address or ip address(ipv4 or ipv6). Default value is empty.This node is obsolete, use hh3cTrapReceiverAddr recommended."
+		::=  {  hh3ctrap  6  }
+
+	hh3cTrapAddr2	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Trap receiver domain address or ip address(ipv4 or ipv6). Default value is empty.This node is obsolete, use hh3cTrapReceiverAddr recommended."
+		::=  {  hh3ctrap  7  }
+
+	hh3cTrapAddr3	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Trap receiver domain address or ip address(ipv4 or ipv6). Default value is empty.This node is obsolete, use hh3cTrapReceiverAddr recommended."
+		::=  {  hh3ctrap  8  }
+
+	hh3cTrapMode	OBJECT-TYPE
+		SYNTAX			Integer32  { NodeMode ( 0 ) , EventMode ( 1 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The trap mode."
+		::=  {  hh3ctrap  9  }
+
+	hh3cTrapSeverityLevel	OBJECT-TYPE
+		SYNTAX			Integer32  { Minor-Major-Critical ( 0 ) , Critical ( 1 ) , All ( 2 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The trap severity level."
+		::=  {  hh3ctrap  10  }
+
+	hh3cDNSSource	OBJECT-TYPE
+		SYNTAX			Integer32  { Auto ( 0 ) , Manual ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about dns source, Auto(0), Manual(1). "
+		::=  {  hh3cDomainNameSystem  1  }
+
+	hh3cDomainBindNetPort	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about dns bind net port."
+		::=  {  hh3cDomainNameSystem  2  }
+
+	hh3cDomainIPPreference	OBJECT-TYPE
+		SYNTAX			Integer32  { invalid ( 0 ) , ipv4 ( 1 ) , ipv6 ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"DNS Ip preference selected ipv4(1) or ipv6(2), if dns source is selected manual, show invalid(0) "
+		::=  {  hh3cDomainNameSystem  3  }
+
+	hh3cDomainName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The domain name suffix registered to the corresponding area of the DNS server. 'Host name + superior domain name' constitutes the domain name that uniquely identifies the host under the public network. Users can access HDM through this domain name. "
+		::=  {  hh3cDomainNameSystem  4  }
+
+	hh3cDomainServer1	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"DNS server 1: the DNS server specified by HDM, which supports IPv4 address and IPv6 address. The number indicates the priority of using DNS server. The smaller the number, the higher the priority "
+		::=  {  hh3cDomainNameSystem  5  }
+
+	hh3cDomainServer2	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"DNS server 2: the DNS server specified by HDM, which supports IPv4 address and IPv6 address. The number indicates the priority of using DNS server. The smaller the number, the higher the priority "
+		::=  {  hh3cDomainNameSystem  6  }
+
+	hh3cDomainServer3	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"DNS server 3: the DNS server specified by HDM, which supports IPv4 address and IPv6 address. The number indicates the priority of using DNS server. The smaller the number, the higher the priority "
+		::=  {  hh3cDomainNameSystem  7  }
+
+	hh3cCurPower	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current total power (W)."
+		::=  {  hh3cPowerStatistic  1  }
+
+	hh3cEntiretyHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) , critical ( 3 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The entirety health status of this machine."
+		::=  {  hh3cHealthInfo  1  }
+
+	hh3cPwrHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Health status of the power supply overall."
+		::=  {  hh3cHealthInfo  2  }
+
+	hh3cFanHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Health status of the fan overall."
+		::=  {  hh3cHealthInfo  3  }
+
+	hh3cCPUHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) , critical ( 3 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Health status of the CPU overall."
+		::=  {  hh3cHealthInfo  4  }
+
+	hh3cSrvHardDiskHealthTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvHardDiskHealthEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table describes about the health of hard disk."
+		::=  { hh3cHealthInfo  5 }
+
+	hh3cSrvHardDiskHealthEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvHardDiskHealthEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The hard disk health table entry."
+		INDEX		{  hh3cSrvHardDiskHealthSlotNum  }
+		::=  { hh3cSrvHardDiskHealthTable 1 }
+
+	Hh3cSrvHardDiskHealthEntry  ::=  SEQUENCE {
+		hh3cSrvHardDiskHealthSlotNum  DisplayString,
+		hh3cSrvHardDiskHealthStatus  DisplayString
+		}
+
+
+	hh3cSrvHardDiskHealthSlotNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The HDD sensor name."
+		::=  {  hh3cSrvHardDiskHealthEntry  1  }
+
+
+	hh3cSrvHardDiskHealthStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The health status of the corresponding hard disk."
+		::=  {  hh3cSrvHardDiskHealthEntry  2  }
+
+	hh3cSrvNetCardHealthTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvNetCardHealthEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The health status of NetCards."
+		::=  { hh3cHealthInfo  6 }
+
+	hh3cSrvNetCardHealthEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvNetCardHealthEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network card healthy entry."
+		INDEX		{  hh3cSrvNetCardHealthIndex  }
+		::=  { hh3cSrvNetCardHealthTable 1 }
+
+	Hh3cSrvNetCardHealthEntry  ::=  SEQUENCE {
+		hh3cSrvNetCardHealthIndex  Integer32,
+		hh3cSrvNetCardHealthSlotNum  Integer32,
+		hh3cSrvNetCardHealthStatus  Integer32
+		}
+
+
+	hh3cSrvNetCardHealthIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index of network card."
+		::=  {  hh3cSrvNetCardHealthEntry  1  }
+
+
+	hh3cSrvNetCardHealthSlotNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The slot number of network card."
+		::=  {  hh3cSrvNetCardHealthEntry  2  }
+
+
+	hh3cSrvNetCardHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , alarm ( 1 ) , unknown ( 255 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of network card."
+		::=  {  hh3cSrvNetCardHealthEntry  3  }
+
+	hh3cMemHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) , critical ( 3 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The overall health of the memory module."
+		::=  {  hh3cHealthInfo  7  }
+
+	hh3cDiskHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The overall health of the hard disk module."
+		::=  {  hh3cHealthInfo  8  }
+
+	hh3cUIDStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { Off ( 0 ) , On ( 1 ) , TimedOn ( 2 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Remote UID control."
+		::=  {  hh3cHealthInfo  9  }
+
+	hh3cTempHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , caution ( 1 ) , warning ( 2 ) , critical ( 3 )}
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Health status of the temperature overall."
+		::=  {  hh3cHealthInfo  10  }
+
+	hh3cSrvUserInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvUserInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The Users' information table."
+		::=  { hh3cUserInfo  1 }
+
+	hh3cSrvUserInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvUserInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The Users' information entry."
+		INDEX		{  hh3cSrvUserID  }
+		::=  { hh3cSrvUserInfoTable 1 }
+
+	Hh3cSrvUserInfoEntry  ::=  SEQUENCE {
+		hh3cSrvUserID  Integer32,
+		hh3cSrvUserName  DisplayString,
+		hh3cSrvUserAccess  Integer32,
+		hh3cSrvUserNetworkPriv  DisplayString,
+		hh3cSrvUserSnmpPriv  Integer32,
+		hh3cSrvUserSnmpAccess  DisplayString,
+		hh3cSrvUserSnmpAuthProtocol  DisplayString,
+		hh3cSrvUserPrivacyProtocol  DisplayString
+		}
+
+
+	hh3cSrvUserID	OBJECT-TYPE
+		SYNTAX			Integer32  ( -2147483648 .. 2147483647  )
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The users' IDs."
+		::=  {  hh3cSrvUserInfoEntry  1  }
+
+
+	hh3cSrvUserName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' names."
+		::=  {  hh3cSrvUserInfoEntry  2  }
+
+
+	hh3cSrvUserAccess	OBJECT-TYPE
+		SYNTAX			Integer32  { enable ( 1 ) , disable ( 0 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' access to HDM."
+		::=  {  hh3cSrvUserInfoEntry  3  }
+
+
+	hh3cSrvUserNetworkPriv	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' roles"
+		::=  {  hh3cSrvUserInfoEntry  4  }
+
+
+	hh3cSrvUserSnmpPriv	OBJECT-TYPE
+		SYNTAX			Integer32  { enable ( 1 ) , disable ( 0 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' SNMP extended privileges."
+		::=  {  hh3cSrvUserInfoEntry  5  }
+
+
+	hh3cSrvUserSnmpAccess	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' SNMP V3 R/W permission."
+		::=  {  hh3cSrvUserInfoEntry  6  }
+
+
+	hh3cSrvUserSnmpAuthProtocol	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' SNMP V3 authProtocol."
+		::=  {  hh3cSrvUserInfoEntry  7  }
+
+
+	hh3cSrvUserPrivacyProtocol	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The users' SNMP V3 privProtocol"
+		::=  {  hh3cSrvUserInfoEntry  8  }
+
+	hh3cSrvLdapEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { Enable ( 1 ) , Disable ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Ldap authentication, Enable(1), Disable(0)."
+		::=  {  hh3cLdapInfo  1  }
+
+	hh3cSrvLdapServerAddr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The system address of the LDAP server, supporting for IPv4 and IPv6 address."
+		::=  {  hh3cLdapInfo  2  }
+
+	hh3cSrvLdapBindDomain	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Bind to the directory where the LDAP server administrator is located, enabling the LDAP server to authenticate users logging into the HDM."
+		::=  {  hh3cLdapInfo  3  }
+
+	hh3cSrvLdapBindPort	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Specify the port number used by LDAP. For SSL connections, the default port number is 636; For other connections, the default port number is 389. Port number range is 1 ~ 65535."
+		::=  {  hh3cLdapInfo  4  }
+
+	hh3cSrvLdapSearchBase	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The DN path searched by the LDAP server, support FQDN."
+		::=  {  hh3cLdapInfo  5  }
+
+	hh3cSrvLdapPassword	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Password for the directory where the LDAP server administrator is located.Can be only set."
+		::=  {  hh3cLdapInfo  6  }
+
+	hh3cSrvLdapGroupInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvLdapGroupInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The LDAP group information table."
+		::=  { hh3cLdapInfo  7 }
+
+	hh3cSrvLdapGroupInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvLdapGroupInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cSrvLdapGroupIndex  }
+		::=  { hh3cSrvLdapGroupInfoTable 1 }
+
+	Hh3cSrvLdapGroupInfoEntry  ::=  SEQUENCE {
+		hh3cSrvLdapGroupIndex  Integer32,
+		hh3cSrvLdapGroupName  DisplayString,
+		hh3cSrvLdapGroupSearchBase  DisplayString,
+		hh3cSrvLdapGroupPriv  Integer32,
+		hh3cSrvLdapGroupDelete  Integer32
+		}
+
+
+	hh3cSrvLdapGroupIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"ID of the role group can be randomly selected from 1 to 5."
+		::=  {  hh3cSrvLdapGroupInfoEntry  1  }
+
+
+	hh3cSrvLdapGroupName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Name of an existing role group on the LDAP server."
+		::=  {  hh3cSrvLdapGroupInfoEntry  2  }
+
+
+	hh3cSrvLdapGroupSearchBase	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"DN search base of the role group on the LDAP server."
+		::=  {  hh3cSrvLdapGroupInfoEntry  3  }
+
+
+	hh3cSrvLdapGroupPriv	OBJECT-TYPE
+		SYNTAX			Integer32  { None ( 15 ) , Administrator ( 4 ) , Operator ( 3 ) , User ( 2 ) , NoAccess ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"HDM user role for the role group, include Administrator, Operator, User."
+		::=  {  hh3cSrvLdapGroupInfoEntry  4  }
+
+
+	hh3cSrvLdapGroupDelete	OBJECT-TYPE
+		SYNTAX			Integer32  { Delete ( 1 ) , NoAccess ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Can be only set, Delete  the role group by index."
+		::=  {  hh3cSrvLdapGroupInfoEntry  5  }
+
+	hh3cSrvLdapServerAddrType	OBJECT-TYPE
+		SYNTAX			Integer32  { IP ( 0 ) , FQDN ( 1 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The LDAP server address type."
+		::=  {  hh3cLdapInfo  8  }
+
+	hh3cCPUInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cCPUInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The CPU information table."
+		::=  { hh3cCPUInfo  1 }
+
+	hh3cCPUInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cCPUInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The CPU information entry."
+		INDEX		{  hh3cCPUID  }
+		::=  { hh3cCPUInfoTable 1 }
+
+	Hh3cCPUInfoEntry  ::=  SEQUENCE {
+		hh3cCPUID  Integer32,
+		hh3cCPUModel  DisplayString,
+		hh3cCPUFreq  DisplayString,
+		hh3cCPUCors  Integer32,
+		hh3cCPUManufactry  DisplayString,
+		hh3cCPUStatus  Integer32,
+		hh3cCPUSupport64bit  Integer32,
+		hh3cCPUThreads  Integer32,
+		hh3cCPUL1Cache  DisplayString,
+		hh3cCPUL2Cache  DisplayString,
+		hh3cCPUL3Cache  DisplayString,
+		hh3cCPUProcessorID  DisplayString,
+		hh3cCPUPresentState  Integer32,
+		hh3cCPUSubStatus  Integer32,
+		hh3cCPUName  DisplayString,
+		hh3cCPUSerialNumber  DisplayString
+		}
+
+
+	hh3cCPUID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ID uniquely identifies the CPU."
+		::=  {  hh3cCPUInfoEntry  1  }
+
+
+	hh3cCPUModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The CPU model of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  2  }
+
+
+	hh3cCPUFreq	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The CPU Frequency of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  3  }
+
+
+	hh3cCPUCors	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of CPU cores of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  4  }
+
+
+	hh3cCPUManufactry	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The CPU manufacturer of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  5  }
+
+
+	hh3cCPUStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { others ( 0 ) , ok ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The working status of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  6  }
+
+
+	hh3cCPUSupport64bit	OBJECT-TYPE
+		SYNTAX			Integer32  { support ( 0 ) , notSupport ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Whether the CPU supports 64 bit of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  7  }
+
+
+	hh3cCPUThreads	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The total threads of the CPU support associated with the ID."
+		::=  {  hh3cCPUInfoEntry  8  }
+
+
+	hh3cCPUL1Cache	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The L1 cache(KB) of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  9  }
+
+
+	hh3cCPUL2Cache	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The L2 cache(KB) of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  10  }
+
+
+	hh3cCPUL3Cache	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The L3 cache(KB) of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  11  }
+
+
+	hh3cCPUProcessorID	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The CPU processor ID."
+		::=  {  hh3cCPUInfoEntry  12  }
+
+
+	hh3cCPUPresentState	OBJECT-TYPE
+		SYNTAX			Integer32  { absence ( 0 ) , presence ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The present status of the CPU associated with the ID."
+		::=  {  hh3cCPUInfoEntry  13  }
+
+
+	hh3cCPUSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about CPU health status."
+		::=  {  hh3cCPUInfoEntry  14  }
+
+
+	hh3cCPUName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The CPU device name."
+		::=  {  hh3cCPUInfoEntry  15  }
+
+
+	hh3cCPUSerialNumber	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The CPU device serial number."
+		::=  {  hh3cCPUInfoEntry  16  }
+
+	hh3cCPUFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about all cpu health status."
+		::=  {  hh3cCPUInfo  2  }
+
+	hh3cMemSummaryInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cMemSummaryInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The memory summary information table."
+		::=  { hh3cMemoryInfo  1 }
+
+	hh3cMemSummaryInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cMemSummaryInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The memory summary information entry."
+		INDEX		{  hh3cMemID  }
+		::=  { hh3cMemSummaryInfoTable 1 }
+
+	Hh3cMemSummaryInfoEntry  ::=  SEQUENCE {
+		hh3cMemID  Integer32,
+		hh3cMemModel  DisplayString,
+		hh3cMemTotalVolum  DisplayString,
+		hh3cMemOperateFreq  DisplayString,
+		hh3cMemOperateVoltage  DisplayString,
+		hh3cMemSocketNum  Integer32
+		}
+
+
+	hh3cMemID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ID uniquely identifies the summary memory."
+		::=  {  hh3cMemSummaryInfoEntry  1  }
+
+
+	hh3cMemModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory model of the memory associated with the ID."
+		::=  {  hh3cMemSummaryInfoEntry  2  }
+
+
+	hh3cMemTotalVolum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The total memory capacity of the corresponding processor."
+		::=  {  hh3cMemSummaryInfoEntry  3  }
+
+
+	hh3cMemOperateFreq	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The working frequency of memory associated with the ID."
+		::=  {  hh3cMemSummaryInfoEntry  4  }
+
+
+	hh3cMemOperateVoltage	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The working voltage of memory associated with ID."
+		::=  {  hh3cMemSummaryInfoEntry  5  }
+
+
+	hh3cMemSocketNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of memory slots that the processor supports."
+		::=  {  hh3cMemSummaryInfoEntry  6  }
+
+	hh3cMemDetailInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cMemDetailInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The memory detail information table."
+		::=  { hh3cMemoryInfo  2 }
+
+	hh3cMemDetailInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cMemDetailInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The memory detail information entry."
+		INDEX		{  hh3cMemIndexID  }
+		::=  { hh3cMemDetailInfoTable 1 }
+
+	Hh3cMemDetailInfoEntry  ::=  SEQUENCE {
+		hh3cMemIndexID  Integer32,
+		hh3cMemLocation  DisplayString,
+		hh3cMemChannel  Integer32,
+		hh3cMemSlotNum  DisplayString,
+		hh3cMemStatus  Integer32,
+		hh3cMemSize  DisplayString,
+		hh3cMemMaxFreq  DisplayString,
+		hh3cMemType  DisplayString,
+		hh3cMemRanks  DisplayString,
+		hh3cMemTech  DisplayString,
+		hh3cMemPartNum  DisplayString,
+		hh3cMemManufactry  DisplayString,
+		hh3cMemAuthen  Integer32,
+		hh3cMemEccStatus  Integer32,
+		hh3cMemDetailOperateVoltage  DisplayString,
+		hh3cMemSubStatus  Integer32,
+		hh3cMemSerialNumber  DisplayString
+		}
+
+
+	hh3cMemIndexID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ID uniquely identifies the every single memory."
+		::=  {  hh3cMemDetailInfoEntry  1  }
+
+
+	hh3cMemLocation	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory location indicates the processor associated with the hh3cMemIndexID in MemSummaryInfoTable."
+		::=  {  hh3cMemDetailInfoEntry  2  }
+
+
+	hh3cMemChannel	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The processor's channel number of memory associated with the ID."
+		::=  {  hh3cMemDetailInfoEntry  3  }
+
+
+	hh3cMemSlotNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory slot number of memory associated with the ID."
+		::=  {  hh3cMemDetailInfoEntry  4  }
+
+
+	hh3cMemStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { absence ( 0 ) , normal ( 1 ) , abnormal ( 2 ) , disabled ( 3 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory status of memory associated with the ID."
+		::=  {  hh3cMemDetailInfoEntry  5  }
+
+
+	hh3cMemSize	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The volume of single memory of memory associated with the ID."
+		::=  {  hh3cMemDetailInfoEntry  6  }
+
+
+	hh3cMemMaxFreq	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory main frequency of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  7  }
+
+
+	hh3cMemType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory DIMM type of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  8  }
+
+
+	hh3cMemRanks	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory DIMM type of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  9  }
+
+
+	hh3cMemTech	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory DIMM technology of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  10  }
+
+
+	hh3cMemPartNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The part number of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  11  }
+
+
+	hh3cMemManufactry	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The manufacturer of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  12  }
+
+
+	hh3cMemAuthen	OBJECT-TYPE
+		SYNTAX			Integer32  { unrecognized ( 0 ) , certified ( 1 ) , ordinary ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The H3C authentication of processor of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  13  }
+
+
+	hh3cMemEccStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { support ( 1 ) , others ( 0 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ECC status of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  14  }
+
+
+	hh3cMemDetailOperateVoltage	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The working voltage of memory associated with ID."
+		::=  {  hh3cMemDetailInfoEntry  15  }
+
+
+	hh3cMemSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about memory health status."
+		::=  {  hh3cMemDetailInfoEntry  16  }
+
+
+	hh3cMemSerialNumber	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The memory device serial number."
+		::=  {  hh3cMemDetailInfoEntry  17  }
+
+	hh3cMemFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about all memory health status."
+		::=  {  hh3cMemoryInfo  3  }
+
+	hh3cSrvRaidCardInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvRaidCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table describes about the raid card information."
+		::=  { hh3cStorageCardInfo  1 }
+
+	hh3cSrvRaidCardInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvRaidCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The  storage information entry."
+		INDEX		{  hh3cSrvRaidCardIndex  }
+		::=  { hh3cSrvRaidCardInfoTable 1 }
+
+	Hh3cSrvRaidCardInfoEntry  ::=  SEQUENCE {
+		hh3cSrvRaidCardIndex  Integer32,
+		hh3cSrvRaidCardModel  DisplayString,
+		hh3cSrvRaidCardFirmVersion  DisplayString,
+		hh3cSrvRaidCardSerialNum  DisplayString,
+		hh3cSrvRaidCardCacheVolume  DisplayString,
+		hh3cSrvRaidCardCacheModule  DisplayString,
+		hh3cSrvRaidCardSupercapacitor  DisplayString,
+		hh3cSrvRaidCardChargingState  Integer32,
+		hh3cSrvRaidCardLocation  DisplayString,
+		hh3cSrvRaidCardSupercapacitorStatus  Integer32
+		}
+
+
+	hh3cSrvRaidCardIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The raid card index."
+		::=  {  hh3cSrvRaidCardInfoEntry  1  }
+
+
+	hh3cSrvRaidCardModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of storage card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  2  }
+
+
+	hh3cSrvRaidCardFirmVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The firmware version of storage card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  3  }
+
+
+	hh3cSrvRaidCardSerialNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The serial number of storage card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  4  }
+
+
+	hh3cSrvRaidCardCacheVolume	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The cache module size of storage card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  5  }
+
+
+	hh3cSrvRaidCardCacheModule	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The cache module status of storage card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  6  }
+
+
+	hh3cSrvRaidCardSupercapacitor	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The super capacity status of storage card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  7  }
+
+
+	hh3cSrvRaidCardChargingState	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The charging status of super capacity of card associated with the index."
+		::=  {  hh3cSrvRaidCardInfoEntry  8  }
+
+
+	hh3cSrvRaidCardLocation	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The location of slot number of raid card."
+		::=  {  hh3cSrvRaidCardInfoEntry  9  }
+
+
+	hh3cSrvRaidCardSupercapacitorStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The super capacitor status."
+		::=  {  hh3cSrvRaidCardInfoEntry  10  }
+
+	hh3cSrvLogicalCardInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvLogicalCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table describes about the logical card."
+		::=  { hh3cStorageCardInfo  2 }
+
+	hh3cSrvLogicalCardInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvLogicalCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The logical card information entry."
+		INDEX		{  hh3cSrvLogicalCardIndex  }
+		::=  { hh3cSrvLogicalCardInfoTable 1 }
+
+	Hh3cSrvLogicalCardInfoEntry  ::=  SEQUENCE {
+		hh3cSrvLogicalCardIndex  Integer32,
+		hh3cSrvLogicalCardStatus  DisplayString,
+		hh3cSrvLogicalCardTypeLevel  DisplayString,
+		hh3cSrvLogicalCardCapacity  DisplayString,
+		hh3cSrvDiskArrayUnderLogical  OCTET STRING,
+		hh3cSrvDiskArraySSDLife  Integer32,
+		hh3cSrvDiskArrayBootEnable  DisplayString,
+		hh3cSrvDiskArrayDriveCache  DisplayString,
+		hh3cSrvLogicalCardSpanNumber Integer32,
+		hh3cSrvLogicalCardNumDrives Integer32
+		}
+
+
+	hh3cSrvLogicalCardIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The number of logical device, always starts from zero."
+		::=  {  hh3cSrvLogicalCardInfoEntry  1  }
+
+
+	hh3cSrvLogicalCardStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of logical device associated with the index."
+		::=  {  hh3cSrvLogicalCardInfoEntry  2  }
+
+
+	hh3cSrvLogicalCardTypeLevel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The raid level of logical device associated with the index."
+		::=  {  hh3cSrvLogicalCardInfoEntry  3  }
+
+
+	hh3cSrvLogicalCardCapacity	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The capacity(GB) of logical device associated with the index."
+		::=  {  hh3cSrvLogicalCardInfoEntry  4  }
+
+
+	hh3cSrvDiskArrayUnderLogical	OBJECT-TYPE
+		SYNTAX			OCTET STRING
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The hard disk list under the logical device."
+		::=  {  hh3cSrvLogicalCardInfoEntry  5  }
+
+
+	hh3cSrvDiskArraySSDLife	OBJECT-TYPE
+		SYNTAX			Integer32  { NULL ( 255 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The minimal hard disk SSD life of the disks under the logical device."
+		::=  {  hh3cSrvLogicalCardInfoEntry  6  }
+
+
+	hh3cSrvDiskArrayBootEnable	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The boot drive enable of logical device associated with the index."
+		::=  {  hh3cSrvLogicalCardInfoEntry  7  }
+
+
+	hh3cSrvDiskArrayDriveCache	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The drive cache policy of logical device associated with the index."
+		::=  {  hh3cSrvLogicalCardInfoEntry  8  }
+
+
+	hh3cSrvLogicalCardSpanNumber	OBJECT-TYPE
+		SYNTAX			Integer32 { Nonsupport ( 0 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Span number of logical disk group. Only support LSI card."
+		::=  {  hh3cSrvLogicalCardInfoEntry  9  }
+
+	hh3cSrvLogicalCardNumDrives	OBJECT-TYPE
+		SYNTAX			Integer32 { Nonsupport ( 0 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Amount of hard disks in logical disk group. Only support LSI card."
+		::=  {  hh3cSrvLogicalCardInfoEntry  10  }
+
+	hh3cSrvStorageCardHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { health ( 1 ) , unhealth ( 0 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The table describes about the storage card health status."
+		::=  {  hh3cStorageCardInfo  3  }
+
+	hh3cSrvStorageCardFamilyHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The table describes about the storage card health status."
+		::=  {  hh3cStorageCardInfo  4  }
+
+	hh3cSrvPCIeCardInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvPCIeInfo  1  }
+
+	hh3cLomCardInfo	OBJECT IDENTIFIER
+		::=  {  hh3cNICInfo  1  }
+
+	hh3cPCIeCardInfo	OBJECT IDENTIFIER
+		::=  {  hh3cNICInfo  2  }
+
+	hh3cNetTypeTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cNetTypeEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network type table."
+		::=  { hh3cNICInfo  3 }
+
+	hh3cNetTypeEntry	OBJECT-TYPE
+		SYNTAX		Hh3cNetTypeEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network type entry."
+		INDEX		{  hh3cNetTypeIndex  }
+		::=  { hh3cNetTypeTable 1 }
+
+	Hh3cNetTypeEntry  ::=  SEQUENCE {
+		hh3cNetTypeIndex  Integer32,
+		hh3cNetTypeSlotNum  Integer32,
+		hh3cNetTypeProductName  DisplayString,
+		hh3cNetTypeCurSpeed  DisplayString,
+		hh3cNetTypeMaxSpeed  DisplayString,
+		hh3cNetTypePCIeStatus  Integer32,
+		hh3cNetTypeNICInterfaceName  DisplayString,
+		hh3cNetTypePortSpeed  DisplayString,
+		hh3cNetTypePortNum  DisplayString,
+		hh3cNetTypePortType  DisplayString,
+		hh3cNetTypeCardType  DisplayString,
+		hh3cNetTypeNetPort  DisplayString,
+		hh3cNetTypeMacAddr  DisplayString,
+		hh3cNetTypeFirmware  DisplayString,
+		hh3cNetCardChipModel  DisplayString,
+		hh3cNetCardChipManufacture DisplayString
+		}
+
+
+	hh3cNetTypeIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The slot number of PCIe."
+		::=  {  hh3cNetTypeEntry  1  }
+
+
+	hh3cNetTypeSlotNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The slot number of PCIe."
+		::=  {  hh3cNetTypeEntry  2  }
+
+
+	hh3cNetTypeProductName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product name of PCIe."
+		::=  {  hh3cNetTypeEntry  3  }
+
+
+	hh3cNetTypeCurSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current speed(GT/s) of net."
+		::=  {  hh3cNetTypeEntry  4  }
+
+
+	hh3cNetTypeMaxSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The max speed(GT/s) of net."
+		::=  {  hh3cNetTypeEntry  5  }
+
+
+	hh3cNetTypePCIeStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , abnormal ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  6  }
+
+
+	hh3cNetTypeNICInterfaceName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The interface type of product."
+		::=  {  hh3cNetTypeEntry  7  }
+
+
+	hh3cNetTypePortSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The speed of the port of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  8  }
+
+
+	hh3cNetTypePortNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The port number of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  9  }
+
+
+	hh3cNetTypePortType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of port associated with index."
+		::=  {  hh3cNetTypeEntry  10  }
+
+
+	hh3cNetTypeCardType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of card of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  11  }
+
+
+	hh3cNetTypeNetPort	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The NIC port of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  12  }
+
+
+	hh3cNetTypeMacAddr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The mac address of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  13  }
+
+
+	hh3cNetTypeFirmware	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The Firmware version of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  14  }
+
+	hh3cNetCardChipModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The net card chip model of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  15  }
+
+
+	hh3cNetCardChipManufacture OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The net card chip manufacture of the net type associated with index."
+		::=  {  hh3cNetTypeEntry  16  }
+
+	hh3cNICStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , abnormal ( 1 ) , absent ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"NIC family status."
+		::=  {  hh3cNICInfo  4  }
+
+	hh3cPowerInfo	OBJECT IDENTIFIER
+		::=  {  hh3cPSUInfo  1  }
+
+	hh3cPowerManagement	OBJECT IDENTIFIER
+		::=  {  hh3cPSUInfo  2  }
+
+	hh3cPowerConsumption	OBJECT IDENTIFIER
+		::=  {  hh3cPSUInfo  3  }
+
+	hh3cHardDiskInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cHardDiskInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table of hard disk information."
+		::=  { hh3cHardDiskInfo  1 }
+
+	hh3cHardDiskInfoEntry	OBJECT-TYPE
+		SYNTAX		hh3cHardDiskInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The hard disk infomation entry."
+		INDEX		{  hh3cSrvHardDiskSlotNum  }
+		::=  { hh3cHardDiskInfoTable 1 }
+
+	hh3cHardDiskInfoEntry  ::=  SEQUENCE {
+		hh3cSrvHardDiskSlotNum  DisplayString,
+		hh3cSrvHardDiskBiosNum  Integer32,
+		hh3cSrvHardDiskOsNum  Integer32,
+		hh3cSrvHardDiskStatus  DisplayString,
+		hh3cSrvHardDiskVendor  DisplayString,
+		hh3cSrvHardDiskFirmVersion  DisplayString,
+		hh3cSrvHardDiskSerial  DisplayString,
+		hh3cSrvHardDiskType  DisplayString,
+		hh3cSrvHardDiskCapacity  DisplayString,
+		hh3cSrvHardDiskSSDLife  Integer32,
+		hh3cSrvHardDiskManufacturer DisplayString
+		}
+
+
+	hh3cSrvHardDiskSlotNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The slot number of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  1  }
+
+
+	hh3cSrvHardDiskBiosNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The BIOS number of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  2  }
+
+
+	hh3cSrvHardDiskOsNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of hard disk under OS, always the same as BIOS number."
+		::=  {  hh3cHardDiskInfoEntry  3  }
+
+
+	hh3cSrvHardDiskStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  4  }
+
+
+	hh3cSrvHardDiskVendor	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vendor of hard disk which not support SATA hard disk."
+		::=  {  hh3cHardDiskInfoEntry  5  }
+
+
+	hh3cSrvHardDiskFirmVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The firmware version of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  6  }
+
+
+	hh3cSrvHardDiskSerial	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The serial number of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  7  }
+
+
+	hh3cSrvHardDiskType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of hard disk, including the link speed, interface type and media type."
+		::=  {  hh3cHardDiskInfoEntry  8  }
+
+
+	hh3cSrvHardDiskCapacity	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The capacity(GB) of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  9  }
+
+
+	hh3cSrvHardDiskSSDLife	OBJECT-TYPE
+		SYNTAX			Integer32  { NULL ( 255 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The SSD life of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  10  }
+
+	hh3cSrvHardDiskManufacturer	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The Manufacturer of hard disk."
+		::=  {  hh3cHardDiskInfoEntry  11  }
+	hh3cNVMeDiskInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cNVMeDiskInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table of NVMe disk infomation."
+		::=  { hh3cHardDiskInfo  2 }
+
+	hh3cNVMeDiskInfoEntry	OBJECT-TYPE
+		SYNTAX		hh3cNVMeDiskInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The NVMe disk infomation entry."
+		INDEX		{  hh3cSrvNVMeDiskIndex  }
+		::=  { hh3cNVMeDiskInfoTable 1 }
+
+	hh3cNVMeDiskInfoEntry  ::=  SEQUENCE {
+		hh3cSrvNVMeDiskIndex  Integer32,
+		hh3cSrvNVMeDiskSlotNum  DisplayString,
+		hh3cSrvNVMeDiskVendorName  DisplayString,
+		hh3cSrvNVMeDiskProductName  DisplayString,
+		hh3cSrvNVMeDiskPDStatus  DisplayString,
+		hh3cSrvNVMeDiskPercentLife  Integer32,
+		hh3cSrvNVMeDiskSerialNum  DisplayString,
+		hh3cSrvNVMeDiskModelNum  DisplayString,
+		hh3cSrvNVMeDiskCapacity  DisplayString,
+		hh3cSrvNVMeDiskFirmwareVersion  DisplayString,
+		hh3cSrvNVMeDiskPortType  DisplayString,
+		hh3cSrvNVMeDiskSubStatus  Integer32,
+		hh3cSrvNVMeDiskPhysicalSlot  DisplayString
+		}
+
+
+	hh3cSrvNVMeDiskIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The index of NVMe disk info entry."
+		::=  {  hh3cNVMeDiskInfoEntry  1  }
+
+
+	hh3cSrvNVMeDiskSlotNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The slot number of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  2  }
+
+
+	hh3cSrvNVMeDiskVendorName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vendor name of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  3  }
+
+
+	hh3cSrvNVMeDiskProductName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product name of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  4  }
+
+
+	hh3cSrvNVMeDiskPDStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The pd status of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  5  }
+
+
+	hh3cSrvNVMeDiskPercentLife	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The life percentage of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  6  }
+
+
+	hh3cSrvNVMeDiskSerialNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The serial number of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  7  }
+
+
+	hh3cSrvNVMeDiskModelNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The model number of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  8  }
+
+
+	hh3cSrvNVMeDiskCapacity	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The capacity of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  9  }
+
+
+	hh3cSrvNVMeDiskFirmwareVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The firmware version of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  10  }
+
+
+	hh3cSrvNVMeDiskPortType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The port type of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  11  }
+
+
+	hh3cSrvNVMeDiskSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The sub status of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  12  }
+
+
+	hh3cSrvNVMeDiskPhysicalSlot	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The physical slot number of NVMe disk."
+		::=  {  hh3cNVMeDiskInfoEntry  13  }
+
+	hh3cHardDiskDetailInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cHardDiskDetailInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table of hard disk information."
+		::=  { hh3cHardDiskInfo  3 }
+
+	hh3cHardDiskDetailInfoEntry	OBJECT-TYPE
+		SYNTAX		hh3cHardDiskDetailInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The hard disk infomation entry."
+		INDEX		{  hh3cHardDiskTableIndex  }
+		::=  { hh3cHardDiskDetailInfoTable 1 }
+
+	hh3cHardDiskDetailInfoEntry  ::=  SEQUENCE {
+		hh3cHardDiskTableIndex  Integer32,
+		hh3cHardDiskBiosNum  Integer32,
+		hh3cHardDiskOsNum  Integer32,
+		hh3cHardDiskStatus  DisplayString,
+		hh3cHardDiskVendor  DisplayString,
+		hh3cHardDiskFirmVersion  DisplayString,
+		hh3cHardDiskSerial  DisplayString,
+		hh3cHardDiskType  DisplayString,
+		hh3cHardDiskCapacity  DisplayString,
+		hh3cHardDiskSSDLife  Integer32,
+		hh3cHardDiskSubStatus  Integer32,
+		hh3cHardDiskSilkScreen  DisplayString,
+		hh3cHardDiskAscriptionRaidName  DisplayString,
+		hh3cHardDiskAscriptionRaidLevel  DisplayString,
+		hh3cHardDiskAscriptionRaidStatus  DisplayString,
+		hh3cHardDiskManufacturer	DisplayString
+		}
+
+
+	hh3cHardDiskTableIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The hard disk detail info table index,meaningless."
+		::=  {  hh3cHardDiskDetailInfoEntry  1  }
+
+
+	hh3cHardDiskBiosNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The BIOS number of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  2  }
+
+
+	hh3cHardDiskOsNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of hard disk under OS, always the same as BIOS number."
+		::=  {  hh3cHardDiskDetailInfoEntry  3  }
+
+
+	hh3cHardDiskStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  4  }
+
+
+	hh3cHardDiskVendor	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vendor of hard disk which not support SATA hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  5  }
+
+
+	hh3cHardDiskFirmVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The firmware version of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  6  }
+
+
+	hh3cHardDiskSerial	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The serial number of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  7  }
+
+
+	hh3cHardDiskType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of hard disk, including the link speed, interface type and media type."
+		::=  {  hh3cHardDiskDetailInfoEntry  8  }
+
+
+	hh3cHardDiskCapacity	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The capacity(GB) of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  9  }
+
+
+	hh3cHardDiskSSDLife	OBJECT-TYPE
+		SYNTAX			Integer32  { NULL ( 255 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The SSD life of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  10  }
+
+
+	hh3cHardDiskSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The sub status of hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  11  }
+
+
+	hh3cHardDiskSilkScreen	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The silk-screen of the hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  12  }
+
+	hh3cHardDiskAscriptionRaidName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The RAID name of the hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  13  }
+	hh3cHardDiskAscriptionRaidLevel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The RAID level of the hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  14  }
+	hh3cHardDiskAscriptionRaidStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The RAID status of the hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  15  }
+	hh3cHardDiskManufacturer	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The RAID manufacturer of the hard disk."
+		::=  {  hh3cHardDiskDetailInfoEntry  16  }
+	hh3cHardDiskFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The family status of the hard disks."
+		::=  {  hh3cHardDiskInfo  4  }
+
+	hh3cNVMeDiskFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The family status of the NVMe disks."
+		::=  {  hh3cHardDiskInfo  5  }
+
+	hh3cHardDiskHealthTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cHardDiskHealthEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The table of hard disk health status."
+		::=  { hh3cHardDiskInfo  6 }
+
+	hh3cHardDiskHealthEntry	OBJECT-TYPE
+		SYNTAX		hh3cHardDiskHealthEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The hard disk information entry."
+		INDEX		{  hh3cHardDiskHealthTableIndex  }
+		::=  { hh3cHardDiskHealthTable 1 }
+
+	hh3cHardDiskHealthEntry  ::=  SEQUENCE {
+		hh3cHardDiskHealthTableIndex  Integer32,
+		hh3cHardDiskLocation  DisplayString,
+		hh3cHardDiskHealthStatus  Integer32
+		}
+
+	hh3cHardDiskHealthTableIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The index of the table."
+		::=  {  hh3cHardDiskHealthEntry  1  }
+
+
+	hh3cHardDiskLocation	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The location of hard disk."
+		::=  {  hh3cHardDiskHealthEntry  2  }
+
+
+	hh3cHardDiskHealthStatus	OBJECT-TYPE
+		SYNTAX			Integer32 { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The hard disk health status."
+		::=  {  hh3cHardDiskHealthEntry  3  }
+
+	hh3cSrvFanInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cSrvFanInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The fans info table."
+		::=  { hh3cFansInfo  1 }
+
+	hh3cSrvFanInfoEntry	OBJECT-TYPE
+		SYNTAX		hh3cSrvFanInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The fans info entry."
+		INDEX		{  hh3cSrvFanID  }
+		::=  { hh3cSrvFanInfoTable 1 }
+
+	hh3cSrvFanInfoEntry  ::=  SEQUENCE {
+		hh3cSrvFanID  Integer32,
+		hh3cSrvFanName  DisplayString,
+		hh3cSrvFanRatio  Integer32,
+		hh3cSrvFanModel  DisplayString,
+		hh3cSrvFanSpeed  Integer32,
+		hh3cSrvFanPresentStatus  Integer32,
+		hh3cSrvFanRedundStatus  Integer32,
+		hh3cSrvFanSubStatus  Integer32
+		}
+
+
+	hh3cSrvFanID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fan id."
+		::=  {  hh3cSrvFanInfoEntry  1  }
+
+
+	hh3cSrvFanName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of fan associated with the ID."
+		::=  {  hh3cSrvFanInfoEntry  2  }
+
+
+	hh3cSrvFanRatio	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The actual speed is divided by the full speed."
+		::=  {  hh3cSrvFanInfoEntry  3  }
+
+
+	hh3cSrvFanModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The model of fan associated with ID."
+		::=  {  hh3cSrvFanInfoEntry  4  }
+
+
+	hh3cSrvFanSpeed	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current actual speed of fan associated with ID."
+		::=  {  hh3cSrvFanInfoEntry  5  }
+
+
+	hh3cSrvFanPresentStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { absence ( 0 ) , present ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The present status of fan associated with the ID."
+		::=  {  hh3cSrvFanInfoEntry  6  }
+
+
+	hh3cSrvFanRedundStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , abnormal ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The redundant status of fan associated with ID."
+		::=  {  hh3cSrvFanInfoEntry  7  }
+
+
+	hh3cSrvFanSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fan sensor status associated with ID."
+		::=  {  hh3cSrvFanInfoEntry  8  }
+
+	hh3cFanFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fan family sensor status."
+		::=  {  hh3cFansInfo  2  }
+
+	hh3cTempFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The Temperature family sensor status."
+		::=  {  hh3cTempInfo  1  }
+
+	hh3cInletTempReading	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The max inlet sensor temperature reading."
+		::=  {  hh3cTempInfo  2  }
+
+	hh3cTempDetailInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  hh3cTempDetailInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The readings of sensors table"
+		::=  { hh3cTempInfo  3 }
+
+	hh3cTempDetailInfoEntry	OBJECT-TYPE
+		SYNTAX		hh3cTempDetailInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The readings of sensors entry"
+		INDEX		{  hh3cTempSensorIndex  }
+		::=  { hh3cTempDetailInfoTable 1 }
+
+	hh3cTempDetailInfoEntry  ::=  SEQUENCE {
+		hh3cTempSensorIndex  Integer32,
+		hh3cTempSensorNum  Integer32,
+		hh3cTempSensorName  DisplayString,
+		hh3cTempSensorReading  Integer32,
+		hh3cTempSensorUnit  DisplayString,
+		hh3cTempSensorSubStatus  Integer32,
+		hh3cTempLowerNonRecoverThres  Integer32,
+		hh3cTempLowerCriticalThres  Integer32,
+		hh3cTempLowerNonCriticalThres  Integer32,
+		hh3cTempHigherNonCriticalThres  Integer32,
+		hh3cTempHigherCriticalThres  Integer32,
+		hh3cTempHigherNonRecoverThres  Integer32
+		}
+
+
+	hh3cTempSensorIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index uniquely identifies the Sensors."
+		::=  {  hh3cTempDetailInfoEntry  1  }
+
+
+	hh3cTempSensorNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of sensors associated with index."
+		::=  {  hh3cTempDetailInfoEntry  2  }
+
+
+	hh3cTempSensorName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of sensors associated with index."
+		::=  {  hh3cTempDetailInfoEntry  3  }
+
+
+	hh3cTempSensorReading	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature reading,the unit is degree C. "
+		::=  {  hh3cTempDetailInfoEntry  4  }
+
+
+	hh3cTempSensorUnit	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The unit of sensor."
+		::=  {  hh3cTempDetailInfoEntry  5  }
+
+
+	hh3cTempSensorSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The Sensors status of component."
+		::=  {  hh3cTempDetailInfoEntry  6  }
+
+
+	hh3cTempLowerNonRecoverThres	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature lower nonrecoverable threshold,the unit is degree C,0 represent NA."
+		::=  {  hh3cTempDetailInfoEntry  7  }
+
+
+	hh3cTempLowerCriticalThres	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature lower critical threshold,the unit is degree C,0 represent NA."
+		::=  {  hh3cTempDetailInfoEntry  8  }
+
+
+	hh3cTempLowerNonCriticalThres	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature lower minor threshold,the unit is degree C,0 represent NA."
+		::=  {  hh3cTempDetailInfoEntry  9  }
+
+
+	hh3cTempHigherNonCriticalThres	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature upper minor threshold,the unit is degree C,0 represent NA."
+		::=  {  hh3cTempDetailInfoEntry  10  }
+
+
+	hh3cTempHigherCriticalThres	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature upper critical threshold,the unit is degree C,0 represent NA."
+		::=  {  hh3cTempDetailInfoEntry  11  }
+
+
+	hh3cTempHigherNonRecoverThres	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about temperature upper nonrecoverable threshold,the unit is degree C,0 represent NA."
+		::=  {  hh3cTempDetailInfoEntry  12  }
+
+	hh3cOutletTempReading	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The outlet sensor temperature readings."
+		::=  {  hh3cTempInfo  4  }
+
+	hh3cFanInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cFanInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The fans info table."
+		::=  { hh3cFanInfo  1 }
+
+	hh3cFanInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cFanInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The fans info entry."
+		INDEX		{  hh3cFanID  }
+		::=  { hh3cFanInfoTable 1 }
+
+	Hh3cFanInfoEntry  ::=  SEQUENCE {
+		hh3cFanID  Integer32,
+		hh3cFanName  DisplayString,
+		hh3cFanRatio  Integer32,
+		hh3cFanModel  DisplayString,
+		hh3cFanPresentStatus  Integer32,
+		hh3cFanSpeed  Integer32,
+		hh3cFanRedundStatus  Integer32
+		}
+
+
+	hh3cFanID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The fan id."
+		::=  {  hh3cFanInfoEntry  1  }
+
+
+	hh3cFanName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of fan associated with the ID."
+		::=  {  hh3cFanInfoEntry  2  }
+
+
+	hh3cFanRatio	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The actual speed is divided by the full speed."
+		::=  {  hh3cFanInfoEntry  3  }
+
+
+	hh3cFanModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The model of fan associated with ID."
+		::=  {  hh3cFanInfoEntry  4  }
+
+
+	hh3cFanPresentStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { absence ( 0 ) , present ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The present status of fan associated with the ID."
+		::=  {  hh3cFanInfoEntry  5  }
+
+
+	hh3cFanSpeed	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current actual speed of fan associated with ID."
+		::=  {  hh3cFanInfoEntry  6  }
+
+
+	hh3cFanRedundStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , abnormal ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The redundant status of fan associated with ID."
+		::=  {  hh3cFanInfoEntry  7  }
+
+	hh3cSensorsTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSensorsEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The readings of sensors table"
+		::=  { hh3cSensors  1 }
+
+	hh3cSensorsEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSensorsEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The readings of sensors entry"
+		INDEX		{  hh3cSensorIndex  }
+		::=  { hh3cSensorsTable 1 }
+
+	Hh3cSensorsEntry  ::=  SEQUENCE {
+		hh3cSensorIndex  Integer32,
+		hh3cSensorNum  Integer32,
+		hh3cSensorName  DisplayString,
+		hh3cSensorType  DisplayString,
+		hh3cSensorReading  DisplayString,
+		hh3cSensorUnit  DisplayString,
+		hh3cSensorServerityLevel  Integer32,
+		hh3cLowerNonRecoverThres  DisplayString,
+		hh3cLowerCriticalThres  DisplayString,
+		hh3cLowerNonCriticalThres  DisplayString,
+		hh3cHigherNonCriticalThres  DisplayString,
+		hh3cHigherCriticalThres  DisplayString,
+		hh3cHigherNonRecoverThres  DisplayString
+		}
+
+
+	hh3cSensorIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index uniquely identifies the Sensors."
+		::=  {  hh3cSensorsEntry  1  }
+
+
+	hh3cSensorNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of sensors associated with index."
+		::=  {  hh3cSensorsEntry  2  }
+
+
+	hh3cSensorName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of sensors associated with index."
+		::=  {  hh3cSensorsEntry  3  }
+
+
+	hh3cSensorType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of sensors associated with index."
+		::=  {  hh3cSensorsEntry  4  }
+
+
+	hh3cSensorReading	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current sensors of the component."
+		::=  {  hh3cSensorsEntry  5  }
+
+
+	hh3cSensorUnit	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The unit of sensor."
+		::=  {  hh3cSensorsEntry  6  }
+
+
+	hh3cSensorServerityLevel	OBJECT-TYPE
+		SYNTAX			Integer32  { NA ( 0 ) , Normal ( 1 ) , Minor ( 2 ) , Major ( 3 ) , Critical ( 4 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The Sensors state of component."
+		::=  {  hh3cSensorsEntry  7  }
+
+
+	hh3cLowerNonRecoverThres	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fatal floor threshold."
+		::=  {  hh3cSensorsEntry  8  }
+
+
+	hh3cLowerCriticalThres	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The critical floor threshold."
+		::=  {  hh3cSensorsEntry  9  }
+
+
+	hh3cLowerNonCriticalThres	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The warning floor threshold."
+		::=  {  hh3cSensorsEntry  10  }
+
+
+	hh3cHigherNonCriticalThres	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The warning upper limit."
+		::=  {  hh3cSensorsEntry  11  }
+
+
+	hh3cHigherCriticalThres	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The critical upper limit."
+		::=  {  hh3cSensorsEntry  12  }
+
+
+	hh3cHigherNonRecoverThres	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The fatal upper limit."
+		::=  {  hh3cSensorsEntry  13  }
+
+	hh3cSensorInletTemperature	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The max inlet temperature sensor reading."
+		::=  {  hh3cSensors  2  }
+
+	hh3cSensorOutletTemperature	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The max out let temperature sensor reading."
+		::=  {  hh3cSensors  3  }
+
+	hh3cSrvPCIeCardInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cPCIeCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The PCIe card information table."
+		::=  { hh3cSrvPCIeCardInfo  1 }
+
+	hh3cSrvPCIeCardInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cPCIeCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The PCIe card information entry."
+		INDEX		{  hh3cSrvPCIeCardSlot  }
+		::=  { hh3cSrvPCIeCardInfoTable 1 }
+
+	Hh3cPCIeCardInfoEntry  ::=  SEQUENCE {
+		hh3cSrvPCIeCardSlot  Integer32,
+		hh3cSrvPCIeCardModel  DisplayString,
+		hh3cSrvPCIeCardDataWidth  DisplayString,
+		hh3cSrvPCIeCardStatus  Integer32,
+		hh3cSrvPCIeCardManuID  DisplayString,
+		hh3cSrvPCIeCardDevID  DisplayString,
+		hh3cSrvPCIeCardCurSpeed  DisplayString,
+		hh3cSrvPCIeCardMaxSpeed  DisplayString,
+		hh3cSrvPCIeCardExpress  DisplayString,
+		hh3cSrvSrvPCIeCardSlotNum  Integer32,
+		hh3cSrvSrvPCIeCardSerialNum  Integer32,
+		hh3cSrvSrvPCIeCardPartNum  Integer32,
+		hh3cSrvPCIeCardMaxLinkWidth  DisplayString,
+	    hh3cSrvSrvPCIeDeviceManufacture  DisplayString
+		}
+
+
+	hh3cSrvPCIeCardSlot	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The PCIe card index."
+		::=  {  hh3cSrvPCIeCardInfoEntry  1  }
+
+
+	hh3cSrvPCIeCardModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Network card Model, currently only support mLOM network card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  2  }
+
+
+	hh3cSrvPCIeCardDataWidth	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The data width of the PCIe card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  3  }
+
+
+	hh3cSrvPCIeCardStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , abnormal ( 1 ) , absent ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of PCIe card associated with the slot number."
+		::=  {  hh3cSrvPCIeCardInfoEntry  4  }
+
+
+	hh3cSrvPCIeCardManuID	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vendor of PCIe card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  5  }
+
+
+	hh3cSrvPCIeCardDevID	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The device of the PCIe card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  6  }
+
+
+	hh3cSrvPCIeCardCurSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Current link speed of mLom network card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  7  }
+
+
+	hh3cSrvPCIeCardMaxSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Maximum link speed of mLom network card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  8  }
+
+
+	hh3cSrvPCIeCardExpress	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card express."
+		::=  {  hh3cSrvPCIeCardInfoEntry  9  }
+
+
+	hh3cSrvSrvPCIeCardSlotNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card slot number."
+		::=  {  hh3cSrvPCIeCardInfoEntry  10  }
+
+
+	hh3cSrvSrvPCIeCardSerialNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card serial number."
+		::=  {  hh3cSrvPCIeCardInfoEntry  11  }
+
+
+	hh3cSrvSrvPCIeCardPartNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card part number."
+		::=  {  hh3cSrvPCIeCardInfoEntry  12  }
+
+	hh3cSrvPCIeCardMaxLinkWidth	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Maximum link width of the PCIe card."
+		::=  {  hh3cSrvPCIeCardInfoEntry  13  }
+
+	hh3cSrvSrvPCIeDeviceManufacture	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The manufacture of the PCIe device."
+		::=  {  hh3cSrvPCIeCardInfoEntry  14  }
+
+	hh3cLomCardInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cLomCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The LomCard information table."
+		::=  { hh3cLomCardInfo  1 }
+
+	hh3cLomCardInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cLomCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The LomCard information entry."
+		INDEX		{  hh3cLomCardInfoID  }
+		::=  { hh3cLomCardInfoTable 1 }
+
+	Hh3cLomCardInfoEntry  ::=  SEQUENCE {
+		hh3cLomCardInfoID  Integer32,
+		hh3cLomCardType  DisplayString,
+		hh3cLomCardMacAddr  DisplayString,
+		hh3cLomCardSpeed  DisplayString,
+		hh3cLomCardNetPort  DisplayString,
+		hh3cLomCardProName  DisplayString,
+		hh3cLomCardLocation  DisplayString
+		}
+
+
+	hh3cLomCardInfoID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The ID uniquely identifies the card information."
+		::=  {  hh3cLomCardInfoEntry  1  }
+
+
+	hh3cLomCardType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The network card type of mLom card associated with the ID."
+		::=  {  hh3cLomCardInfoEntry  2  }
+
+
+	hh3cLomCardMacAddr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The physical address of the port of mLom card associated with the ID."
+		::=  {  hh3cLomCardInfoEntry  3  }
+
+
+	hh3cLomCardSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The link speed of mLom network card associated with the ID."
+		::=  {  hh3cLomCardInfoEntry  4  }
+
+
+	hh3cLomCardNetPort	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The net port number of the card associated with the ID."
+		::=  {  hh3cLomCardInfoEntry  5  }
+
+
+	hh3cLomCardProName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product name of mLom card associated with the ID."
+		::=  {  hh3cLomCardInfoEntry  6  }
+
+
+	hh3cLomCardLocation	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The network card installation location of mLom card associated with ID."
+		::=  {  hh3cLomCardInfoEntry  7  }
+
+	hh3cPCIeCardInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cPCIeCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The PCIe card information table."
+		::=  { hh3cPCIeCardInfo  1 }
+
+	hh3cPCIeCardInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cPCIeCardInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The PCIe card information entry."
+		INDEX		{  hh3cPCIeCardSlot  }
+		::=  { hh3cPCIeCardInfoTable 1 }
+
+	Hh3cPCIeCardInfoEntry  ::=  SEQUENCE {
+		hh3cPCIeCardSlot  Integer32,
+		hh3cPCIeCardModel  DisplayString,
+		hh3cPCIeCardDataWidth  DisplayString,
+		hh3cPCIeCardStatus  Integer32,
+		hh3cPCIeCardManuID  DisplayString,
+		hh3cPCIeCardDevID  DisplayString,
+		hh3cPCIeCardCurSpeed  DisplayString,
+		hh3cPCIeCardMaxSpeed  DisplayString,
+		hh3cPCIeCardExpress  DisplayString,
+		hh3cSrvPCIeCardSlotNum  Integer32,
+		hh3cSrvPCIeCardSerialNumber  Integer32,
+		hh3cSrvPCIeCardPartNumber  Integer32,
+		hh3cPCIeCardMaxLinkWidth  DisplayString,
+		hh3cSrvPCIeDeviceManufacture  DisplayString
+		}
+
+
+	hh3cPCIeCardSlot	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The PCIe card index."
+		::=  {  hh3cPCIeCardInfoEntry  1  }
+
+
+	hh3cPCIeCardModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Network card Model, currently only support mLOM network card."
+		::=  {  hh3cPCIeCardInfoEntry  2  }
+
+
+	hh3cPCIeCardDataWidth	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The data width of the PCIe card."
+		::=  {  hh3cPCIeCardInfoEntry  3  }
+
+
+	hh3cPCIeCardStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { normal ( 0 ) , abnormal ( 1 ), absent ( 2 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of PCIe card associated with the slot number."
+		::=  {  hh3cPCIeCardInfoEntry  4  }
+
+
+	hh3cPCIeCardManuID	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vendor of PCIe card."
+		::=  {  hh3cPCIeCardInfoEntry  5  }
+
+
+	hh3cPCIeCardDevID	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The device of the PCIe card."
+		::=  {  hh3cPCIeCardInfoEntry  6  }
+
+
+	hh3cPCIeCardCurSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Current link speed of mLom network card."
+		::=  {  hh3cPCIeCardInfoEntry  7  }
+
+
+	hh3cPCIeCardMaxSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Maximum link speed of mLom network card."
+		::=  {  hh3cPCIeCardInfoEntry  8  }
+
+
+	hh3cPCIeCardExpress	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card express."
+		::=  {  hh3cPCIeCardInfoEntry  9  }
+
+
+	hh3cSrvPCIeCardSlotNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card slot number."
+		::=  {  hh3cPCIeCardInfoEntry  10  }
+
+
+	hh3cSrvPCIeCardSerialNumber	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card serial number."
+		::=  {  hh3cPCIeCardInfoEntry  11  }
+
+
+	hh3cSrvPCIeCardPartNumber	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The PCIe card part number."
+		::=  {  hh3cPCIeCardInfoEntry  12  }
+
+
+	hh3cPCIeCardMaxLinkWidth	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The max data width of the PCIe card."
+		::=  {  hh3cPCIeCardInfoEntry  13  }
+
+	hh3cSrvPCIeDeviceManufacture	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The manufacture of the PCIe device."
+		::=  {  hh3cPCIeCardInfoEntry  14  }
+
+	hh3cPowerInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cPowerInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The power information table."
+		::=  { hh3cPowerInfo  1 }
+
+	hh3cPowerInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cPowerInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The power information entry."
+		INDEX		{  hh3cPowerID  }
+		::=  { hh3cPowerInfoTable 1 }
+
+	Hh3cPowerInfoEntry  ::=  SEQUENCE {
+		hh3cPowerID  Integer32,
+		hh3cPowerPresentStatus  Integer32,
+		hh3cPowerModel  DisplayString,
+		hh3cMaxPower  Integer32,
+		hh3cPowerVersion  DisplayString,
+		hh3cPowerManu  DisplayString,
+		hh3cPowerSN  DisplayString,
+		hh3cPowerWorkMode  Integer32,
+		hh3cPowerInputMode  Integer32,
+		hh3cPowerCost  Integer32,
+		hh3cPowerInputVoltage  Integer32,
+		hh3cPowerOutputVoltage  Integer32,
+		hh3cPowerSubStatus  Integer32,
+		hh3cPowerName  DisplayString
+		}
+
+
+	hh3cPowerID	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The ID uniquely identifies the power supply."
+		::=  {  hh3cPowerInfoEntry  1  }
+
+
+	hh3cPowerPresentStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { absence ( 0 ) , presence ( 1 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The present status of power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  2  }
+
+
+	hh3cPowerModel	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The model of power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  3  }
+
+
+	hh3cMaxPower	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The maximum input power of the power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  4  }
+
+
+	hh3cPowerVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The current firmware version information of the power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  5  }
+
+
+	hh3cPowerManu	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The manufacturer of power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  6  }
+
+
+	hh3cPowerSN	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The serial number of power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  7  }
+
+
+	hh3cPowerWorkMode	OBJECT-TYPE
+		SYNTAX			Integer32  { main ( 0 ) , standby ( 1 ) , unrecognized ( 255 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The main and standby status of power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  8  }
+
+
+	hh3cPowerInputMode	OBJECT-TYPE
+		SYNTAX			Integer32  { Noinput ( 0 ) , AC ( 1 ) , HVDC ( 2 ) , LVDC ( 3 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The main and standby status of power supply associated with ID."
+		::=  {  hh3cPowerInfoEntry  9  }
+
+
+	hh3cPowerCost	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about the cost of power.The unit is watt."
+		::=  {  hh3cPowerInfoEntry  10  }
+
+
+	hh3cPowerInputVoltage	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about the input voltage.The unit is voltage"
+		::=  {  hh3cPowerInfoEntry  11  }
+
+
+	hh3cPowerOutputVoltage	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about the output voltage. The unit is voltage"
+		::=  {  hh3cPowerInfoEntry  12  }
+
+
+	hh3cPowerSubStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about power status."
+		::=  {  hh3cPowerInfoEntry  13  }
+
+
+	hh3cPowerName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"power display name."
+		::=  {  hh3cPowerInfoEntry  14  }
+
+	hh3cPowerFamilyStatus	OBJECT-TYPE
+		SYNTAX			Integer32  { unknown ( 0 ) , absence ( 1 ) , ok ( 2 ) , minor ( 3 ) , major ( 4 ) , fatal ( 5 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Information about all power supply health status."
+		::=  {  hh3cPowerInfo  2  }
+
+	hh3cPowerTotalCost	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The total cost of power.
+							The unit is watt"
+		::=  {  hh3cPowerInfo  3  }
+
+	hh3cSrvPowerCappingEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { enable ( 1 ) , disable ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Power capping enable."
+		::=  {  hh3cPowerManagement  1  }
+
+	hh3cSrvPowerCappingValue	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Power capping value(W)"
+		::=  {  hh3cPowerManagement  2  }
+
+	hh3cSrvPowerCappingFailure	OBJECT-TYPE
+		SYNTAX			Integer32  { Yes ( 1 ) , No ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Shut down on capping failure."
+		::=  {  hh3cPowerManagement  3  }
+
+	hh3cPeakPower	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Max power consumption updated in real time.(W)"
+		::=  {  hh3cPowerConsumption  1  }
+
+	hh3cMaxPowerStartTime	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Real-time max value appeared at."
+		::=  {  hh3cPowerConsumption  2  }
+
+	hh3cPowerStatisticStartTime	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Start time of real-time statistics period."
+		::=  {  hh3cPowerConsumption  3  }
+
+	hh3cAvgPowerInDay	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Average Power consumption data for past 24 hours.(W)"
+		::=  {  hh3cPowerConsumption  4  }
+
+	hh3cMaxPowerInDay	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Maximum Power consumption data for past 24 hours.(W)"
+		::=  {  hh3cPowerConsumption  5  }
+
+	hh3cMinPowerInDay	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Minimum Power consumption data for past 24 hours.(W)"
+		::=  {  hh3cPowerConsumption  6  }
+
+	hh3cAvgPowerInWeek	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Average Power consumption data for past 7 days (W)."
+		::=  {  hh3cPowerConsumption  7  }
+
+	hh3cMaxPowerInWeek	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Maximum Power consumption data for past 7 days (W)."
+		::=  {  hh3cPowerConsumption  8  }
+
+	hh3cMinPowerInWeek	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"Minimum Power consumption data for past 7 days (W)."
+		::=  {  hh3cPowerConsumption  9  }
+
+	hh3cClearStatistic	OBJECT-TYPE
+		SYNTAX			Integer32  { clearall ( 1 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"This node can only execute set value(1) command. Set 1 will clear all history power consumption statistics, and restart statistics."
+		::=  {  hh3cPowerConsumption  10  }
+
+	hh3cGPUInfo	OBJECT IDENTIFIER
+		::=  {  hh3cSrvDeviceInfo  13  }
+
+	hh3cSrvGPUInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvGPUInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The GPU information table."
+		::=  { hh3cGPUInfo  1 }
+
+	hh3cSrvGPUInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvGPUInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cSrvGPUIndex  }
+		::=  { hh3cSrvGPUInfoTable 1 }
+
+	Hh3cSrvGPUInfoEntry  ::=  SEQUENCE {
+		hh3cSrvGPUIndex  Integer32,
+		hh3cSrvGPUSlotNum  Integer32,
+		hh3cSrvGPUProductName  DisplayString,
+		hh3cSrvGPUVendorName  DisplayString,
+		hh3cSrvGPUSerialNum  DisplayString,
+		hh3cSrvGPUPartNum  DisplayString,
+		hh3cSrvGPUFWVersion  DisplayString,
+		hh3cSrvGPUPower  Integer32
+		}
+
+
+	hh3cSrvGPUIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index of the table."
+		::=  {  hh3cSrvGPUInfoEntry  1  }
+
+
+	hh3cSrvGPUSlotNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The slot number of GPU."
+		::=  {  hh3cSrvGPUInfoEntry  2  }
+
+
+	hh3cSrvGPUProductName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The product name of GPU."
+		::=  {  hh3cSrvGPUInfoEntry  3  }
+
+
+	hh3cSrvGPUVendorName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The vendor name of GPU."
+		::=  {  hh3cSrvGPUInfoEntry  4  }
+
+
+	hh3cSrvGPUSerialNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The serial number of GPU."
+		::=  {  hh3cSrvGPUInfoEntry  5  }
+
+
+	hh3cSrvGPUPartNum	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The part number of GPU."
+		::=  {  hh3cSrvGPUInfoEntry  6  }
+
+
+	hh3cSrvGPUFWVersion	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The firmware version of GPU."
+		::=  {  hh3cSrvGPUInfoEntry  7  }
+
+
+	hh3cSrvGPUPower	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The real time power of GPU. (W)"
+		::=  {  hh3cSrvGPUInfoEntry  8  }
+
+	hh3cTrapInfoDescriptionTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cTrapInfoDescriptionEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"A table containing the list of trap description."
+		::=  { hh3ctrap  11 }
+
+	hh3cTrapInfoDescriptionEntry	OBJECT-TYPE
+		SYNTAX		Hh3cTrapInfoDescriptionEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cTrapReceiverIndex  }
+		::=  { hh3cTrapInfoDescriptionTable 1 }
+
+	Hh3cTrapInfoDescriptionEntry  ::=  SEQUENCE {
+		hh3cTrapReceiverIndex  Integer32,
+		hh3cTrapReceiverEnable  Integer32,
+		hh3cTrapReceiverPort  Integer32,
+		hh3cTrapReceiverAddr  DisplayString
+		}
+
+
+	hh3cTrapReceiverIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index of trap receiver."
+		::=  {  hh3cTrapInfoDescriptionEntry  1  }
+
+
+	hh3cTrapReceiverEnable	OBJECT-TYPE
+		SYNTAX			Integer32  { enable ( 1 ) , disable ( 0 ) }
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"The status of trap."
+		::=  {  hh3cTrapInfoDescriptionEntry  2  }
+
+
+	hh3cTrapReceiverPort	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"SNMP trap port between 1-65535, default is 162."
+		::=  {  hh3cTrapInfoDescriptionEntry  3  }
+
+
+	hh3cTrapReceiverAddr	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-write
+		STATUS			current
+		DESCRIPTION		"Trap receiver domain address or ip address(ipv4 or ipv6). Default value is empty."
+		::=  {  hh3cTrapInfoDescriptionEntry  4  }
+
+	hh3cSrvLinkInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvLinkInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network link information table"
+		::=  { hh3cNetwork  4 }
+
+	hh3cSrvLinkInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvLinkInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The network link information entry"
+		INDEX		{  h3cSrvLinkTableIndex  }
+		::=  { hh3cSrvLinkInfoTable 1 }
+
+	Hh3cSrvLinkInfoEntry  ::=  SEQUENCE {
+		h3cSrvLinkTableIndex  Integer32,
+		h3cSrvLinkIfName  DisplayString,
+		h3cSrvLinkPortNum  Integer32,
+		h3cSrvLinkPortStatus  DisplayString
+		}
+
+
+	h3cSrvLinkTableIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		not-accessible
+		STATUS			current
+		DESCRIPTION		"The index of the table"
+		::=  {  hh3cSrvLinkInfoEntry  1  }
+
+
+	h3cSrvLinkIfName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The interface name of the port"
+		::=  {  hh3cSrvLinkInfoEntry  2  }
+
+
+	h3cSrvLinkPortNum	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The number of the port"
+		::=  {  hh3cSrvLinkInfoEntry  3  }
+
+
+	h3cSrvLinkPortStatus	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The link status of the port"
+		::=  {  hh3cSrvLinkInfoEntry  4  }
+
+
+
+
+	hh3cFCHBAInfo	OBJECT IDENTIFIER
+	::=  {  hh3cSrvDeviceInfo  14  }
+
+	hh3cSrvFCHBAInfoTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  Hh3cSrvFCHBAInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"The FCHBA information table."
+		::=  { hh3cFCHBAInfo  1 }
+
+	hh3cSrvFCHBAInfoEntry	OBJECT-TYPE
+		SYNTAX		Hh3cSrvFCHBAInfoEntry
+		MAX-ACCESS	not-accessible
+		STATUS		current
+		DESCRIPTION	"Row Description"
+		INDEX		{  hh3cSrvFCHBACardIndex  }
+		::=  { hh3cSrvFCHBAInfoTable 1 }
+
+	Hh3cSrvFCHBAInfoEntry  ::=  SEQUENCE {
+		hh3cSrvFCHBACardIndex  Integer32,
+		hh3cSrvFCHBACardName   DisplayString,
+		hh3cSrvFCHBACardType   DisplayString,
+		hh3cSrvFCHBACardFWver  DisplayString,
+		hh3cSrvFCHBACardLocation  DisplayString,
+		hh3cSrvFCHBACardPort  Integer32,
+		hh3cSrvFCHBACardWwpn  DisplayString,
+		hh3cSrvFCHBACardWwnn  DisplayString,
+		hh3cSrvFCHBACardLinkSpeed  DisplayString,
+		hh3cSrvFCHBACardLinkStatus  Integer32
+		}
+
+
+	hh3cSrvFCHBACardIndex	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The index of the table."
+		::=  {  hh3cSrvFCHBAInfoEntry  1  }
+
+
+	hh3cSrvFCHBACardName	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The name of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  2  }
+
+
+	hh3cSrvFCHBACardType	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The type of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  3  }
+
+
+	hh3cSrvFCHBACardFWver	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The firmware version of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  4  }
+
+
+	hh3cSrvFCHBACardLocation	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The location of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  5  }
+
+
+	hh3cSrvFCHBACardPort	OBJECT-TYPE
+		SYNTAX			Integer32
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The port of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  6  }
+
+
+	hh3cSrvFCHBACardWwpn	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The WWPN of the port of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  7  }
+
+
+	hh3cSrvFCHBACardWwnn	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The WWNN of the port of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  8  }
+
+
+	hh3cSrvFCHBACardLinkSpeed	OBJECT-TYPE
+		SYNTAX			DisplayString
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The speed(GT/s) of the port of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  9  }
+
+
+	hh3cSrvFCHBACardLinkStatus	OBJECT-TYPE
+		SYNTAX			Integer32 { connect ( 1 ) , disconnect ( 2 ) , NA ( 255 ) }
+		MAX-ACCESS		read-only
+		STATUS			current
+		DESCRIPTION		"The status of the port of FC HBA card."
+		::=  {  hh3cSrvFCHBAInfoEntry  10  }
+
+
+END
